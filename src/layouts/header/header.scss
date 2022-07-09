@@ -1,0 +1,32 @@
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    background-color: red;
+    padding: 20px;
+
+    &__nav {
+        display: flex;
+        
+        ul {
+            display: flex;
+            list-style: none;
+
+            li {
+                a {
+                    display: block;
+                    padding: 0.5rem;
+                    text-decoration: none;
+                    color: #fff;
+                    font-size: 1rem;
+                    font-weight: bold;
+                    transition: all 0.3s ease-in-out;
+                    &:hover {
+                        color: #40d8bb;
+                    }
+                }
+            }
+        }
+    }   
+}
