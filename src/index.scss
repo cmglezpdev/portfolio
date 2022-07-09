@@ -1,0 +1,60 @@
+@import './scss/variables.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#root {
+
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+
+    background-color: $background-gray-black;
+}
+
+
+#app {
+    display: relative;
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 100%;
+    height: 100%;
+    border: 1px solid red;
+}
+
+@media (min-width: 640px) {
+    #app {
+        max-width: 640px;
+    }
+}
+
+@media (min-width: 768px) {
+    #app {
+        max-width: 768px;
+    }
+}
+
+@media (min-width: 1024px) {
+    #app {
+        max-width: 1024px;
+    }
+}
+
+@media (min-width: 1280px) {
+    #app {
+        max-width: 1280px;
+    }
+}
+
+   
+@media (min-width: 1536px) {
+    #app {
+        max-width: 1536px;
+    }
+}
+
+   
