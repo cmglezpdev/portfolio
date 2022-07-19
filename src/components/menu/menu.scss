@@ -1,54 +1,110 @@
 @import '../../scss/variables.scss';
 
-.menu {
-    
-    width: 100%;
-    height: 100%;
-    padding: 30px;
+.nav{
+    --state-close: scale(0);
+    --state-hamburguer:scale(1);
+    --state-menu: translate(-100%);
 
-    ul {
-        width: 100%;
-        height: 100%;
+    margin: 0 auto;
+    width: 90%;
+    max-width: 1200px;
+    overflow: hidden;
 
-        display: flex;
-        flex-direction: column;
-        gap: 35px;
-   
-        list-style: none;
-        
-        li {
+    padding: 40px 0;
+    display: grid;
+    justify-content: space-between;
+    align-items: center;
+    grid-template-columns: repeat(2, max-content);
 
-            width: max-content;
-            font-family: sans-serif;
-            
-            a {
-                color: $font-color-white;
-                padding: 0.5rem;
-                text-decoration: none;
-                font-size: 25px;
-                font-weight: bold;
-                transition: all 0.3s ease-in-out;
-                
-            }
-            
-            .line {
-                width: 100%;
-                height: 3px;
-                background-color: transparent;
-                transition: all 0.3s ease-in-out;
-                
-            }
-    
-            &:hover {
-                a {
-                    color: $font-color-green;
-                }
-
-                .line {
-                    background-color: $font-color-green;
-                }
-            }
-        }
+    &:target {
+        --state-menu: translate(0);
+        --state-close: scale(1);
+        --state-hamburguer:scale(0);
     }
 
+    &__logo{
+        font-size: 2.5rem;
+        z-index: 1;
+        color: white;
+    }
+    
+    &__hamburguer, 
+    &__close{
+        cursor: pointer;
+        grid-column: -2/-1;
+        grid-row: 1/2;
+        transition: .4s transform;
+    }
+    
+    &__hamburguer{
+        transform: var(--state-hamburguer);
+    }
+    
+    &__close{
+        transform: var(--state-close);
+    }
+    
+    &__icon{
+        width: 40px;
+    }
+    
+    &__links{
+        background-color: #000;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 0;
+    
+        display: grid;
+        align-content: center;
+        gap: 2em;
+        padding-left: 5%;
+    
+        transform: var(--state-menu);
+        transition: .3s transform;
+    }
+    
+    &__item{
+        list-style: none;
+    }
+    
+    &__link{
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.2rem;
+        letter-spacing: 2px;
+    }
+}
+
+
+@media (min-width:768px) {
+    .nav{
+        --state-hamburguer:scale(0);
+        --state-menu: translate(0);
+        
+        &:target{
+            --state-close: scale(0);
+        }
+    
+        &__links{
+            padding: 0;
+            background-color: unset;
+            position: unset;
+            gap: 1.5em;
+            grid-auto-flow: column;
+        
+            transform: unset;
+    
+            grid-column: -2/-1;
+            grid-row: 1/2;
+        }
+    
+        &__link{
+            font-size: 1rem;
+            letter-spacing: none;
+        }
+    }
+    
 }
