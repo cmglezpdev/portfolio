@@ -1,5 +1,5 @@
+import { Header } from "./components/header/Header"
 import { Menu } from "./components/menu/Menu"
-// import { Header } from "./layouts/header/Header"
 
 export const App = () => {
 
@@ -8,8 +8,7 @@ export const App = () => {
   
     <div id='app'>
       <Menu />
-
-
+      <Header />
     </div>
   
   )

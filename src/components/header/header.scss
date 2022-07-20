@@ -1,0 +1,46 @@
+@import '../../scss/variables.scss';
+
+.header {
+
+    // border: 1px solid red;
+    width: 100%;
+    margin: 0 auto;
+
+    &-gretting {
+        font-size: 2.8rem;
+        color: white;
+        text-align: center;
+
+        span {
+            color: $font-color-green;
+        }
+    }
+
+    &-name {
+        font-size: 2.4rem;
+        color: $font-color-green;
+        text-align: center;
+    }
+
+    &-interests {
+        font-size: 1.6rem;
+        color: $font-color-gray-light;
+        text-align: center;
+    }
+
+    &-minidescription {
+        padding: 20px;
+        font-size: 14px;
+        color: $font-color-gray-superlight;
+    }
+
+    &__image {
+        max-width: 100%;
+        
+        .me {
+            max-width: 80%;
+            margin: 0 auto;
+            // object-fit: fill;
+        }
+    }
+}

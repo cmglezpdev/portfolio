@@ -11,7 +11,6 @@ export const Menu = () => {
         <nav className="nav container-nav" id="nav">
             <div className="nav__logo">
                 <span>{ "{" }</span> <h2>{"cmglezpdev"}</h2><span>{"}"}</span>
-                {/* <span>{ "< " }</span> <h2>{"cmglezpdev"}</h2><span>{" />"}</span> */}
             </div>
             
             <ul className='nav__links'>
