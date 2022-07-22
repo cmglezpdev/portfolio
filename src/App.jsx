@@ -1,5 +1,6 @@
-import { Header } from "./components/header/Header"
-import { Menu } from "./components/menu/Menu"
+import { About } from "./components"
+import { Header } from "./components"
+import { Menu } from "./components"
 
 export const App = () => {
 
@@ -10,6 +11,7 @@ export const App = () => {
       <div className="container-general">
         <Menu />
         <Header />
+        <About />
       </div>
     </div>
   

@@ -1,0 +1,28 @@
+@import '../../scss/variables.scss';
+
+.title {
+    font-size: 40px;
+    text-align: center;
+    color: rgba($font-color-green, 0.5);
+    margin-bottom: 30px;
+    font-family: 'Rubik';
+
+    span {
+        color: rgba($font-color-green, 0.3);
+    }
+}
+
+
+
+@media (min-width: 640px) {
+    .title {
+        font-size: 60px;
+    }
+}
+
+
+@media (min-width: 1024px) {
+    .title {
+        font-size: 80px;
+    }
+}

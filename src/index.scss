@@ -1,5 +1,10 @@
 @import './scss/variables.scss';
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@300&display=swap');
+
+// Roboto -> Descripciones y textos
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap');
+
+// Rubik -> Para los titulos
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;900&display=swap');
 
 
 * {
@@ -10,9 +15,8 @@
 }
 
 #root {
-
-    width: 100vw;
-    height: 100vh;
+    // min-width: 375;
+    max-width: 100vw;
     overflow: auto;
 
     background-color: $background-gray-black;

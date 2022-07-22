@@ -72,7 +72,31 @@
         color: #111;
    }
    
+}
 
 
+
+
+@media (min-width: 1280px) {
+
+    .header {
+        &-gretting {
+            font-size: 3.3rem;
+        }
+    
+        &-name {
+            font-size: 3.3rem;
+        }
+    
+        &-interests {
+            margin-top: 20px;
+            font-size: 2.2rem;
+        }
+    
+        &-minidescription {
+            font-size: 22px;
+        }
+    }
 
 }
+
