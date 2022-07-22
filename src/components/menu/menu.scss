@@ -21,7 +21,7 @@
     }
 
     &__logo{
-        z-index: 2;
+        z-index: 101;
         
         span {
             font-size: 2.8em;
@@ -47,7 +47,7 @@
         grid-column: -2/-1;
         grid-row: 1/2;
         transition: .4s transform;
-        z-index: 2;
+        z-index: 100;
     }
     
     &__hamburguer{
@@ -64,7 +64,7 @@
     
     &__links{
         background-color: #000;
-        z-index: 1;
+        z-index: 100;
         position: absolute;
         top: 0;
         bottom: 0;

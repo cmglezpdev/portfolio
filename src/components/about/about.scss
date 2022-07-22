@@ -1,0 +1,84 @@
+@import '../../scss/variables.scss';
+
+
+.container-about {
+    // border: 1px solid  cadetblue;
+
+    margin: 200px 0;
+
+    
+    .about-information {
+        display: flex;
+        flex-direction: column;
+
+        .photo {
+            width: 100%;
+            margin: 0 auto;
+
+            img {
+                max-width: 100%;
+                object-fit: fill;
+            }
+        }
+
+        .description {
+            margin-top: 26px;
+            color: $font-color-gray-superlight;
+            font-size: 18px;
+            font-weight: 400;
+            font-family: 'Roboto';
+        }
+
+    }
+}
+
+
+
+@media (min-width: 768px) {
+    .container-about {
+        .about-information {
+            display: block;
+       
+            .photo img {
+                width: 45%;
+                shape-image-threshold: 0.5;
+                margin-left: 10px;
+                float: right;
+            }
+
+            .description {
+                // width: 60%;
+                text-align: justify;
+            }
+        }
+    }
+}
+
+// @media (min-width: 1024px) {
+//     #app {
+//         max-width: 1024px;
+//         .container-general {
+//             width: 80%;
+//         }
+//     }
+// }
+
+// @media (min-width: 1280px) {
+//     #app {
+//         max-width: 1280px;
+//         .container-general {
+//             width: 80%;
+//         }
+//     }
+// }
+
+// @media (min-width: 1536px) {
+//     #app {
+//         max-width: 1536px;
+//         .container-general {
+//             width: 80%;
+//         }
+//     }
+// }
+
+
