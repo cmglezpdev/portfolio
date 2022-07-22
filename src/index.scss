@@ -41,42 +41,33 @@ html {
 @media (min-width: 640px) {
     #app {
         max-width: 640px;
+        .container-general {
+            width: 90%;
+        }
     }
 }
 
 @media (min-width: 768px) {
     #app {
         max-width: 768px;
-        .container-general {
-            width: 80%;
-        }
     }
 }
 
 @media (min-width: 1024px) {
     #app {
         max-width: 1024px;
-        .container-general {
-            width: 80%;
-        }
     }
 }
 
 @media (min-width: 1280px) {
     #app {
         max-width: 1280px;
-        .container-general {
-            width: 80%;
-        }
     }
 }
 
 @media (min-width: 1536px) {
     #app {
         max-width: 1536px;
-        .container-general {
-            width: 80%;
-        }
     }
 }
 

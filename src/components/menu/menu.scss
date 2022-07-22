@@ -1,14 +1,14 @@
 @import '../../scss/variables.scss';
 
-.nav{
+.nav {
     --state-close: scale(0);
-    --state-hamburguer:scale(1);
+    --state-hamburguer: scale(1);
     --state-menu: translate(-100%);
 
     margin: 0 auto;
     overflow: hidden;
-
-    padding: 40px 0;
+    
+    padding: 20px;
     display: grid;
     justify-content: space-between;
     align-items: center;
@@ -17,52 +17,52 @@
     &:target {
         --state-menu: translate(0);
         --state-close: scale(1);
-        --state-hamburguer:scale(0);
+        --state-hamburguer: scale(0);
     }
 
-    &__logo{
+    &__logo {
         z-index: 101;
-        
+
         span {
             font-size: 2.8em;
             font-weight: bold;
             color: $font-color-green;
             padding: 10px;
         }
-        
+
         h2 {
             display: inline-block;
             position: relative;
             font-size: 2rem;
             top: -5px;
             color: $font-color-gray-superlight;
-        
+
         }
 
     }
-    
-    &__hamburguer, 
-    &__close{
+
+    &__hamburguer,
+    &__close {
         cursor: pointer;
         grid-column: -2/-1;
         grid-row: 1/2;
         transition: .4s transform;
         z-index: 100;
     }
-    
-    &__hamburguer{
+
+    &__hamburguer {
         transform: var(--state-hamburguer);
     }
-    
-    &__close{
+
+    &__close {
         transform: var(--state-close);
     }
-    
-    &__icon{
+
+    &__icon {
         width: 40px;
     }
-    
-    &__links{
+
+    &__links {
         background-color: #000;
         z-index: 100;
         position: absolute;
@@ -71,28 +71,28 @@
         left: 0;
         right: 0;
         padding: 0;
-    
+
         display: grid;
         align-content: center;
         gap: 2em;
         padding-left: 5%;
-    
+
         transform: var(--state-menu);
         transition: .3s transform;
     }
-    
-    &__item{
+
+    &__item {
         list-style: none;
         width: max-content;
     }
-    
-    &__link{
+
+    &__link {
         color: $font-color-gray-light;
         text-decoration: none;
         font-size: 1.3rem;
         letter-spacing: 2px;
 
-        &:hover{
+        &:hover {
             color: $font-color-gray-superlight;
         }
     }
@@ -100,7 +100,7 @@
     .active {
         a {
             color: $font-color-green;
-            font-weight: bold;    
+            font-weight: bold;
         }
 
         .underline {
@@ -113,31 +113,65 @@
 }
 
 @media (min-width:768px) {
-    .nav{
-        --state-hamburguer:scale(0);
+    .nav {
+        --state-hamburguer: scale(0);
         --state-menu: translate(0);
-        
-        &:target{
+
+        &:target {
             --state-close: scale(0);
         }
-    
-        &__links{
+
+        &__links {
             padding: 0;
             background-color: unset;
             position: unset;
             gap: 1.5em;
             grid-auto-flow: column;
-        
+
             transform: unset;
-    
+
             grid-column: -2/-1;
             grid-row: 1/2;
         }
-    
-        &__link{
-            font-size: 1.3rem;
+
+        &__link {
+            font-size: 1rem;
             letter-spacing: none;
         }
-    }
+        
+        &__logo {
     
+            span {
+                font-size: 2em;
+                padding: 6px;
+            }
+    
+            h2 {
+                font-size: 1.7rem;
+            }
+    
+        }
+    }
+
+}
+
+@media (min-width:1024px) {
+    .nav {
+        &__link {
+            font-size: 1.3rem;
+        }
+    
+        &__logo {
+    
+            span {
+                font-size: 2.8em;
+                padding: 10px;
+            }
+    
+            h2 {
+                font-size: 2rem;
+            }
+    
+        }
+    }
 }
