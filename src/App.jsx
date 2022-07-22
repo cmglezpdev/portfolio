@@ -1,6 +1,4 @@
-import { About } from "./components"
-import { Header } from "./components"
-import { Menu } from "./components"
+import { Header,Menu, About, Skills } from "./components"
 
 export const App = () => {
 
@@ -12,6 +10,7 @@ export const App = () => {
         <Menu />
         <Header />
         <About />
+        <Skills />
       </div>
     </div>
   

@@ -1,17 +1,15 @@
 @import './scss/variables.scss';
-
-// Roboto -> Descripciones y textos
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap');
-
-// Rubik -> Para los titulos
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;900&display=swap');
-
+@import './scss/fonts.scss';
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto';
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 #root {
