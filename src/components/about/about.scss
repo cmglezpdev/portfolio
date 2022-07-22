@@ -42,7 +42,7 @@
             .photo img {
                 width: 45%;
                 shape-image-threshold: 0.5;
-                margin-left: 10px;
+                margin-left: 20px;
                 float: right;
             }
 
@@ -54,31 +54,14 @@
     }
 }
 
-// @media (min-width: 1024px) {
-//     #app {
-//         max-width: 1024px;
-//         .container-general {
-//             width: 80%;
-//         }
-//     }
-// }
 
-// @media (min-width: 1280px) {
-//     #app {
-//         max-width: 1280px;
-//         .container-general {
-//             width: 80%;
-//         }
-//     }
-// }
-
-// @media (min-width: 1536px) {
-//     #app {
-//         max-width: 1536px;
-//         .container-general {
-//             width: 80%;
-//         }
-//     }
-// }
-
-
+@media (min-width: 1280px) {
+    .container-about {
+        .about-information {
+            .description {
+                font-size: 22px;
+                text-align: justify;
+            }
+        }
+    }
+}

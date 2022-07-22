@@ -15,15 +15,15 @@ export const Menu = () => {
             
             <ul className='nav__links'>
                 <li className="nav__item active">
-                    <a href="#" className='nav__link'>Home</a>
+                    <a href="#nav" className='nav__link'>Home</a>
                     <div className="underline"></div>
                 </li>
                 <li className="nav__item">
-                    <a href="#" className='nav__link'>About</a>
+                    <a href="#about" className='nav__link'>About</a>
                     <div className="underline"></div>
                 </li>
                 <li className="nav__item">
-                    <a href="#" className='nav__link'>Skills</a>
+                    <a href="#skills" className='nav__link'>Skills</a>
                     <div className="underline"></div>
                 </li>
                 <li className="nav__item">
