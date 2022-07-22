@@ -4,12 +4,11 @@
 
     // border: 1px solid red;
     width: 100%;
-    margin: 0 auto;
+    margin: 20px auto;
 
     &-gretting {
-        font-size: 2.8rem;
+        font-size: 2.4rem;
         color: white;
-        text-align: center;
 
         span {
             color: $font-color-green;
@@ -17,30 +16,63 @@
     }
 
     &-name {
-        font-size: 2.4rem;
+        font-size: 2.8rem;
         color: $font-color-green;
-        text-align: center;
     }
 
     &-interests {
-        font-size: 1.6rem;
+        margin-top: 20px;
+        font-size: 1.8rem;
         color: $font-color-gray-light;
-        text-align: center;
     }
 
     &-minidescription {
         padding: 20px;
-        font-size: 14px;
+        padding-left: 0;
+        font-size: 18px;
         color: $font-color-gray-superlight;
     }
 
-    &__image {
-        max-width: 100%;
-        
-        .me {
-            max-width: 80%;
-            margin: 0 auto;
-            // object-fit: fill;
-        }
-    }
+
+
+    .btn-work {
+        padding: 0.8em 1.8em;
+        border: 2px solid #17C3B2;
+        position: relative;
+        overflow: hidden;
+        background-color: transparent;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 16px;
+        transition: .3s;
+        z-index: 1;
+        font-family: inherit;
+        color: #17C3B2;
+   }
+   
+   .btn-work::before {
+        content: '';
+        width: 0;
+        height: 300%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+        background: #17C3B2;
+        transition: .5s ease;
+        display: block;
+        z-index: -1;
+   }
+   
+   .btn-work:hover::before {
+        width: 105%;
+   }
+   
+   .btn-work:hover {
+        color: #111;
+   }
+   
+
+
+
 }

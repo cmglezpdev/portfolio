@@ -31,11 +31,16 @@ export const Header = () => {
 
             </h2>
 
-
             <p className='header-minidescription'>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusamus cum hic dolor rerum ea nostrum sint et, est assumenda fugit, recusandae, quo nemo eligendi eveniet officia labore optio. Aut.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
             </p>
-
+            
+            <a href="#work">
+                <button className='btn-work'>
+                    My Work
+                </button>
+            </a>
+                    
         </div>
     </div>
   )

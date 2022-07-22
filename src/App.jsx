@@ -7,8 +7,10 @@ export const App = () => {
   return (
   
     <div id='app'>
-      <Menu />
-      <Header />
+      <div className="container-general">
+        <Menu />
+        <Header />
+      </div>
     </div>
   
   )
