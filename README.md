@@ -40,3 +40,11 @@ $font-color-green: #40d8bb;
 ## Media queries
 
 min-width: 640, 768, 1024, 1280, 1536
+
+
+## TASKS
+
+1. Evitar que se haga scroll cuando tienes el menu en vista movil 
+2. Crear animación de color cuando se selecciona en el menu(la raya de abajo)
+3. Dejar fijo el menu en vista escritorio
+4. Actualizar el color de la seccion activa en el menu
