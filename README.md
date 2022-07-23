@@ -48,3 +48,4 @@ min-width: 640, 768, 1024, 1280, 1536
 2. Crear animación de color cuando se selecciona en el menu(la raya de abajo)
 3. Dejar fijo el menu en vista escritorio
 4. Actualizar el color de la seccion activa en el menu
+5. Sacar el menu principal un nivel hacia afuera

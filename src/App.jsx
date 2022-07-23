@@ -1,4 +1,4 @@
-import { Header,Menu, About, Skills } from "./components"
+import { Header,Menu, About, Skills, Work } from "./components"
 
 export const App = () => {
 
@@ -11,6 +11,7 @@ export const App = () => {
         <Header />
         <About />
         <Skills />
+        <Work />
       </div>
     </div>
   

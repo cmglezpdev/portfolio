@@ -1,0 +1,245 @@
+@import '../../scss/variables.scss';
+
+.card-container {
+    
+    width: 100%;
+    display: flex;
+    padding: 15px;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    background-color: rgba($background-gray-superblack, 0.5);
+
+    img {
+        width: 100%;
+        border-radius: 10px;   
+    }
+
+    .card-information {
+    
+        margin-top: 20px;
+        padding: 0 10px;
+
+        .title-project {
+            margin: 0 0 20px 0;
+            h3 {
+                font-size: 36px;
+                color: $font-color-white;
+            }
+            
+            div {
+                height: 5px;
+                width: 100px;
+                margin-top: 5px;
+                background-color: $background-green;
+            }
+        }
+
+
+        .technologies {
+            padding: 5px;
+            margin: 10px 0;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+
+            .tech {
+                display: flex;
+                align-items: center;
+                gap: 1px;
+
+                font-weight: bold;
+                color: $font-color-gray-light;
+                
+                svg {
+                    font-size: 20px;
+                }
+            }
+
+        }
+
+        .description {
+            color: $font-color-gray-superlight;
+            font-family: 'Roboto';
+            font-weight: 300;
+            margin: 30px 0;
+        }
+
+        .buttons {
+            margin: 10px 0 20px 0;
+            display: flex;
+            gap: 10px;
+
+            button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                padding: 13px 20px;
+                font-size: 18px;
+                background-color: $background-gray-dark;
+                color: $font-color-gray-light;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                
+                svg {
+                    font-size: 25px;
+                    margin-right: 5px;
+                }
+            
+                &:hover {
+                    transform: translateY(-5px);
+                    transition: all .1s ease-in;
+                    
+                    color: $font-color-white;
+                    background-color: rgba($background-gray, 0.5);
+                }
+            
+            }
+        }
+    }
+
+
+}
+
+
+@media (min-width: 1024px) {
+    .card-container {
+        flex-direction: row;
+        height: max-content;
+
+        img {
+            max-width: 60%;
+            margin-right: 10px;
+            object-fit: contain;
+        }
+
+        .card-information {
+    
+            margin-top: 0;
+            padding: 0;
+    
+            .title-project {
+                margin: 0 0 20px 0;
+                h3 {
+                    font-size: 30px;
+                }   
+            }
+    
+
+            .description {
+                margin: 20px 0;
+            }
+    
+            .buttons {
+                margin: 5px 0 10px 0;
+    
+                button {
+                    padding: 13px 15px;
+                    font-size: 16px;
+                    
+                    svg {
+                        font-size: 20px;
+                        margin-right: 5px;
+                    }       
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1280px) {
+    .card-container {
+        .card-information {
+    
+            margin-top: 20px;
+            padding: 0 10px;
+    
+            .title-project {
+                margin: 0 0 20px 0;
+                h3 {
+                    font-size: 40px;
+                }
+                
+                div {
+                    height: 5px;
+                    width: 100px;
+                    margin-top: 5px;
+                }
+            }
+
+            .technologies {
+                .tech {
+                    font-size: 20px;
+                    svg {
+                        font-size: 25px;
+                    }
+                }
+            }
+        
+            .description {
+                margin: 25px 0;
+                font-size: 20px;
+            }
+
+            .buttons {
+                margin: 10px 0 20px 0;
+                
+                button {
+                    padding: 13px 20px;
+                    font-size: 18px;
+                    svg {
+                        font-size: 25px;
+                    }            
+                }
+            }
+        }
+    }
+}
+   
+
+@media (min-width: 1536px) {
+    .card-container {
+        
+        .card-information {
+            
+            .title-project {
+
+                h3 {
+                    font-size: 43px;
+                }
+            }
+        
+            .technologies {
+    
+                .tech {
+                    font-size: 24px;
+                    
+                    svg {
+                        font-size: 30px;
+                    }
+                }
+    
+            }
+    
+            .description {
+                font-size: 20px;
+                margin: 40px 0;
+            }
+
+            .buttons {
+                margin: 20px 0;
+                
+                button {
+                    padding: 15px 25px;
+                    font-size: 23px;
+                    svg {
+                        font-size: 28px;
+                    }            
+                }
+            }
+        }
+
+    }
+}

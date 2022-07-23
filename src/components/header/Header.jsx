@@ -23,7 +23,7 @@ export const Header = () => {
                     eraseDelay={1500}
                     text={[
                     `Frontend Developer`,
-                    `Backend Develper`,
+                    `Backend Developer`,
                     `Competitive Programming`,
                     `Machine Learning`,
                     ]}
