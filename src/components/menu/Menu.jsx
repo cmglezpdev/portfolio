@@ -27,11 +27,11 @@ export const Menu = () => {
                     <div className="underline"></div>
                 </li>
                 <li className="nav__item">
-                    <a href="#" className='nav__link'>Works</a>
+                    <a href="#work" className='nav__link'>Works</a>
                     <div className="underline"></div>
                 </li>
                 <li className="nav__item">
-                    <a href="#" className='nav__link'>Contact</a>
+                    <a href="#contact" className='nav__link'>Contact</a>
                     <div className="underline"></div>
                 </li>
             </ul>
