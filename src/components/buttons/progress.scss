@@ -1,0 +1,32 @@
+@import '../../scss/variables.scss';
+
+
+.progress {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin: 0 20px;
+    
+    .squares {
+        width: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+
+            .square {
+                width: 15px;
+                height: 15px;
+                background-color: $font-color-gray-light;
+            }
+        }
+
+
+    .vertical-line {
+        width: 3px;
+        height: 150px;
+        background-color: $font-color-gray-light;
+    }
+}
+
