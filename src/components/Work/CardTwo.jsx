@@ -7,17 +7,17 @@ import { IoLogoElectron } from 'react-icons/io5';
 
 
 import './cardProject.scss';
-import imageProject from '../../props/img3.jpg'
+import imageProject from '../../props/img3.jpg';
 
 
-export const CardOne = () => {
+export const CardTwo = () => {
   return (
-    <div className='card-container'>
-      <img src={imageProject} alt="Musicfy" />
+    <div className='card-container' style={{flexDirection:"row-reverse"}}>
+      <img src={imageProject} alt="cmglezpdev-protfolio" />
       
       <div className="card-information">
           <div className='title-project'>
-            <h3>Musicfy</h3>
+            <h3>Portfolio</h3>
             <div></div>
           </div>
 
@@ -32,12 +32,7 @@ export const CardOne = () => {
               <FaReact />
               <span>REACT</span>
             </div>
-          
-            <div className="tech">
-              <IoLogoElectron />
-              <span>ELECTRON</span>
-            </div>
-          
+                    
             <div className="tech">
               <FaSass />
               <span>SASS</span>
@@ -55,7 +50,7 @@ export const CardOne = () => {
                 Live
               </button></a>
 
-              <a href='https://github.com/cmglezpdev/Musicfy' target={"_blank"}><button>
+              <a href='https://github.com/cmglezpdev/portfolio' target={"_blank"}><button>
                 <AiFillGithub />
                 Source
               </button></a>

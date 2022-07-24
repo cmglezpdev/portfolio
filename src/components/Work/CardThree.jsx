@@ -10,14 +10,14 @@ import './cardProject.scss';
 import imageProject from '../../props/img3.jpg'
 
 
-export const CardOne = () => {
+export const CardThree = () => {
   return (
     <div className='card-container'>
-      <img src={imageProject} alt="Musicfy" />
+      <img src={imageProject} alt="GeoMaps" />
       
       <div className="card-information">
           <div className='title-project'>
-            <h3>Musicfy</h3>
+            <h3>GeoMaps</h3>
             <div></div>
           </div>
 
@@ -35,14 +35,8 @@ export const CardOne = () => {
           
             <div className="tech">
               <IoLogoElectron />
-              <span>ELECTRON</span>
+              <span>TYPESCRIPT</span>
             </div>
-          
-            <div className="tech">
-              <FaSass />
-              <span>SASS</span>
-            </div>
-  
           </div>
 
           <p className='description'>
@@ -55,7 +49,7 @@ export const CardOne = () => {
                 Live
               </button></a>
 
-              <a href='https://github.com/cmglezpdev/Musicfy' target={"_blank"}><button>
+              <a href='https://github.com/cmglezpdev/GeoMaps' target={"_blank"}><button>
                 <AiFillGithub />
                 Source
               </button></a>
