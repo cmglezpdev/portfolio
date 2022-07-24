@@ -1,0 +1,63 @@
+@import '../../scss/variables.scss';
+
+
+.fixed {
+    display: none;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    
+    .relative {
+        
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        height: 100%;
+    }
+
+}
+
+
+
+
+@media (min-width: 640px) {
+    .fixed {
+        display: block;
+        .relative {
+            max-width: 640px;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .fixed {
+        .relative {
+            max-width: 768px;
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    .fixed {
+        .relative {
+            max-width: 1024px;
+        }
+    }
+}
+
+@media (min-width: 1280px) {
+    .fixed {
+        .relative {
+            max-width: 1280px;
+        }
+    }
+}
+
+@media (min-width: 1536px) {
+    .fixed {
+        .relative {
+            max-width: 1536px;
+        }
+    }
+}
