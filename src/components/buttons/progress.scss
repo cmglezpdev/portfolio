@@ -13,13 +13,21 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 15px;
+        gap: 20px;
 
             .square {
-                width: 15px;
-                height: 15px;
-                background-color: $font-color-gray-light;
+                width: 20px;
+                height: 20px;
+                border: 3px solid $font-color-gray-light;
+                transition: all .4s ease-in-out;
+                transform: rotate(0deg);
+                
+                &:hover {
+                    background-color: $font-color-gray-light;
+                    transition: all 0.2s;
+                }
             }
+
         }
 
 
@@ -30,3 +38,9 @@
     }
 }
 
+.active-position {
+    transform: rotate(45deg) !important;
+    background-color: $font-color-gray-superlight !important;
+    border: 1px solid $font-color-gray-superlight !important;
+    transition: all .4s ease-in-out;
+}
