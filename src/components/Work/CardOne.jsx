@@ -13,7 +13,7 @@ import imageProject from '../../props/img3.jpg'
 export const CardOne = () => {
   return (
     <div className='card-container'>
-      <img src={imageProject} alt="PRoject" />
+      <img src={imageProject} alt="Musicfy" />
       
       <div className="card-information">
           <div className='title-project'>
@@ -50,15 +50,15 @@ export const CardOne = () => {
           </p>
 
           <div className='buttons'>
-              <button>
+              <a href='#' target={"_blank"}><button>
                 <RiShareForwardFill />
                 Live
-              </button>
+              </button></a>
 
-              <button>
+              <a href='https://github.com/cmglezpdev/Musicfy' target={"_blank"}><button>
                 <AiFillGithub />
                 Source
-              </button>
+              </button></a>
           </div>
 
       </div>
