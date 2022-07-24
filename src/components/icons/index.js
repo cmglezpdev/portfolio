@@ -4,6 +4,7 @@ export { Firebase } from "./Firebase";
 export { Html } from "./Html";
 export { MongoDB } from "./MongoDB";
 export { NestJs } from "./Nest";
+export { NextJs } from "./Next";
 export { NodeJs } from "./Node";
 export { Python } from "./Python";
 export { React } from "./React";
