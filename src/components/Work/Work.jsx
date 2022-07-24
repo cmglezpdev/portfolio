@@ -8,7 +8,7 @@ import './work.scss';
 
 export const Work = () => {
     return (
-        <div className='work-container' id='work'>
+        <div className='work-container' id='works'>
             <Title text={"Work"}/>
         
             {/* Seccion de principales projectos que he hecho */}

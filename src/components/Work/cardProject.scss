@@ -74,35 +74,35 @@
 
             a{
                 text-decoration: none;
-            }
-
-            button {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
-                padding: 13px 20px;
-                font-size: 18px;
-                background-color: $background-gray-dark;
-                color: $font-color-gray-light;
-                border: none;
-                border-radius: 5px;
-                cursor: pointer;
                 
-                svg {
-                    font-size: 25px;
-                    margin-right: 5px;
-                }
-            
-                &:hover {
-                    transform: translateY(-5px);
-                    transition: all .1s ease-in;
+                button {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+    
+                    padding: 13px 20px;
+                    font-size: 18px;
+                    background-color: $background-gray-dark;
+                    color: $font-color-gray-light;
+                    border: none;
+                    border-radius: 5px;
                     
-                    color: $font-color-white;
-                    background-color: rgba($background-gray, 0.5);
+                    svg {
+                        font-size: 25px;
+                        margin-right: 5px;
+                    }
+                
+        
+                    &:hover {
+                        transform: translateY(-5px);
+                        color: $font-color-white;
+                        background-color: rgba($background-gray, 0.5);
+                        transition: all .1s;
+                    }
+                    
                 }
-            
             }
+
         }
     }
 

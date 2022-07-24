@@ -7,39 +7,54 @@ const root = createRoot( document.querySelector('#root') );
 
 root.render( <App /> );
 
-// // const handleChangeActive = ( linkref ) => {
+const handleChangeActive = ( linkref ) => {
 
-// //     const current = document.querySelector( `[linkref="${linkref}"]` ).children[0];
+    const currentNav = document.querySelector( `[linkref="${linkref}"]` );
 
-// //     if( current.classList.contains("active-nav") ) return;
+    if( currentNav.classList.contains("active-position") ) return;
 
-// //     const active = document.querySelector(".icon.active-nav");
-// //     active.classList.remove("active-nav");
-// //     current.classList.add("active-nav");
-// // }
+    const active = document.querySelector(".active-position");
+    if(active != undefined)  active.classList.remove("active-position");
+    currentNav.classList.add("active-position");
+}
 
-// // window.addEventListener("load", () => {
-// //     window.addEventListener("scroll", () => {
-// //         const marginTop = 50;
-// //         const home = document.querySelector("#home");
-// //         const about = document.querySelector("#about");
-// //         const projects = document.querySelector("#projects");
+const actions = () => {
 
-// //         const positionHome = home.getBoundingClientRect().top;
-// //         const positionAbout = about.getBoundingClientRect().top;
-// //         const positionProjects = projects.getBoundingClientRect().top;
-        
-// //         // console.log(positionHome);
-// //         if( 0 <= positionHome && positionHome <= marginTop ) {
-// //             handleChangeActive("home")
-// //         }
-        
-// //         if( 0 <= positionAbout && positionAbout <= marginTop ) {
-// //             handleChangeActive("about")
-// //         } 
-        
-// //         if( 0 <= positionProjects && positionProjects <= marginTop ) {
-// //             handleChangeActive("projects")
-// //         }
-// //     });
-// })
+    const marginTop = 100;
+    const home = document.querySelector("#home");
+    const about = document.querySelector("#about");
+    const skills = document.querySelector("#skills");
+    const works = document.querySelector("#works");
+
+    const positionHome = home.getBoundingClientRect().top;
+    const positionAbout = about.getBoundingClientRect().top;
+    const positionSkills = skills.getBoundingClientRect().top;
+    const positionWorks = works.getBoundingClientRect().top;
+
+
+    if( 0 <= positionHome && positionHome <= marginTop ) {
+        handleChangeActive("home")
+    }
+
+    if( 0 <= positionAbout && positionAbout <= marginTop ) {
+        handleChangeActive("about")
+    } 
+    if( 0 <= positionSkills && positionSkills <= marginTop ) {
+        handleChangeActive("skills")
+    } 
+
+    if( 0 <= positionWorks && positionWorks <= marginTop ) {
+        handleChangeActive("works")
+    }
+}
+
+
+
+window.addEventListener("load", () => {
+
+    actions();
+
+    window.addEventListener("scroll", () => {
+        actions();
+    });
+})
