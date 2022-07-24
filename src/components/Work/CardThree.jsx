@@ -1,7 +1,9 @@
 import { AiFillGithub, AiFillHtml5 } from 'react-icons/ai';
 import { RiShareForwardFill } from 'react-icons/ri';
-import { FaReact, FaSass } from 'react-icons/fa';
+import { FaReact } from 'react-icons/fa';
 import { IoLogoElectron } from 'react-icons/io5';
+import { SiTypescript } from 'react-icons/si';
+
 
 
 
@@ -12,7 +14,7 @@ import imageProject from '../../props/img3.jpg'
 
 export const CardThree = () => {
   return (
-    <div className='card-container'>
+    <div className='card-container' id='three'>
       <img src={imageProject} alt="GeoMaps" />
       
       <div className="card-information">
@@ -34,7 +36,7 @@ export const CardThree = () => {
             </div>
           
             <div className="tech">
-              <IoLogoElectron />
+              <SiTypescript />
               <span>TYPESCRIPT</span>
             </div>
           </div>

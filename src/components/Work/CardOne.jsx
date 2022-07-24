@@ -12,7 +12,7 @@ import imageProject from '../../props/img3.jpg'
 
 export const CardOne = () => {
   return (
-    <div className='card-container'>
+    <div className='card-container' id='one'>
       <img src={imageProject} alt="Musicfy" />
       
       <div className="card-information">
