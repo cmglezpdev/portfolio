@@ -20,8 +20,8 @@ const handleChangeActive = ( linkref ) => {
 
 const actions = () => {
 
-    const marginTop = 100;
-    const home = document.querySelector("#home");
+    const marginTop = 180;
+    const home = document.querySelector("#app");
     const about = document.querySelector("#about");
     const skills = document.querySelector("#skills");
     const works = document.querySelector("#works");
@@ -32,7 +32,7 @@ const actions = () => {
     const positionWorks = works.getBoundingClientRect().top;
 
 
-    if( 0 <= positionHome && positionHome <= marginTop ) {
+    if( positionHome == 0 ) {
         handleChangeActive("home")
     }
 

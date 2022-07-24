@@ -8,6 +8,7 @@ import iconClose from '../../props/close.svg'
 
 export const Menu = () => {
     return (
+
         <nav className="nav container-nav" id="nav">
             <div className="nav__logo">
                 <span>{ "{" }</span> <h2>{"cmglezpdev"}</h2><span>{"}"}</span>
@@ -27,7 +28,7 @@ export const Menu = () => {
                     <div className="underline"></div>
                 </li>
                 <li className="nav__item">
-                    <a href="#work" className='nav__link'>Works</a>
+                    <a href="#works" className='nav__link'>Works</a>
                     <div className="underline"></div>
                 </li>
                 <li className="nav__item">

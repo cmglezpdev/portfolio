@@ -6,7 +6,7 @@ export const Progress = () => {
     <div className='progress'>
       
       <div className="squares">
-        <a href='#home'><div className="square" linkref="home"></div></a>
+        <a href='#app'><div className="square" linkref="home"></div></a>
         <a href='#about'><div className="square" linkref="about"></div></a>
         <a href='#skills'><div className="square" linkref="skills"></div></a>
         <a href='#works'><div className="square" linkref="works"></div></a>
