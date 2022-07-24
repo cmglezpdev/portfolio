@@ -1,10 +1,9 @@
+import { useState } from 'react';
 
+import { NextJs, CPlusPlus, CSharp, Css, Django, Express, Firebase, GraphQL, Html, JavaScript, MongoDB, MySQL, NestJs, NodeJs, Python, React, Typescript } from '../icons';
 import { Title } from '../';
 import './skills.scss';
 
-import { CSharp, Css, Firebase, Html, JavaScript, MongoDB, NestJs, NodeJs, Python, React, Typescript } from '../icons';
-import { useState } from 'react';
-import { NextJs } from '../icons/Next';
 
 export const Skills = () => {
 
@@ -60,6 +59,7 @@ const StrongSection = () => {
             <Typescript />
             <React />
             <CSharp />
+            <CPlusPlus />
         </>
     )
 }
@@ -69,6 +69,7 @@ const LearningSection = () => {
         <>
             <Firebase />
             <NodeJs />
+            <Express />
             <MongoDB />
         </>
     )
@@ -81,6 +82,8 @@ const InterestedSection = () => {
             <Python />
             <NestJs />
             <NextJs />
+            <GraphQL />
+            <MySQL />
         </>
     )
 

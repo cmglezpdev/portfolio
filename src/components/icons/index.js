@@ -10,7 +10,7 @@ export { React } from "./React";
 export { CSharp } from "./CSharp";
 export { JavaScript } from "./Javascript";
 export { Typescript } from "./Typescript"
-
-
-
-
+export { GraphQL } from "./GraphQL";
+export { MySQL } from "./MySQL";
+export { Express } from "./Express";
+export { CPlusPlus } from "./CPlusPlus";
