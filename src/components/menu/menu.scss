@@ -5,11 +5,16 @@
     --state-hamburguer: scale(1);
     --state-menu: translate(-100%);
 
+    z-index: 100;
+    width: 100%;
+    background-color: rgba($background-gray-black, 0.6);
+    backdrop-filter: blur(10px);
+
+    position: fixed;
+    display: grid;
     margin: 0 auto;
     overflow: hidden;
-    
     padding: 20px;
-    display: grid;
     justify-content: space-between;
     align-items: center;
     grid-template-columns: repeat(2, max-content);
@@ -112,11 +117,19 @@
 
 }
 
+@media (min-width:640px) {
+    .nav {
+        max-width: 640px;
+    }
+}
+
+
 @media (min-width:768px) {
     .nav {
         --state-hamburguer: scale(0);
         --state-menu: translate(0);
-
+        max-width: 768px;
+        
         &:target {
             --state-close: scale(0);
         }
@@ -156,7 +169,10 @@
 }
 
 @media (min-width:1024px) {
+
     .nav {
+        max-width: 1024px;
+
         &__link {
             font-size: 1.3rem;
         }
@@ -173,5 +189,19 @@
             }
     
         }
+    }
+}
+
+
+
+@media (min-width: 1280px) {
+    .nav {
+        max-width: 1280px;
+    }
+}
+
+@media (min-width: 1536px) {
+    .nav {
+        max-width: 1536px;
     }
 }
