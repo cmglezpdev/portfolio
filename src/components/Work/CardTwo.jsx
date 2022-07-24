@@ -12,7 +12,7 @@ import imageProject from '../../props/img3.jpg';
 
 export const CardTwo = () => {
   return (
-    <div className='card-container' style={{flexDirection:"row-reverse"}}>
+    <div className='card-container' id='two'>
       <img src={imageProject} alt="cmglezpdev-protfolio" />
       
       <div className="card-information">

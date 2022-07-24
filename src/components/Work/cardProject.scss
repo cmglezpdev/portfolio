@@ -111,8 +111,13 @@
 
 
 @media (min-width: 1024px) {
+    #two {
+        flex-direction: row-reverse;
+    }
+    
     .card-container {
         flex-direction: row;
+
         height: max-content;
 
         img {
