@@ -7,7 +7,7 @@
 
     z-index: 100;
     width: 100%;
-    background-color: rgba($background-gray-black, 0.6);
+    background-color: rgba($background-gray-black, 0.8);
 
     position: fixed;
     display: grid;
@@ -86,7 +86,7 @@
         gap: 2em;
         padding-left: 5%;
         
-        background-color: rgba($background-gray-black, .9);
+        background-color: rgba($background-gray-black, .8);
         backdrop-filter: blur(10px);
 
         transform: var(--state-menu);
@@ -150,7 +150,7 @@
         --state-hamburguer: scale(0);
         --state-menu: translate(0);
         max-width: 768px;
-
+        backdrop-filter: blur(10px);
 
         &:target {
             --state-close: scale(0);
@@ -160,6 +160,7 @@
         &__links {
             padding: 0;
             background-color: unset;
+            backdrop-filter: none;
             position: unset;
             height: auto;
             width: auto;
