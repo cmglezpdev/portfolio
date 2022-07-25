@@ -35,7 +35,7 @@ export const Header = () => {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
             </p>
             
-            <a href="#work">
+            <a href="#works">
                 <button className='btn-work'>
                     My Work
                 </button>

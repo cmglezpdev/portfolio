@@ -32,7 +32,7 @@ export const CSharp = ({ theme }) => {
   return (
     <div className='icon'>
         <img src={icon} alt="CSharp" />
-        <span>CSharp</span>
+        <span>C#</span>
     </div>
   )
 }
