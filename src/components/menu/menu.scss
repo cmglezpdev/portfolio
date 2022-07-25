@@ -16,13 +16,15 @@
     overflow: hidden;
     padding: 20px;
     justify-content: space-between;
-    align-items: center;
     grid-template-columns: repeat(2, max-content);
+    align-items: center;
 
     &:target {
         --state-menu: translate(0);
         --state-close: scale(1);
         --state-hamburguer: scale(0);
+        align-items: flex-start;
+        height: 100%;
     }
 
     &__logo {
@@ -68,7 +70,7 @@
     }
 
     &__links {
-        background-color: #000;
+        background-color: rgba(#000, 0.4);
         z-index: 100;
         position: absolute;
         top: 0;
@@ -102,7 +104,7 @@
         }
     }
 
-    .active {
+    .active-nav {
         a {
             color: $font-color-green;
             font-weight: bold;
@@ -129,9 +131,11 @@
         --state-hamburguer: scale(0);
         --state-menu: translate(0);
         max-width: 768px;
-        
+
+
         &:target {
             --state-close: scale(0);
+            height: auto;
         }
 
         &__links {
@@ -140,7 +144,6 @@
             position: unset;
             gap: 1.5em;
             grid-auto-flow: column;
-
             transform: unset;
 
             grid-column: -2/-1;
@@ -151,18 +154,18 @@
             font-size: 1rem;
             letter-spacing: none;
         }
-        
+
         &__logo {
-    
+
             span {
                 font-size: 2em;
                 padding: 6px;
             }
-    
+
             h2 {
                 font-size: 1.7rem;
             }
-    
+
         }
     }
 
@@ -176,18 +179,18 @@
         &__link {
             font-size: 1.3rem;
         }
-    
+
         &__logo {
-    
+
             span {
                 font-size: 2.8em;
                 padding: 10px;
             }
-    
+
             h2 {
                 font-size: 2rem;
             }
-    
+
         }
     }
 }
