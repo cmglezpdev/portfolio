@@ -8,6 +8,7 @@ import './skills.scss';
 export const Skills = () => {
 
     const [selected, setSelected] = useState(1);
+    const [theme, setTheme] = useState("");
 
     const selectedIcons = () => {
         switch( selected ) {

@@ -32,7 +32,7 @@ export const CPlusPlus = ({ theme }) => {
   return (
     <div className='icon'>
         <img src={icon} alt="CPlusPlus" />
-        <span>CPlusPlus</span>
+        <span>C++</span>
     </div>
   )
 }
