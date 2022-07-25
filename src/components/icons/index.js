@@ -15,3 +15,4 @@ export { GraphQL } from "./GraphQL";
 export { MySQL } from "./MySQL";
 export { Express } from "./Express";
 export { CPlusPlus } from "./CPlusPlus";
+export { Sass } from "./Sass";
