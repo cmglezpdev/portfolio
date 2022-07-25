@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { NextJs, CPlusPlus, CSharp, Css, Django, Express, Firebase, GraphQL, Html, JavaScript, MongoDB, MySQL, NestJs, NodeJs, Python, React, Typescript } from '../icons';
+import { NextJs, CPlusPlus, CSharp, Css, Django, Express, Firebase, GraphQL, Html, JavaScript, MongoDB, MySQL, NestJs, NodeJs, Python, React, Typescript, Sass } from '../icons';
 import { Title } from '../';
 import './skills.scss';
 
@@ -59,6 +59,7 @@ const StrongSection = () => {
             <JavaScript />
             <Typescript />
             <React />
+            <Sass />
             <CSharp />
             <CPlusPlus />
         </>
