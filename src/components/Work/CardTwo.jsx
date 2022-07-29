@@ -16,6 +16,8 @@ export const CardTwo = () => {
       <img src={imageProject} alt="cmglezpdev-protfolio" />
       
       <div className="card-information">
+          <span className='status-project'>currely working on</span>
+
           <div className='title-project'>
             <h3>Portfolio</h3>
             <div></div>
