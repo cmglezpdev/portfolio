@@ -8,7 +8,6 @@ import './skills.scss';
 export const Skills = () => {
 
     const [selected, setSelected] = useState(1);
-    const [theme, setTheme] = useState("");
 
     const selectedIcons = () => {
         switch( selected ) {
@@ -32,7 +31,7 @@ export const Skills = () => {
                 <div 
                     className={selected == 1 ? 'active-section' : ''}
                     onClick={() => setSelected(1)}
-                >Strong</div>
+                >Knowledge</div>
                 <div 
                     className={selected == 2 ? 'active-section' : ''}
                     onClick={() => setSelected(2)}
@@ -82,6 +81,7 @@ const InterestedSection = () => {
     return (
         <>
             <Python />
+            <Django />
             <NestJs />
             <NextJs />
             <GraphQL />

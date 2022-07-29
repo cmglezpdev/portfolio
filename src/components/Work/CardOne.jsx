@@ -16,6 +16,8 @@ export const CardOne = () => {
       <img src={imageProject} alt="Musicfy" />
       
       <div className="card-information">
+          <span className='status-project'>currely working on</span>
+          
           <div className='title-project'>
             <h3>Musicfy</h3>
             <div></div>

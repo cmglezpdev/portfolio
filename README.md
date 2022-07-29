@@ -50,3 +50,4 @@ min-width: 640, 768, 1024, 1280, 1536
 4. Actualizar el color de la seccion activa en el menu
 5. Sacar el menu principal un nivel hacia afuera
 6. Cuando se recarga la paguina, hacer que el cuadradito correspondiente a la seccion se cambie
+6. La foto de los projectos que sea un carrucel de fotos

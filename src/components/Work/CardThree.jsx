@@ -18,6 +18,9 @@ export const CardThree = () => {
       <img src={imageProject} alt="GeoMaps" />
       
       <div className="card-information">
+          
+          <span className='status-project'>currely working on</span>
+          
           <div className='title-project'>
             <h3>GeoMaps</h3>
             <div></div>

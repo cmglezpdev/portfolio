@@ -22,6 +22,14 @@
         margin-top: 20px;
         padding: 0 10px;
 
+        .status-project {
+            color: $font-color-green;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 17px;
+            margin-bottom: 5px;
+        }
+
         .title-project {
             margin: 0 0 20px 0;
             h3 {
@@ -117,17 +125,16 @@
     
     .card-container {
         flex-direction: row;
-
         height: max-content;
-
+        
         img {
             max-width: 60%;
             margin-right: 10px;
             object-fit: contain;
         }
-
+        
         .card-information {
-    
+            
             margin-top: 0;
             padding: 0;
     
@@ -164,7 +171,6 @@
     .card-container {
         .card-information {
     
-            margin-top: 20px;
             padding: 0 10px;
     
             .title-project {
