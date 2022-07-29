@@ -1,0 +1,17 @@
+@import '../../scss/variables.scss';
+
+.contact-container {
+    
+    padding-top: 100px;
+    .contact-text {
+        font-family: 'Roboto';
+        color: $font-color-gray-superlight;        
+        font-size: 20px;
+
+        a {
+            text-decoration: none;
+            font-weight: bold;
+            color: $font-color-green;
+        }
+    }
+}

@@ -27,17 +27,18 @@ const handleChangeActive = ( linkref ) => {
 
 const actions = () => {
 
-    const marginTop = 180;
+    const marginTop = 220;
     const home = document.querySelector("#app");
     const about = document.querySelector("#about");
     const skills = document.querySelector("#skills");
     const works = document.querySelector("#works");
+    const contact = document.querySelector("#contact");
 
     const positionHome = home.getBoundingClientRect().top;
     const positionAbout = about.getBoundingClientRect().top;
     const positionSkills = skills.getBoundingClientRect().top;
     const positionWorks = works.getBoundingClientRect().top;
-
+    const positionContact = contact.getBoundingClientRect().top;
 
     if( positionHome == 0 ) {
         handleChangeActive("home")
@@ -53,6 +54,11 @@ const actions = () => {
     if( 0 <= positionWorks && positionWorks <= marginTop ) {
         handleChangeActive("works")
     }
+    
+    if( 0 <= positionContact && positionContact <= marginTop ) {
+        handleChangeActive("contact")
+    }
+
 }
 
 
