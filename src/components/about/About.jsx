@@ -17,10 +17,12 @@ export const About = () => {
                 </div>
                 <div className="description">
                     <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo corrupti alias tempore velit dolorum labore exercitationem, iusto excepturi ex quo eius aliquid porro, voluptatem odit officia harum optio nostrum ipsam.
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste maxime officia velit quam libero quaerat ipsa deserunt culpa itaque sit pariatur, quas obcaecati? Distinctio, rem nulla! Tempora libero neque quibusdam.
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum sequi quaerat facere deleniti, dicta, nam provident exercitationem sunt perspiciatis nulla, minima assumenda nisi culpa velit natus est incidunt quis quia!
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam, at sapiente natus facere, harum ut nemo quis architecto temporibus sequi repudiandae voluptates quod quibusdam dicta sed perferendis quae aliquid sint.
+                        Hola, mi nombre es Carlos Manuel González y soy estudiante de Ciencias de la Computación en la Universidad de la Habana. <br />
+                        Me apasiona el mundo del desarrollo de softweare en general, aunque actualmente estoy enfocado en el desarrollo web. <br />
+                        Empecé a programar a los 16 años en la parte de programación competitiva. Estube 3 años enfocado solo en eso y participé en muchas competencias tanto nacionales como internacionales desde mi preuniversitario. <br />
+
+                        Cuando entré en la universidad emprecé a interesarme mas por el desarrollo web, llegando a desarrollar aplicaciones tanto frontend como de backend. Me interesa mucho el desarrollo web, las criptomonedas y el machine learning. <br />
+                        No he tenido todavía experiencia laboral pero si sigo creando aplicaciones personales como parte de mi aprendizaje, y estoy abierto a poder trabajar y colaborar con una empresa u otro desarrollador que quiera trabajar conmigo. <br />
                     </p>
                 </div>
             </div>
