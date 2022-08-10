@@ -1,7 +1,7 @@
 
 import img from '../../props/img4.jpg'
 
-export const Project = () => {
+export const Project = ({ titleProject, technologies, description, urlSourceCode, urlLiveApp }) => {
 
 
     return (
@@ -11,19 +11,21 @@ export const Project = () => {
                 
                 <div className='info-hover'>
                     <div className="title">
-                        <span className="title-project">Journal App</span>
+                        <span className="title-project">{ titleProject }</span>
                         <div className='row'></div>
                     </div>
                     <div className="technologies">
-                        <span>TailwindCSS</span>
-                        <span>React</span>
-                        <span>Redux</span>
+                        {
+                            technologies.map((technology, index) => (
+                                <span key={index}>{technology}</span>
+                            ))
+                        }
                     </div>
-                    <p className="description">Ya puedes crearte una cuenta y empezar a tomar tus notas diarias. Aplicación desarrollada para aprender Redux, Tailwind y Firebase</p>
+                    <p className="description">{ description }</p>
                 
                     <div className="buttons">
-                        <button className="source-code">Source</button>
-                        <button className="live-app">Live</button>
+                        <a href={urlSourceCode}><button src={urlSourceCode} className="source-code">Source</button></a>
+                        <a href={urlLiveApp}><button src={urlLiveApp} className="live-app">Live</button></a>
                     </div>
                 </div>    
             </div>
