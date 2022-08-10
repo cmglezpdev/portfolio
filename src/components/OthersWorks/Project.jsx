@@ -1,13 +1,23 @@
 
-import img from '../../props/img4.jpg'
-
-export const Project = ({ titleProject, technologies, description, urlSourceCode, urlLiveApp }) => {
+export const Project = ({ images, titleProject, technologies, description, urlSourceCode, urlLiveApp }) => {
 
 
     return (
         <>
             <div className="project" >
-                <img src={img} alt="project" className='image' />
+                <div className="slider-images">
+                    <ul>
+                        {
+                            images.map((image, index) => {
+                                return (
+                                    <li key={index}>
+                                        <img src={image} alt={titleProject} className='image' />
+                                    </li>
+                                )
+                            })
+                        }
+                    </ul>
+                </div>
                 
                 <div className='info-hover'>
                     <div className="title">
