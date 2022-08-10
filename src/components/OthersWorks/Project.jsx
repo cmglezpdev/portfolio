@@ -1,5 +1,4 @@
 
-
 import img from '../../props/img4.jpg'
 
 export const Project = () => {
