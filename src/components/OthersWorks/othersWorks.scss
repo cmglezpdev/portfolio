@@ -1,0 +1,316 @@
+@import '../../scss/variables.scss';
+
+
+.more-projects {
+
+    width: 100%;
+
+    .projects {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 20px;
+    
+    
+        .project {
+            width: 100%;
+            position: relative;
+            
+            .image{
+                max-width: 100%;
+                max-height: 100%;
+            }
+            
+            .info-hover {
+                width: 100%;
+                height: 100%;
+                padding: 10px;
+                position: absolute;
+                top: 0;
+                z-index: 1;
+                
+                background-color: $background-gray-dark;
+                opacity: 0;
+                clip-path: circle(1.5% at 50% 50%);
+                transition: clip-path 1s, opacity 1s;
+                
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                
+                .title {
+                    padding-top: 0 !important;
+                    margin: 0 0 5px 0 !important;
+                    font-size: 0 !important;
+
+                    .title-project {
+                        font-size: 24px;
+                        font-weight: bold;
+                        color: white;
+                        text-align: center;
+                        padding: 10px;
+                        padding-bottom: 0;   
+                    }
+    
+                    .row {
+                        width: 100%;
+                        height: 5px;
+                        background-color: $background-green;
+                    }
+
+                }
+
+                .technologies {
+                    font-size: 14px;
+                    color: $font-color-gray;
+                    text-align: center;
+                    padding: 10px;
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 8px;
+                    
+                    span {
+                        text-transform: uppercase;
+                        font-weight: bold;
+                        background-color: aqua;
+                        padding: 5px;
+                    }
+                }
+            
+                .description {
+                    font-size: 14px;
+                    color: white;
+                    text-align: center;
+                    padding: 10px;
+                }
+
+                .buttons {
+                    button {
+                        
+                        margin: 10px 5px;
+                        font-size: 14px;
+                        border: none;
+                        border-radius: 5px;
+                        background-color: lighten($color: $background-gray-dark, $amount: 10);
+                        color: white;
+                        font-weight: 500;
+                        transition: background-color .3s;
+
+                        &:hover {
+                            background-color: lighten($color: $background-gray-dark, $amount: 5);
+                        }
+                    }
+
+                    .source-code {
+                        padding: 10px;
+                    }
+                    .live-app {
+                        padding: 10px 20px;
+                    }
+                }
+            }
+        
+            &:hover {
+                .info-hover {
+                    clip-path: circle(100% at 50% 50%);
+                    opacity: 1
+                }
+            }
+        }
+    
+    }
+
+}
+
+
+@media (min-width: 475px) {
+    
+    .more-projects {
+        .projects {
+            
+            .project {
+
+                .info-hover {
+            
+                    .title {
+            
+                        .title-project {
+                            font-size: 35px; 
+                        }
+                    }
+            
+                    .technologies {
+                        font-size: 18px;
+                    }
+                
+                    .description {
+                        font-size: 18px;
+                    }
+            
+                    .buttons {
+                        button {
+                            font-size: 18px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media (min-width: 780px) {
+    
+    .more-projects {
+
+        .projects {
+
+            grid-template-columns: 1fr 1fr;
+
+            .project {
+
+                .info-hover {
+            
+                    .title {
+            
+                        .title-project {
+                            font-size: 20px; 
+                        }
+
+                        .row {
+                            height: 3px;
+                        }
+                    }
+            
+                    .technologies {
+                        font-size: 10px;
+                        padding: 3px;
+                    }
+                
+                    .description {
+                        font-size: 12px;
+                    }
+            
+                    .buttons {
+                        
+                        button {
+                            font-size: 10px;   
+                        }
+
+                        .source-code {
+                            padding: 8px;
+                        }
+                        .live-app {
+                            padding: 8px 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+@media (min-width: 1024px) {
+    
+    .more-projects {
+
+        .projects {
+
+            grid-template-columns: 1fr 1fr;
+
+            .project {
+
+                .info-hover {
+            
+                    .title {
+            
+                        .title-project {
+                            font-size: 30px; 
+                        }
+
+                        .row {
+                            height: 5px;
+                        }
+                    }
+            
+                    .technologies {
+                        font-size: 14px;
+                        padding: 3px;
+                    }
+                
+                    .description {
+                        font-size: 14px;
+                    }
+            
+                    .buttons {
+                        
+                        button {
+                            font-size: 14px;   
+                        }
+
+                        .source-code {
+                            padding: 10px;
+                        }
+                        .live-app {
+                            padding: 10px 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media (min-width: 1280px) {
+    
+    .more-projects {
+
+        .projects {
+
+            grid-template-columns: 1fr 1fr 1fr;
+
+            .project {
+
+                .info-hover {
+            
+                    .title {
+            
+                        .title-project {
+                            font-size: 30px; 
+                        }
+
+                        .row {
+                            height: 5px;
+                        }
+                    }
+            
+                    .technologies {
+                        font-size: 14px;
+                        padding: 3px;
+                    }
+                
+                    .description {
+                        font-size: 14px;
+                    }
+            
+                    .buttons {
+                        
+                        button {
+                            font-size: 14px;   
+                        }
+
+                        .source-code {
+                            padding: 10px;
+                        }
+                        .live-app {
+                            padding: 10px 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
