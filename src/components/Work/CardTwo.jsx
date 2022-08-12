@@ -1,9 +1,6 @@
 import { AiFillGithub, AiFillHtml5 } from 'react-icons/ai';
 import { RiShareForwardFill } from 'react-icons/ri';
 import { FaReact, FaSass } from 'react-icons/fa';
-import { IoLogoElectron } from 'react-icons/io5';
-
-
 
 
 import './cardProject.scss';
@@ -13,7 +10,9 @@ import imageProject from '../../props/img3.jpg';
 export const CardTwo = () => {
   return (
     <div className='card-container' id='two'>
-      <img src={imageProject} alt="cmglezpdev-protfolio" />
+      <div className='cover-image'>
+        <img src={imageProject} alt="cmglezpdev-protfolio" />
+      </div>
       
       <div className="card-information">
           <span className='status-project'>currely working on</span>
@@ -47,12 +46,12 @@ export const CardTwo = () => {
           </p>
 
           <div className='buttons'>
-              <a href='#' target={"_blank"}><button>
+              <a href='#' target={"_blank"} rel='noreferrer'><button>
                 <RiShareForwardFill />
                 Live
               </button></a>
 
-              <a href='https://github.com/cmglezpdev/portfolio' target={"_blank"}><button>
+              <a href='https://github.com/cmglezpdev/portfolio' target={"_blank"} rel='noreferrer'><button>
                 <AiFillGithub />
                 Source
               </button></a>

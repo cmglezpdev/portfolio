@@ -7,13 +7,15 @@ import { IoLogoElectron } from 'react-icons/io5';
 
 
 import './cardProject.scss';
-import imageProject from '../../props/img3.jpg'
+import imageProject from '../../props/Projects/Musicfy/image.png'
 
 
 export const CardOne = () => {
   return (
     <div className='card-container' id='one'>
-      <img src={imageProject} alt="Musicfy" />
+      <div className='cover-image'>
+        <img src={imageProject} alt="Musicfy" />
+      </div>
       
       <div className="card-information">
           <span className='status-project'>currely working on</span>
@@ -48,16 +50,16 @@ export const CardOne = () => {
           </div>
 
           <p className='description'>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Error iste hic expedita 
+            Musicfy is a desktop and web application that allows you to create your own playlist and share it with your friends.
           </p>
 
           <div className='buttons'>
-              <a href='#' target={"_blank"}><button>
+              <a href='#' target={"_blank"} rel='noreferrer'><button>
                 <RiShareForwardFill />
                 Live
               </button></a>
 
-              <a href='https://github.com/cmglezpdev/Musicfy' target={"_blank"}><button>
+              <a href='https://github.com/cmglezpdev/Musicfy' target={"_blank"} rel='noreferrer'><button>
                 <AiFillGithub />
                 Source
               </button></a>
