@@ -8,6 +8,7 @@ export { NextJs } from "./Next";
 export { NodeJs } from "./Node";
 export { Python } from "./Python";
 export { React } from "./React";
+export { ReactNative } from "./ReactNative";
 export { CSharp } from "./CSharp";
 export { JavaScript } from "./Javascript";
 export { Typescript } from "./Typescript"
@@ -16,3 +17,4 @@ export { MySQL } from "./MySQL";
 export { Express } from "./Express";
 export { CPlusPlus } from "./CPlusPlus";
 export { Sass } from "./Sass";
+export { Redux } from "./Redux"
