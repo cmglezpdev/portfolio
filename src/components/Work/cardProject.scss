@@ -11,9 +11,15 @@
     border-radius: 10px;
     background-color: rgba($background-gray-superblack, 0.5);
 
+    .cover-image {
+        height: 300px;
+        width: 100%;
+    }
+
     img {
         width: 100%;
-        max-height: 400px; //!!!!!
+        height: 100%;
+        object-fit: fill;
         border-radius: 10px;   
     }
 
@@ -127,10 +133,11 @@
         flex-direction: row;
         height: max-content;
         
-        img {
+        .cover-image {
             max-width: 60%;
+            min-width: 50%;
+            min-height: 350px;
             margin-right: 10px;
-            object-fit: contain;
         }
         
         .card-information {

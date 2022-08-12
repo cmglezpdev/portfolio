@@ -1,7 +1,6 @@
 import { AiFillGithub, AiFillHtml5 } from 'react-icons/ai';
 import { RiShareForwardFill } from 'react-icons/ri';
 import { FaReact } from 'react-icons/fa';
-import { IoLogoElectron } from 'react-icons/io5';
 import { SiTypescript } from 'react-icons/si';
 
 
@@ -15,7 +14,10 @@ import imageProject from '../../props/img3.jpg'
 export const CardThree = () => {
   return (
     <div className='card-container' id='three'>
-      <img src={imageProject} alt="GeoMaps" />
+
+      <div className="cover-image">
+        <img src={imageProject} alt="GeoMaps" />
+      </div>
       
       <div className="card-information">
           
@@ -45,16 +47,16 @@ export const CardThree = () => {
           </div>
 
           <p className='description'>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Error iste hic expedita 
+            GeoMaps is a web application that allows you to search places and see the distances and the tour bewtween them.
           </p>
 
           <div className='buttons'>
-              <a href='#' target={"_blank"}><button>
+              <a href='#' target={"_blank"} rel='noreferrer'><button>
                 <RiShareForwardFill />
                 Live
               </button></a>
 
-              <a href='https://github.com/cmglezpdev/GeoMaps' target={"_blank"}><button>
+              <a href='https://github.com/cmglezpdev/GeoMaps' target={"_blank"} rel='noreferrer'><button>
                 <AiFillGithub />
                 Source
               </button></a>
