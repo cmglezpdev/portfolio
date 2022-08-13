@@ -1,4 +1,4 @@
-import { Header,Menu, About, Skills, Work, Footer, ButtonsContainer, Contact } from "./components"
+import { Header,Menu, About, Skills, Work, Footer, ButtonsContainer, Contact, BackgroundParticles } from "./components"
 
 export const App = () => {
 
@@ -17,6 +17,9 @@ export const App = () => {
           <ButtonsContainer />
         </div>    
       </div>
+      
+      <BackgroundParticles />
+
     </>
     )
 }
