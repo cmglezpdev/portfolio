@@ -10,6 +10,11 @@ import ca2 from '../../props/Projects/Calendar-App/02.png';
 import ca3 from '../../props/Projects/Calendar-App/03.png';
 import ca4 from '../../props/Projects/Calendar-App/04.png';
 
+import ja1 from '../../props/Projects/Journal-App/01.png';
+import ja2 from '../../props/Projects/Journal-App/02.png';
+import ja3 from '../../props/Projects/Journal-App/03.png';
+import ja4 from '../../props/Projects/Journal-App/04.png';
+
 
 export const OthersWorks = () => {
     return (
@@ -19,7 +24,7 @@ export const OthersWorks = () => {
             <div className="projects">
                 
                 <Project
-                    images={[baseImg, baseImg, baseImg, baseImg]}
+                    images={[ja1, ja2, ja3, ja4]}
                     titleProject={"Journal App"}
                     technologies={["Sass", "React", "Redux"]}
                     description={"Ya puedes crearte una cuenta y empezar a tomar tus notas diarias"}
