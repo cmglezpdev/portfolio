@@ -10,6 +10,3 @@ export { ButtonsContainer } from "./buttons/ButtonsContainer";
 export { Contact } from "./contact/Contact";
 
 
-export { BackgroundParticles } from "./Particles/Particles";
-
-

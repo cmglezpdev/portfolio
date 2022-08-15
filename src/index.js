@@ -40,7 +40,7 @@ const actions = () => {
     const positionWorks = works.getBoundingClientRect().top;
     const positionContact = contact.getBoundingClientRect().top;
 
-    if( positionHome == 0 ) {
+    if( positionHome === 0 ) {
         handleChangeActive("home")
     }
 
