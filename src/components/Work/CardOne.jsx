@@ -7,7 +7,7 @@ import { IoLogoElectron } from 'react-icons/io5';
 
 
 import './cardProject.scss';
-import imageProject from '../../props/Projects/Musicfy/image.png'
+import imageProject from '../../props/Projects/MusicfyImage.png'
 
 
 export const CardOne = () => {

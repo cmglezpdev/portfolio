@@ -1,24 +1,12 @@
 
-export const Project = ({ images, titleProject, technologies, description, urlSourceCode, urlLiveApp }) => {
-
+export const Project = ({ image, titleProject, technologies, description, urlSourceCode, urlLiveApp }) => {
 
     return (
         <>
             <div className="project" >
-                <div className="slider-images">
-                    <ul>
-                        {
-                            images.map((image, index) => {
-                                return (
-                                    <li key={index}>
-                                        <img src={image} alt={titleProject} className='image' />
-                                    </li>
-                                )
-                            })
-                        }
-                    </ul>
-                </div>
-                
+
+                <img src={image} alt={titleProject} className='image' />
+
                 <div className='info-hover'>
                     <div className="title">
                         <span className="title-project">{ titleProject }</span>
