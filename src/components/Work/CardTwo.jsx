@@ -46,7 +46,7 @@ export const CardTwo = () => {
           </p>
 
           <div className='buttons'>
-              <a href='#' target={"_blank"} rel='noreferrer'><button>
+              <a href='cmglezpdev.vercel.com' target={"_blank"} rel='noreferrer'><button>
                 <RiShareForwardFill />
                 Live
               </button></a>

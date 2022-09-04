@@ -60,6 +60,7 @@ const StrongSection = () => {
             <React />
             <Redux />
             <Sass />
+            <Python />
             <CSharp />
             <CPlusPlus />
         </>
@@ -73,7 +74,6 @@ const LearningSection = () => {
             <NodeJs />
             <Express />
             <MongoDB />
-            <ReactNative />
             <NextJs />
         </>
     )
@@ -83,10 +83,9 @@ const InterestedSection = () => {
 
     return (
         <>
-            <Python />
             <Django />
             <NestJs />
-            <NextJs />
+            <ReactNative />
             <GraphQL />
             <MySQL />
         </>

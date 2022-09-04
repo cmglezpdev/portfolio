@@ -1,5 +1,5 @@
 import { AiFillGithub, AiFillHtml5 } from 'react-icons/ai';
-import { RiShareForwardFill } from 'react-icons/ri';
+// import { RiShareForwardFill } from 'react-icons/ri';
 import { FaReact, FaSass } from 'react-icons/fa';
 import { IoLogoElectron } from 'react-icons/io5';
 
@@ -54,10 +54,10 @@ export const CardOne = () => {
           </p>
 
           <div className='buttons'>
-              <a href='#' target={"_blank"} rel='noreferrer'><button>
+              {/* <a href='#' target={"_blank"} rel='noreferrer'><button>
                 <RiShareForwardFill />
                 Live
-              </button></a>
+              </button></a> */}
 
               <a href='https://github.com/cmglezpdev/Musicfy' target={"_blank"} rel='noreferrer'><button>
                 <AiFillGithub />
