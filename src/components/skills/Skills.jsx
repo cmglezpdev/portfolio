@@ -29,15 +29,15 @@ export const Skills = () => {
 
             <div className='select-skills'>
                 <div 
-                    className={selected == 1 ? 'active-section' : ''}
+                    className={selected === 1 ? 'active-section' : ''}
                     onClick={() => setSelected(1)}
                 >Knowledge</div>
                 <div 
-                    className={selected == 2 ? 'active-section' : ''}
+                    className={selected === 2 ? 'active-section' : ''}
                     onClick={() => setSelected(2)}
                 >I'm Learning</div>
                 <div 
-                    className={selected == 3 ? 'active-section' : ''}
+                    className={selected === 3 ? 'active-section' : ''}
                     onClick={() => setSelected(3)}
                 >I'm Interested</div>
             </div>
@@ -60,6 +60,11 @@ const StrongSection = () => {
             <React />
             <Redux />
             <Sass />
+            <Firebase />
+            <NodeJs />
+            <Express />
+            <MongoDB />
+            <Python />
             <CSharp />
             <CPlusPlus />
         </>
@@ -69,12 +74,9 @@ const StrongSection = () => {
 const LearningSection = () => {
     return (
         <>
-            <Firebase />
-            <NodeJs />
-            <Express />
-            <MongoDB />
-            <ReactNative />
             <NextJs />
+            <NestJs />
+            <GraphQL />
         </>
     )
 }
@@ -83,11 +85,8 @@ const InterestedSection = () => {
 
     return (
         <>
-            <Python />
             <Django />
-            <NestJs />
-            <NextJs />
-            <GraphQL />
+            <ReactNative />
             <MySQL />
         </>
     )

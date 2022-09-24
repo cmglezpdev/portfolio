@@ -1,24 +1,14 @@
+import LazyLoad from 'react-lazy-load';
 
-export const Project = ({ images, titleProject, technologies, description, urlSourceCode, urlLiveApp }) => {
-
+export const Project = ({ image, titleProject, technologies, description, urlSourceCode, urlLiveApp }) => {
 
     return (
         <>
             <div className="project" >
-                <div className="slider-images">
-                    <ul>
-                        {
-                            images.map((image, index) => {
-                                return (
-                                    <li key={index}>
-                                        <img src={image} alt={titleProject} className='image' />
-                                    </li>
-                                )
-                            })
-                        }
-                    </ul>
-                </div>
-                
+                <LazyLoad>
+                    <img src={image} alt={titleProject} className='image' />
+                </LazyLoad>
+
                 <div className='info-hover'>
                     <div className="title">
                         <span className="title-project">{ titleProject }</span>
@@ -35,7 +25,7 @@ export const Project = ({ images, titleProject, technologies, description, urlSo
                 
                     <div className="buttons">
                         <a href={urlSourceCode}><button src={urlSourceCode} className="source-code">Source</button></a>
-                        <a href={urlLiveApp}><button src={urlLiveApp} className="live-app">Live</button></a>
+                        {urlLiveApp && <a href={urlLiveApp}><button src={urlLiveApp} className="live-app">Live</button></a>}
                     </div>
                 </div>    
             </div>
