@@ -18,7 +18,7 @@ export const CardOne = () => {
       </div>
       
       <div className="card-information">
-          <span className='status-project'>currely working on</span>
+          {/* <span className='status-project'>currenly working on</span> */}
           
           <div className='title-project'>
             <h3>Musicfy</h3>
@@ -50,7 +50,7 @@ export const CardOne = () => {
           </div>
 
           <p className='description'>
-            Musicfy is a desktop and web application that allows you to create your own playlist and share it with your friends.
+            Musicfy is a desktop application that allow us to listen to music and, if you are admin, create albums and upload new music
           </p>
 
           <div className='buttons'>

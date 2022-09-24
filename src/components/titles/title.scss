@@ -1,16 +1,16 @@
 @import '../../scss/variables.scss';
 
 .title {
-    padding-top: 100px;
+    padding-top: 70px;
     font-size: 40px;
     text-align: center;
-    color: rgba($font-color-green, 0.5);
+    color: rgba($font-color-green, 0.7);
     margin-bottom: 30px;
     font-family: 'Rubik';
     position: relative;
 
     span {
-        color: rgba($font-color-green, 0.3);
+        color: rgba($font-color-green, 0.5);
     }
 }
 

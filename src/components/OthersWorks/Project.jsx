@@ -23,7 +23,7 @@ export const Project = ({ image, titleProject, technologies, description, urlSou
                 
                     <div className="buttons">
                         <a href={urlSourceCode}><button src={urlSourceCode} className="source-code">Source</button></a>
-                        <a href={urlLiveApp}><button src={urlLiveApp} className="live-app">Live</button></a>
+                        {urlLiveApp && <a href={urlLiveApp}><button src={urlLiveApp} className="live-app">Live</button></a>}
                     </div>
                 </div>    
             </div>
