@@ -1,27 +1,23 @@
+import LazyLoad from 'react-lazy-load';
 import { AiFillGithub, AiFillHtml5 } from 'react-icons/ai';
 import { RiShareForwardFill } from 'react-icons/ri';
 import { FaReact } from 'react-icons/fa';
 import { SiTypescript } from 'react-icons/si';
 
-
-
-
-
-import './cardProject.scss';
 import imageProject from '../../props/img3.jpg'
-
+import './cardProject.scss';
 
 export const CardThree = () => {
   return (
     <div className='card-container' id='three'>
 
-      <div className="cover-image">
+      <LazyLoad className="cover-image">
         <img src={imageProject} alt="GeoMaps" />
-      </div>
+      </LazyLoad>
       
       <div className="card-information">
           
-          <span className='status-project'>currely working on</span>
+          <span className='status-project'>currenly working on</span>
           
           <div className='title-project'>
             <h3>GeoMaps</h3>

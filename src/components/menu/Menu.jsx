@@ -38,11 +38,11 @@ export const Menu = () => {
             </ul>
 
             <a href="#nav" className="nav__hamburguer">
-                <img src={iconMenu} className="nav__icon" />
+                <img src={iconMenu} className="nav__icon" alt='' />
             </a>
             
             <a href="#other" className="nav__close">
-                <img src={iconClose} className="nav__icon" />
+                <img src={iconClose} className="nav__icon" alt='' />
             </a>
 
     </nav>  

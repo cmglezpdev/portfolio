@@ -1,24 +1,20 @@
+import LazyLoad from 'react-lazy-load';
 import { AiFillGithub, AiFillHtml5 } from 'react-icons/ai';
-import { RiShareForwardFill } from 'react-icons/ri';
 import { FaReact, FaSass } from 'react-icons/fa';
 import { IoLogoElectron } from 'react-icons/io5';
 
-
-
-
+import imageProject from '../../props/Projects/MusicfyImage.png'
 import './cardProject.scss';
-import imageProject from '../../props/Projects/Musicfy/image.png'
-
 
 export const CardOne = () => {
   return (
     <div className='card-container' id='one'>
-      <div className='cover-image'>
+      <LazyLoad className='cover-image'>
         <img src={imageProject} alt="Musicfy" />
-      </div>
+      </LazyLoad>
       
       <div className="card-information">
-          <span className='status-project'>currely working on</span>
+          {/* <span className='status-project'>currenly working on</span> */}
           
           <div className='title-project'>
             <h3>Musicfy</h3>
@@ -50,14 +46,14 @@ export const CardOne = () => {
           </div>
 
           <p className='description'>
-            Musicfy is a desktop and web application that allows you to create your own playlist and share it with your friends.
+            Musicfy is a desktop application that allow us to listen to music and, if you are admin, create albums and upload new music
           </p>
 
           <div className='buttons'>
-              <a href='#' target={"_blank"} rel='noreferrer'><button>
+              {/* <a href='#' target={"_blank"} rel='noreferrer'><button>
                 <RiShareForwardFill />
                 Live
-              </button></a>
+              </button></a> */}
 
               <a href='https://github.com/cmglezpdev/Musicfy' target={"_blank"} rel='noreferrer'><button>
                 <AiFillGithub />

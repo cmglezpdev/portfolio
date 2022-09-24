@@ -2,8 +2,6 @@
 import ReactTypingEffect from 'react-typing-effect';
 import './header.scss';
 
-import myPhoto from '../../props/me.jpg';
-
 export const Header = () => {
   return (
     <div className='header' id='home'>
@@ -32,7 +30,7 @@ export const Header = () => {
             </h2>
 
             <p className='header-minidescription'>
-                Me apasiona el desarrollo web, las criptomonedas y el machine learning.
+                I'm passionate of Software Development and Machine Learning.
             </p>
             
             <a href="#works">
