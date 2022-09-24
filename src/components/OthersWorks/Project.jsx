@@ -1,11 +1,13 @@
+import LazyLoad from 'react-lazy-load';
 
 export const Project = ({ image, titleProject, technologies, description, urlSourceCode, urlLiveApp }) => {
 
     return (
         <>
             <div className="project" >
-
-                <img src={image} alt={titleProject} className='image' />
+                <LazyLoad>
+                    <img src={image} alt={titleProject} className='image' />
+                </LazyLoad>
 
                 <div className='info-hover'>
                     <div className="title">

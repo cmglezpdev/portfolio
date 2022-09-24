@@ -1,4 +1,4 @@
-
+import LazyLoad from 'react-lazy-load';
 
 import './about.scss';
 import me from '../../props/me.jpg';
@@ -13,7 +13,9 @@ export const About = () => {
 
             <div className='about-information'>
                 <div className='photo'>
-                    <img src={me} alt="Me" />
+                    <LazyLoad>
+                        <img src={me} alt="Me" />
+                    </LazyLoad>
                 </div>
                 <div className="description">
                     <p>
