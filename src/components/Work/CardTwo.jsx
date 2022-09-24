@@ -1,18 +1,17 @@
+import LazyLoad from 'react-lazy-load';
 import { AiFillGithub } from 'react-icons/ai';
 import { TbCSharp } from 'react-icons/tb';
 import { FaReact, FaSass } from 'react-icons/fa';
 
-
-import './cardProject.scss';
 import imageProject from '../../props/Projects/DominoGameImage.jpg';
-
+import './cardProject.scss';
 
 export const CardTwo = () => {
   return (
     <div className='card-container' id='two'>
-      <div className='cover-image'>
+      <LazyLoad className='cover-image'>
         <img src={imageProject} alt="domino" />
-      </div>
+      </LazyLoad>
       
       <div className="card-information">
         
