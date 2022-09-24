@@ -4,9 +4,6 @@ import { FaReact } from 'react-icons/fa';
 import { SiTypescript } from 'react-icons/si';
 
 
-
-
-
 import './cardProject.scss';
 import imageProject from '../../props/img3.jpg'
 
@@ -21,7 +18,7 @@ export const CardThree = () => {
       
       <div className="card-information">
           
-          <span className='status-project'>currely working on</span>
+          <span className='status-project'>currenly working on</span>
           
           <div className='title-project'>
             <h3>GeoMaps</h3>
