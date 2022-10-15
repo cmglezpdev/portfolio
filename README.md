@@ -1,53 +1,7 @@
-# my-portfolio
-My portfolio
+# ✌ Welcome to my Portfolio!
 
-## Colors
+## Hi!, my name is Carlos Manuel González Peña, I'm Computer Science Student and Software Engineer
 
-### Background colors
+_Here you'll find some of my personal projects that I have been doing during my learning, this with the objetive that you can see my skills and what i do_
 
-$background-white: #fff;
-
-$background-gray-light: #c2c2c2;
-$background-gray: #55545a;
-$background-gray-dark: #2a2830;
-$background-gary-black: #1d1b24;
-
-$background-green-light: #53f6c7;
-$background-green: #19d19d;
-
-$background-pink-dark: #f21e4e;
-
-### Text colors
-
-$font-color-white: #fff;
-
-$font-color-gray-superlight: #d8d5d5;
-$font-color-gray-light: #9d9d9d;
-$font-color-gray: #303030;
-$font-color-gray-dark: #212121;
-$font-color-gray-superdark: #19191c;
-
-$font-color-black: #000;
-
-$font-color-green: #40d8bb;
-
-
-## Font info
-
-"Times New Roman":
-"Open Sans", sans-serif:
-
-## Media queries
-
-min-width: 640, 768, 1024, 1280, 1536
-
-
-## TASKS
-
-1. Evitar que se haga scroll cuando tienes el menu en vista movil 
-2. Crear animación de color cuando se selecciona en el menu(la raya de abajo)
-3. Dejar fijo el menu en vista escritorio
-4. Actualizar el color de la seccion activa en el menu
-5. Sacar el menu principal un nivel hacia afuera
-6. Cuando se recarga la paguina, hacer que el cuadradito correspondiente a la seccion se cambie
-6. La foto de los projectos que sea un carrucel de fotos
+My portfolio in production: [cmglezpdev.vercel.app](cmglezpdev.vercel.app)
