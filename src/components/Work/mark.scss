@@ -1,0 +1,33 @@
+@import '../../scss/variables.scss';
+
+
+.message {
+    background-color: $background-pink-dark;
+    padding: 5px 9px;
+    position: absolute;
+    top: 15px;
+    left: -15px;
+    
+    width: 40px;
+    height: 29px;
+    cursor: pointer;
+    border-radius: 5px;
+    
+    span {
+        color: rgb(37, 33, 33);
+        display: none;
+        font-weight: bold;
+        transition: width 5s; // TODO: fix the transition that is not work it
+    }
+
+    &:hover {
+        width: auto;
+        height: auto;
+        
+        span {
+            display: inline-block;
+        }
+    }  
+}
+
+
