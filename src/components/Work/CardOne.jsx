@@ -1,5 +1,5 @@
 import LazyLoad from 'react-lazy-load';
-import { AiFillGithub, AiFillHtml5 } from 'react-icons/ai';
+import { AiFillGithub } from 'react-icons/ai';
 import { FaReact, FaSass } from 'react-icons/fa';
 import { IoLogoElectron } from 'react-icons/io5';
 
@@ -22,12 +22,7 @@ export const CardOne = () => {
           </div>
 
           <div className="technologies">
-            
-            <div className="tech">
-              <AiFillHtml5 />
-              <span>HTML</span>
-            </div>
-
+      
             <div className="tech">
               <FaReact />
               <span>REACT</span>

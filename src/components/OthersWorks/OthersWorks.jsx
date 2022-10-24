@@ -3,9 +3,10 @@ import { Project } from "./Project"
 
 import './othersWorks.scss'
 
-import baseImg from '../../props/img3.jpg'
 import CalendarAppImage from '../../props/Projects/CalendarAppImage.png';
 import JournalAppImage from '../../props/Projects/JournalAppImage.png';
+import OpenJiraImage from '../../props/Projects/OpenJiraImage.png';
+import PockedexImage from '../../props/Projects/PockedexImage.png';
 
 
 
@@ -19,7 +20,7 @@ export const OthersWorks = () => {
                 <Project
                     image={JournalAppImage}
                     titleProject={"Journal App"}
-                    technologies={["Sass", "React", "Redux"]}
+                    technologies={["React", "Redux", "Sass"]}
                     description={"Ya puedes crearte una cuenta y empezar a tomar tus notas diarias"}
                     urlSourceCode={"https://github.com/cmglezpdev/Journal-App"}
                     // urlLiveApp={""} 
@@ -28,28 +29,27 @@ export const OthersWorks = () => {
                 <Project
                     image={CalendarAppImage}
                     titleProject={"Calendar App"}
-                    technologies={["TailwindCSS", "React", "Redux"]}
+                    technologies={["React", "Redux", "TailwindCSS", "Node", "Express", "MongoDB"]}
                     description={"Ya puedes crearte una cuenta y empezar a crear eventos en tu calendario."}
                     urlSourceCode={"https://github.com/cmglezpdev/Calendar-App-Client"}
                     // urlLiveApp={"https://calendar-nodejs-reactcours.herokuapp.com/"} 
                 />
-
+     
                 <Project
-                    image={CalendarAppImage}
-                    titleProject={"Calendar App"}
-                    technologies={["Node", "Express", "MongoDB"]}
-                    description={"Backend desarrollado para nuestra aplicación de calendario API REST para manecar la autenticación y creación de eventos"}
-                    urlSourceCode={"https://github.com/cmglezpdev/Calendar-App-Backend"}
-                    // urlLiveApp={"https://calendar-nodejs-reactcours.herokuapp.com/"} 
+                    image={OpenJiraImage}
+                    titleProject={"Open Jira"}
+                    technologies={["NextJs", "MaterialUI"]}
+                    description={"Un pequeño manejador de tareas diarias para controlar tu trabajo"}
+                    urlSourceCode={"https://github.com/cmglezpdev/Open-Jira-App"}
+                    // urlLiveApp={""} 
                 />
 
-        
                 <Project
-                    image={baseImg}
-                    titleProject={"Heroes App"}
-                    technologies={["React", "CSS"]}
-                    description={"Muesta información de varios heroes de Marvel y DC, desarrollada para apreder React Router"}
-                    urlSourceCode={"https://github.com/cmglezpdev/Heroes-app"}
+                    image={PockedexImage}
+                    titleProject={"Pockedex"}
+                    technologies={["NextJs", "NextUI"]}
+                    description={"Una paguina con la información principal de todos los pokemones"}
+                    urlSourceCode={"https://github.com/cmglezpdev/Pockemon-Next-App"}
                     // urlLiveApp={""} 
                 />
 
