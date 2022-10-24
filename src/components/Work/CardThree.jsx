@@ -2,6 +2,7 @@ import LazyLoad from 'react-lazy-load';
 import { AiFillGithub } from 'react-icons/ai';
 // import { RiShareForwardFill } from 'react-icons/ri';
 import { SiNextdotjs, SiTypescript, SiMaterialui } from 'react-icons/si';
+import { Mark } from './Mark';
 
 import imageProject from '../../props/Projects/TesloShopImage.png'
 import './cardProject.scss';
@@ -11,13 +12,13 @@ export const CardThree = () => {
     <div className='card-container' id='three'>
 
       <LazyLoad className="cover-image">
-        <img src={imageProject} alt="Teslo Shop" />
+      <div style={{ position: 'relative' }}>
+          <Mark />
+          <img src={imageProject} alt="Teslo Shop" />
+        </div>
       </LazyLoad>
       
       <div className="card-information">
-          
-          {/* <span className='status-project'>currenly working on</span> */}
-          
           <div className='title-project'>
             <h3>Teslo Shop</h3>
             <div></div>

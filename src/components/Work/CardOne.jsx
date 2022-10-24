@@ -2,6 +2,7 @@ import LazyLoad from 'react-lazy-load';
 import { AiFillGithub } from 'react-icons/ai';
 import { FaReact, FaSass } from 'react-icons/fa';
 import { IoLogoElectron } from 'react-icons/io5';
+import { Mark } from './Mark';
 
 import imageProject from '../../props/Projects/MusicfyImage.png'
 import './cardProject.scss';
@@ -10,7 +11,10 @@ export const CardOne = () => {
   return (
     <div className='card-container' id='one'>
       <LazyLoad className='cover-image'>
-        <img src={imageProject} alt="Musicfy" />
+        <div style={{ position: 'relative' }}>
+          <Mark />
+          <img src={imageProject} alt="Musicfy" />
+        </div>
       </LazyLoad>
       
       <div className="card-information">
