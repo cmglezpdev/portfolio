@@ -3,7 +3,7 @@ import { Title } from '../';
 import { OthersWorks } from '../OthersWorks/OthersWorks';
 import { CardOne } from './CardOne';
 import { CardTwo } from './CardTwo';
-// import { CardThree } from './CardThree';
+import { CardThree } from './CardThree';
 import './work.scss';
 
 
@@ -16,7 +16,7 @@ export const Work = () => {
             <div className="principal-projects">
                 <CardOne />
                 <CardTwo />
-                {/* <CardThree /> */}
+                <CardThree />
             </div>
 
             <OthersWorks />

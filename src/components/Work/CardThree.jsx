@@ -1,10 +1,9 @@
 import LazyLoad from 'react-lazy-load';
-import { AiFillGithub, AiFillHtml5 } from 'react-icons/ai';
-import { RiShareForwardFill } from 'react-icons/ri';
-import { FaReact } from 'react-icons/fa';
-import { SiTypescript } from 'react-icons/si';
+import { AiFillGithub } from 'react-icons/ai';
+// import { RiShareForwardFill } from 'react-icons/ri';
+import { SiNextdotjs, SiTypescript, SiMaterialui } from 'react-icons/si';
 
-import imageProject from '../../props/img3.jpg'
+import imageProject from '../../props/Projects/TesloShopImage.png'
 import './cardProject.scss';
 
 export const CardThree = () => {
@@ -12,47 +11,47 @@ export const CardThree = () => {
     <div className='card-container' id='three'>
 
       <LazyLoad className="cover-image">
-        <img src={imageProject} alt="GeoMaps" />
+        <img src={imageProject} alt="Teslo Shop" />
       </LazyLoad>
       
       <div className="card-information">
           
-          <span className='status-project'>currenly working on</span>
+          {/* <span className='status-project'>currenly working on</span> */}
           
           <div className='title-project'>
-            <h3>GeoMaps</h3>
+            <h3>Teslo Shop</h3>
             <div></div>
           </div>
 
           <div className="technologies">
             
             <div className="tech">
-              <AiFillHtml5 />
-              <span>HTML</span>
+              <SiNextdotjs />
+              <span>NEXTJS</span>
             </div>
 
-            <div className="tech">
-              <FaReact />
-              <span>REACT</span>
-            </div>
-          
             <div className="tech">
               <SiTypescript />
               <span>TYPESCRIPT</span>
             </div>
+
+            <div className="tech">
+              <SiMaterialui />
+              <span>MaterialUI</span>
+            </div>
           </div>
 
           <p className='description'>
-            GeoMaps is a web application that allows you to search places and see the distances and the tour bewtween them.
+            Teslo Shop is a ecommerce with multiple functionalities that improve the user experience. Login, register, administration, payment, search engine, ...
           </p>
 
           <div className='buttons'>
-              <a href='#' target={"_blank"} rel='noreferrer'><button>
+              {/* <a href='#' target={"_blank"} rel='noreferrer'><button>
                 <RiShareForwardFill />
                 Live
-              </button></a>
+              </button></a> */}
 
-              <a href='https://github.com/cmglezpdev/GeoMaps' target={"_blank"} rel='noreferrer'><button>
+              <a href='https://github.com/cmglezpdev/Teslo-Shop' target={"_blank"} rel='noreferrer'><button>
                 <AiFillGithub />
                 Source
               </button></a>
