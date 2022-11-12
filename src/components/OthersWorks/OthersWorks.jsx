@@ -50,7 +50,7 @@ export const OthersWorks = () => {
                     technologies={["NextJs", "NextUI"]}
                     description={"Una paguina con la información principal de todos los pokemones"}
                     urlSourceCode={"https://github.com/cmglezpdev/Pockemon-Next-App"}
-                    // urlLiveApp={""} 
+                    urlLiveApp={"https://pockemon-next-app.vercel.app/"} 
                 />
 
                 
