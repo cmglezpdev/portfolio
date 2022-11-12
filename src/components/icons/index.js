@@ -18,3 +18,4 @@ export { Express } from "./Express";
 export { CPlusPlus } from "./CPlusPlus";
 export { Sass } from "./Sass";
 export { Redux } from "./Redux"
+export { MaterialUI } from "./MaterialUI"
