@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { NextJs, CPlusPlus, CSharp, Css, Django, Express, Firebase, GraphQL, Html, JavaScript, MongoDB, MySQL, NestJs, NodeJs, Python, React, Typescript, Sass, Redux, ReactNative } from '../icons';
+import { NextJs, CPlusPlus, CSharp, Css, Django, Express, Firebase, GraphQL, Html, JavaScript, MongoDB, MySQL, NestJs, NodeJs, Python, React, Typescript, Sass, Redux, ReactNative, MaterialUI } from '../icons';
 import { Title } from '../';
 import './skills.scss';
 
@@ -58,8 +58,10 @@ const StrongSection = () => {
             <JavaScript />
             <Typescript />
             <React />
+            <NextJs />
             <Redux />
             <Sass />
+            <MaterialUI />
             <Firebase />
             <NodeJs />
             <Express />
@@ -74,7 +76,6 @@ const StrongSection = () => {
 const LearningSection = () => {
     return (
         <>
-            <NextJs />
             <NestJs />
             <GraphQL />
         </>
