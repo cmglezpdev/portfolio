@@ -32,7 +32,7 @@ export const OthersWorks = () => {
                     technologies={["React", "Redux", "TailwindCSS", "Node", "Express", "MongoDB"]}
                     description={"Ya puedes crearte una cuenta y empezar a crear eventos en tu calendario."}
                     urlSourceCode={"https://github.com/cmglezpdev/Calendar-App-Client"}
-                    // urlLiveApp={"https://calendar-nodejs-reactcours.herokuapp.com/"} 
+                    urlLiveApp={"https://calendar-nodejs-reactcours.herokuapp.com"} 
                 />
      
                 <Project
