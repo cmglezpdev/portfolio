@@ -41,7 +41,7 @@ export const OthersWorks = () => {
                     technologies={["NextJs", "MaterialUI"]}
                     description={"Un pequeño manejador de tareas diarias para controlar tu trabajo"}
                     urlSourceCode={"https://github.com/cmglezpdev/Open-Jira-App"}
-                    // urlLiveApp={""} 
+                    urlLiveApp={"https://open-jira-nextapp.netlify.app/"} 
                 />
 
                 <Project
