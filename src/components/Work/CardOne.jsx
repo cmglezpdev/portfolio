@@ -2,7 +2,7 @@ import LazyLoad from 'react-lazy-load';
 import { AiFillGithub } from 'react-icons/ai';
 import { FaReact, FaSass } from 'react-icons/fa';
 import { IoLogoElectron } from 'react-icons/io5';
-import { Mark } from './Mark';
+import { RiShareForwardFill } from 'react-icons/ri';
 
 import imageProject from '../../props/Projects/MusicfyImage.png'
 import './cardProject.scss';
@@ -12,7 +12,6 @@ export const CardOne = () => {
     <div className='card-container' id='one'>
       <LazyLoad className='cover-image'>
         <div style={{ position: 'relative' }}>
-          <Mark />
           <img src={imageProject} alt="Musicfy" />
         </div>
       </LazyLoad>
@@ -49,10 +48,10 @@ export const CardOne = () => {
           </p>
 
           <div className='buttons'>
-              {/* <a href='#' target={"_blank"} rel='noreferrer'><button>
+              <a href='https://musicfy-app.vercel.app/' target={"_blank"} rel='noreferrer'><button>
                 <RiShareForwardFill />
                 Live
-              </button></a> */}
+              </button></a>
 
               <a href='https://github.com/cmglezpdev/Musicfy' target={"_blank"} rel='noreferrer'><button>
                 <AiFillGithub />

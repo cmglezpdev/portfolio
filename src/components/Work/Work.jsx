@@ -4,6 +4,7 @@ import { OthersWorks } from '../OthersWorks/OthersWorks';
 import { CardOne } from './CardOne';
 import { CardTwo } from './CardTwo';
 import { CardThree } from './CardThree';
+import { CardFour } from './CardFour';
 import './work.scss';
 
 
@@ -17,6 +18,7 @@ export const Work = () => {
                 <CardOne />
                 <CardTwo />
                 <CardThree />
+                <CardFour />
             </div>
 
             <OthersWorks />

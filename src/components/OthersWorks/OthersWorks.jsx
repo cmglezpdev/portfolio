@@ -7,6 +7,8 @@ import CalendarAppImage from '../../props/Projects/CalendarAppImage.png';
 import JournalAppImage from '../../props/Projects/JournalAppImage.png';
 import OpenJiraImage from '../../props/Projects/OpenJiraImage.png';
 import PockedexImage from '../../props/Projects/PockedexImage.png';
+import DominoImage from '../../props/Projects/DominoGameImage.jpg';
+import PokedexImage from '../../props/Projects/PokedexImage.jpg';
 
 
 
@@ -16,25 +18,7 @@ export const OthersWorks = () => {
             <Title text={"More projects"} />
             
             <div className="projects">
-                
-                <Project
-                    image={JournalAppImage}
-                    titleProject={"Journal App"}
-                    technologies={["React", "Redux", "Sass"]}
-                    description={"Ya puedes crearte una cuenta y empezar a tomar tus notas diarias"}
-                    urlSourceCode={"https://github.com/cmglezpdev/Journal-App"}
-                    // urlLiveApp={""} 
-                />
-
-                <Project
-                    image={CalendarAppImage}
-                    titleProject={"Calendar App"}
-                    technologies={["React", "Redux", "TailwindCSS", "Node", "Express", "MongoDB"]}
-                    description={"Ya puedes crearte una cuenta y empezar a crear eventos en tu calendario."}
-                    urlSourceCode={"https://github.com/cmglezpdev/Calendar-App-Client"}
-                    urlLiveApp={"https://calendar-nodejs-reactcours.herokuapp.com"} 
-                />
-     
+                     
                 <Project
                     image={OpenJiraImage}
                     titleProject={"Open Jira"}
@@ -53,7 +37,38 @@ export const OthersWorks = () => {
                     urlLiveApp={"https://pockemon-next-app.vercel.app/"} 
                 />
 
-                
+                <Project
+                    image={JournalAppImage}
+                    titleProject={"Journal App"}
+                    technologies={["React", "Redux", "Sass"]}
+                    description={"Ya puedes crearte una cuenta y empezar a tomar tus notas diarias"}
+                    urlSourceCode={"https://github.com/cmglezpdev/Journal-App"}
+                />
+
+                <Project
+                    image={CalendarAppImage}
+                    titleProject={"Calendar App"}
+                    technologies={["React", "Redux", "TailwindCSS", "Node", "Express", "MongoDB"]}
+                    description={"Ya puedes crearte una cuenta y empezar a crear eventos en tu calendario."}
+                    urlSourceCode={"https://github.com/cmglezpdev/Calendar-App-Client"}
+                    urlLiveApp={"https://calendar-nodejs-reactcours.herokuapp.com"} 
+                />
+
+                <Project
+                    image={DominoImage}
+                    titleProject={"Domino Simulation"}
+                    technologies={["React", "SASS", ".Net"]}
+                    description={"Una simulación de un juego de dominó con reglas totalmente diferentes a las clásicas."}
+                    urlSourceCode={"https://github.com/cmglezpdev/Domino"}
+                />
+
+                <Project
+                    image={PokedexImage}
+                    titleProject={"Pokedex API"}
+                    technologies={["Nest.js", "MongoDB"]}
+                    description={"RESTFul API para la crear, editar, eliminar y consultar y ver información de los pokemones."}
+                    urlSourceCode={"https://github.com/cmglezpdev/nest-pokedex"}
+                />
             </div>
         </div>
     )

@@ -1,9 +1,8 @@
 import { useState } from 'react';
 
-import { NextJs, CPlusPlus, CSharp, Css, Django, Express, Firebase, GraphQL, Html, JavaScript, MongoDB, MySQL, NestJs, NodeJs, Python, React, Typescript, Sass, Redux, ReactNative, MaterialUI, Docker, Postgres, DotNet, Rust } from '../icons';
+import { Astro, NextJs, CPlusPlus, CSharp, Css, Django, Express, Firebase, GraphQL, Html, JavaScript, MongoDB, MySQL, NestJs, NodeJs, Python, React, Typescript, Sass, Redux, ReactNative, MaterialUI, Docker, Postgres, DotNet, Rust } from '../icons';
 import { Title } from '../';
 import './skills.scss';
-import { FaDocker } from 'react-icons/fa';
 
 
 export const Skills = () => {
@@ -78,6 +77,7 @@ const StrongSection = () => {
 const LearningSection = () => {
     return (
         <>
+            <Astro />
             <GraphQL />
             <Docker />
             <Postgres />

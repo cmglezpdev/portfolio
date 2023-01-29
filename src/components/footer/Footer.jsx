@@ -1,5 +1,5 @@
 
-import { AiFillGithub, AiFillTwitterCircle, AiFillCodepenCircle, AiFillLinkedin } from 'react-icons/ai';
+import { AiFillGithub, AiFillTwitterCircle, AiFillLinkedin } from 'react-icons/ai';
 
 import './footer.scss'
 
@@ -9,10 +9,9 @@ export const Footer = () => {
         <span className="copyright">© 2022 - Built by Carlos Manuel</span>
 
         <div className="social">
-            <a href='#'><AiFillGithub /></a>
-            <a href='#'><AiFillTwitterCircle /></a>
-            <a href='#'><AiFillCodepenCircle /></a>
-            <a href='#'><AiFillLinkedin /></a>
+            <a href='https://github.com/cmglezpdev' target="_blank" rel='noreferrer'><AiFillGithub /></a>
+            <a href='https://twitter.com/cmglezpdev'  target="_blank" rel='noreferrer'><AiFillTwitterCircle /></a>
+            <a href='https://linkedin.com/in/cmglezpdev'  target="_blank" rel='noreferrer'><AiFillLinkedin /></a>
         </div>
     </footer>
   )
