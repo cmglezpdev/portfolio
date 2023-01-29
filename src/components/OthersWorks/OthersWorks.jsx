@@ -23,7 +23,7 @@ export const OthersWorks = () => {
                     image={OpenJiraImage}
                     titleProject={"Open Jira"}
                     technologies={["NextJs", "MaterialUI"]}
-                    description={"Un pequeño manejador de tareas diarias para controlar tu trabajo"}
+                    description={"A small task manager for controlling your work"}
                     urlSourceCode={"https://github.com/cmglezpdev/Open-Jira-App"}
                     urlLiveApp={"https://open-jira-nextapp.netlify.app/"} 
                 />
@@ -32,7 +32,7 @@ export const OthersWorks = () => {
                     image={PockedexImage}
                     titleProject={"Pockedex"}
                     technologies={["NextJs", "NextUI"]}
-                    description={"Una paguina con la información principal de todos los pokemones"}
+                    description={"Page with the main information of all the pokemons"}
                     urlSourceCode={"https://github.com/cmglezpdev/Pockemon-Next-App"}
                     urlLiveApp={"https://pockemon-next-app.vercel.app/"} 
                 />
@@ -41,7 +41,7 @@ export const OthersWorks = () => {
                     image={JournalAppImage}
                     titleProject={"Journal App"}
                     technologies={["React", "Redux", "Sass"]}
-                    description={"Ya puedes crearte una cuenta y empezar a tomar tus notas diarias"}
+                    description={"Create an account and start taking your daily notes."}
                     urlSourceCode={"https://github.com/cmglezpdev/Journal-App"}
                 />
 
@@ -49,7 +49,7 @@ export const OthersWorks = () => {
                     image={CalendarAppImage}
                     titleProject={"Calendar App"}
                     technologies={["React", "Redux", "TailwindCSS", "Node", "Express", "MongoDB"]}
-                    description={"Ya puedes crearte una cuenta y empezar a crear eventos en tu calendario."}
+                    description={"Create an account and start creating your events in your calendar."}
                     urlSourceCode={"https://github.com/cmglezpdev/Calendar-App-Client"}
                     urlLiveApp={"https://calendar-nodejs-reactcours.herokuapp.com"} 
                 />
@@ -58,7 +58,7 @@ export const OthersWorks = () => {
                     image={DominoImage}
                     titleProject={"Domino Simulation"}
                     technologies={["React", "SASS", ".Net"]}
-                    description={"Una simulación de un juego de dominó con reglas totalmente diferentes a las clásicas."}
+                    description={"You can create the several simulation of the domino game with several rules differences of the classics."}
                     urlSourceCode={"https://github.com/cmglezpdev/Domino"}
                 />
 
@@ -66,7 +66,7 @@ export const OthersWorks = () => {
                     image={PokedexImage}
                     titleProject={"Pokedex API"}
                     technologies={["Nest.js", "MongoDB"]}
-                    description={"RESTFul API para la crear, editar, eliminar y consultar y ver información de los pokemones."}
+                    description={"RESTFul API to create, edit, delete, check and see information of the pokemons."}
                     urlSourceCode={"https://github.com/cmglezpdev/nest-pokedex"}
                 />
             </div>
