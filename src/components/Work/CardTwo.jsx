@@ -1,44 +1,50 @@
 import LazyLoad from 'react-lazy-load';
 import { AiFillGithub } from 'react-icons/ai';
-import { TbCSharp } from 'react-icons/tb';
-import { FaReact, FaSass } from 'react-icons/fa';
+import { SiMongodb, SiNextdotjs, SiNodedotjs, SiTailwindcss } from 'react-icons/si';
 
-import imageProject from '../../props/Projects/DominoGameImage.jpg';
+import imageProject from '../../props/Projects/TwitterCloneImage.png';
 import './cardProject.scss';
 
 export const CardTwo = () => {
   return (
     <div className='card-container' id='two'>
       <LazyLoad className='cover-image'>
-        <img src={imageProject} alt="domino" />
+        <div style={{ position: 'relative' }}>
+            <img src={imageProject} alt="Twitter Clone" />
+        </div>
       </LazyLoad>
       
       <div className="card-information">
-        
+        <span className='status-project'>currenly working on</span>
           <div className='title-project'>
-            <h3>Domino App</h3>
+            <h3>Twitter Clone</h3>
             <div />
           </div>
 
           <div className="technologies">
             
             <div className="tech">
-              <FaReact />
-              <span>REACT</span>
+              <SiNextdotjs />
+              <span>Next.js</span>
             </div>
             <div className="tech">
-              <FaSass />
-              <span>SASS</span>
+              <SiTailwindcss />
+              <span>Tailwind</span>
             </div>
 
             <div className="tech">
-              <TbCSharp />
-              <span>.Net</span>
+              <SiNodedotjs />
+              <span>Node</span>
             </div>
-  
+            
+            <div className="tech">
+              <SiMongodb />
+              <span>Mongo DB</span>
+            </div>
+          
           </div>
           <p className='description'>
-           A Domino Game that allow us simulate games with rules completely differents of the classic.   
+            A small twitter clone with the main functionalities of the original app.  
           </p>
 
           <div className='buttons'>
@@ -47,12 +53,11 @@ export const CardTwo = () => {
                 Live
               </button></a> */}
 
-              <a href='https://github.com/cmglezpdev/domino' target={"_blank"} rel='noreferrer'><button>
+              <a href='https://github.com/cmglezpdev/twitter-clone' target={"_blank"} rel='noreferrer'><button>
                 <AiFillGithub />
                 Source
               </button></a>
           </div>
-
       </div>
     </div>
   )

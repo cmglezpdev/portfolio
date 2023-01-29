@@ -1,8 +1,7 @@
 import LazyLoad from 'react-lazy-load';
 import { AiFillGithub } from 'react-icons/ai';
-// import { RiShareForwardFill } from 'react-icons/ri';
 import { SiNextdotjs, SiTypescript, SiMaterialui } from 'react-icons/si';
-import { Mark } from './Mark';
+import { RiShareForwardFill } from 'react-icons/ri';
 
 import imageProject from '../../props/Projects/TesloShopImage.png'
 import './cardProject.scss';
@@ -13,7 +12,7 @@ export const CardThree = () => {
 
       <LazyLoad className="cover-image">
       <div style={{ position: 'relative' }}>
-          <Mark />
+          {/* <Mark /> */}
           <img src={imageProject} alt="Teslo Shop" />
         </div>
       </LazyLoad>
@@ -47,10 +46,10 @@ export const CardThree = () => {
           </p>
 
           <div className='buttons'>
-              {/* <a href='#' target={"_blank"} rel='noreferrer'><button>
+              <a href='https://teslo-shop-ecommence.vercel.app/' target={"_blank"} rel='noreferrer'><button>
                 <RiShareForwardFill />
                 Live
-              </button></a> */}
+              </button></a>
 
               <a href='https://github.com/cmglezpdev/Teslo-Shop' target={"_blank"} rel='noreferrer'><button>
                 <AiFillGithub />
