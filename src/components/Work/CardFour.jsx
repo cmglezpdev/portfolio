@@ -38,7 +38,7 @@ export const CardFour = () => {
           </div>
 
           <p className='description'>
-            RESTFul API alternativo de mi Teslo Shop ecommerce. Puedes crear productos, editarlos, consultarlos y un sistema de login para usuarios
+            Alternative RESTFul API of my Teslo Shop ecommerce. You can create products, edit them, consult them and a login system for users.
           </p>
 
           <div className='buttons'>
