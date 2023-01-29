@@ -19,11 +19,11 @@ export const About = () => {
                 </div>
                 <div className="description">
                     <p>
-                        Hi! My name is Carlos Manuel González and i'm a student of Computer Science at the University of Havana. <br />
-                        I really love running and going out with my friends. I'm very curious and keep in continuous learning about the things that I like. <br />
-                        I'm passionate about web development, cryptocurrencies and machine learning, but currently I'm enfoced on web development. <br />
-                        I started programming when have 16 years old in the competitive programming. I have been 3 years focused only on that and participated in many national and international competitions from my preuniversity. <br />
-                        When I ingresed in the university I started to interest more in web development, and I come to develop applications both frontend and backend. <br />
+                        <span>Who I am?</span> <br />
+                        Hi, My name is Carlos Manuel, I'm Computer Science Student and Software Developer.<br />
+                        Started my career in the 2016 participating in Competitive Programming Contest solving problems about Data Structures and Algorithms, and currenly I develop Full Stack Web Applications.<br />
+                        I'm very perseverant, i like keeping in learning and passed my free time with my friends and family.<br />
+                        I'm open to work in new offerts and get my maximun potential to contribute with my knowledge and experience to the developemt to the company.
                     </p>
                 </div>
             </div>

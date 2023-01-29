@@ -20,17 +20,17 @@ export const Header = () => {
                     eraseSpeed={30}
                     eraseDelay={1500}
                     text={[
-                    `Frontend Developer`,
-                    `Backend Developer`,
-                    `Competitive Programming`,
-                    `Machine Learning`,
+                        `Computer Science Sudent`,
+                        `Frontend Developer`,
+                        `Backend Developer`,
+                        `Competitive Programming`,
                     ]}
                 />
 
             </h2>
 
             <p className='header-minidescription'>
-                I'm passionate of Software Development and Machine Learning.
+                I'm passionate of Computer Science and Software Development.
             </p>
             
             <a href="#works">
