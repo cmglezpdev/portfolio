@@ -19,3 +19,7 @@ export { CPlusPlus } from "./CPlusPlus";
 export { Sass } from "./Sass";
 export { Redux } from "./Redux"
 export { MaterialUI } from "./MaterialUI"
+export { Docker } from "./Docker"
+export { Postgres } from "./Postgres"
+export { DotNet } from "./DotNet"
+export { Rust } from "./Rust"
