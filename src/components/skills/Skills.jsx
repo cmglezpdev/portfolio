@@ -35,11 +35,11 @@ export const Skills = () => {
                 <div 
                     className={selected === 2 ? 'active-section' : ''}
                     onClick={() => setSelected(2)}
-                >I'm Learning</div>
+                >Learning</div>
                 <div 
                     className={selected === 3 ? 'active-section' : ''}
                     onClick={() => setSelected(3)}
-                >I'm Interested</div>
+                >Interested</div>
             </div>
 
             <div className='skill-icons'>
