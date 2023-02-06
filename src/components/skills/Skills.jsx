@@ -78,8 +78,9 @@ const LearningSection = () => {
     return (
         <>
             <Astro />
-            <GraphQL />
             <Docker />
+            <MySQL />
+            <DotNet />
             <Postgres />
         </>
     )
@@ -89,10 +90,9 @@ const InterestedSection = () => {
 
     return (
         <>
+            <GraphQL /> 
             <Django />
             <ReactNative />
-            <MySQL />
-            <DotNet />
             <Rust />
         </>
     )
