@@ -45,7 +45,7 @@ export const Menu = () => {
                 <img src={iconClose} className="nav__icon" alt='' />
             </a>
 
-    </nav>  
+        </nav>  
 
     )
 }
