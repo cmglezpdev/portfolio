@@ -9,10 +9,10 @@ export const App = () => {
         <Menu />
         <div className="container-general">
           <Header />
-          <About />
           <Job />
           <Skills />
           {/* <Work /> */}
+          <About />
           <Contact />
           <Footer />
           <ButtonsContainer />
