@@ -4,7 +4,10 @@
 
     // border: 1px solid red;
     width: 100%;
-    margin: 100px auto;
+    // margin: 100px auto;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
 
     &-gretting {
         font-size: 2.4rem;
