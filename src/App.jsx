@@ -1,4 +1,4 @@
-import { Header,Menu, About, Skills, Work, Footer, ButtonsContainer, Contact } from "./components"
+import { Header,Menu, About, Skills, Work, Footer, ButtonsContainer, Contact, Job } from "./components"
 
 export const App = () => {
 
@@ -10,8 +10,9 @@ export const App = () => {
         <div className="container-general">
           <Header />
           <About />
+          <Job />
           <Skills />
-          <Work />
+          {/* <Work /> */}
           <Contact />
           <Footer />
           <ButtonsContainer />
