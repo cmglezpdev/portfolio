@@ -5,7 +5,7 @@ const myJobs = [
   {
     title: 'Backend Developer',
     companyName: 'Dara\' Services',
-    companyImage: 'https://media.licdn.com/dms/image/D560BAQHQULrvHq8W5w/company-logo_200_200/0/1704317224818?e=1728518400&v=beta&t=sLMHo4k49vnEMzQ6H9SXqS4KzG0ki-YVWSYaMmFULmM',
+    companyImage: '/jobs/daraservices.webp',
     startDate: 'Oct 2023',
     endDate: 'Present',
     duration: new Date().getFullYear() - 2024 + new Date().getMonth() + 3,
@@ -20,7 +20,7 @@ const myJobs = [
   {
     title: 'Full Stack Developer',
     companyName: 'Dasmex',
-    companyImage: 'https://media.licdn.com/dms/image/C560BAQFWfZQOiB_vDw/company-logo_200_200/0/1634796340724?e=1728518400&v=beta&t=GuEMw0YitkHUZlYc-m8e-Xu5MtpCCY8fmxi1fEQ9x7o',
+    companyImage: '/jobs/dasmex.webp',
     startDate: 'Aug 2023',
     endDate: 'Nov 2023',
     duration: 4,
@@ -38,7 +38,7 @@ const myJobs = [
   {
     title: 'Software Engineer',
     companyName: 'NTSprint',
-    companyImage: 'https://media.licdn.com/dms/image/D4E0BAQHjVDJYr34DkA/company-logo_200_200/0/1690422912622?e=1728518400&v=beta&t=F2dMg8yJY8OLwIMgSGotL-KDtWdiI-2Vv4Tm9WlORfo',
+    companyImage: '/jobs/ntsprint.webp',
     startDate: 'Feb 2023',
     endDate: 'Mar 2023',
     duration: 2,
