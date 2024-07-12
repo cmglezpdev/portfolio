@@ -14,13 +14,13 @@ const handleChangeActive = ( linkref ) => {
 
     if( !currentNav.classList.contains("active-position") ) {
         const active = document.querySelector(".active-position");
-        if(active != undefined)  active.classList.remove("active-position");
+        if(active)  active.classList.remove("active-position");
         currentNav.classList.add("active-position");
     }
 
     if( !currentMenu.classList.contains("active-nav") ) {
         const active = document.querySelector('.active-nav');
-        if( active != undefined ) active.classList.remove("active-nav");
+        if( active) active.classList.remove("active-nav");
         currentMenu.classList.add('active-nav');
     }
 }
