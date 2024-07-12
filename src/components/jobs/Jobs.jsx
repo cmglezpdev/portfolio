@@ -42,7 +42,7 @@ const myJobs = [
     startDate: 'Feb 2023',
     endDate: 'Mar 2023',
     duration: 2,
-    description: 'I have greatly promoted the scope of the company by developing the company\'s own and third-party services. I have led the development of some client services and developed ours from scratch. Develop taxi services, online stores, mobile recharges, package messaging and more using supabase as BaaS to improve app performance.',
+    description: 'I was in the development of a web application for buying and selling houses. I developed interfaces with ASP .NET Web Forms giving styles of the pages. I resolve some bugs and realized simple consults to the database with SQL. We worked with the SCRUM methodology.',
     skills: [
       'ASP .NET',
       'SQL Server',
