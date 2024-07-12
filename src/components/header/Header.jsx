@@ -35,7 +35,7 @@ export const Header = () => {
             
             <a href="#works">
                 <button className='btn-work'>
-                    My Work
+                    My Experience
                 </button>
             </a>
                     

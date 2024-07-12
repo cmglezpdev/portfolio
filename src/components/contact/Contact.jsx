@@ -9,7 +9,7 @@ export const Contact = () => {
 
       <Title text={"Contact"}/>
 
-      <p className='contact-text'>I'm available for new projects and work offers, so if you are interested in my work and want that work us together, or simply want that i create the application that you desire, you can write to this email <a href='maito:cmglezpdev@gmail.com'>cmglezpdev@gmail.com</a> and we talk it.</p>
+      <p className='contact-text'>I am open to new projects and job offers. If you are interested in my work and would like to collaborate, or if you have any inquiries, feel free to contact me at <a href='maito:cmglezpdev@gmail.com'>cmglezpdev@gmail.com</a>.</p>
     </div>
   )
 }
