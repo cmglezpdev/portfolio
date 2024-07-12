@@ -7,7 +7,7 @@ import {
     NestJs, NodeJs, Python, React, 
     Typescript, Docker, Postgres, 
     DotNet, AmazonWebServices, Supabase, 
-    OpenAI, ClaudeAI, HuggingFace
+    OpenAI, ClaudeAI, ReactNative
 } from '../icons';
 import { Title } from '../';
 import './skills.scss';
@@ -82,6 +82,7 @@ const LearningSection = () => {
         <>
             {/* <HuggingFace /> */}
             <AmazonWebServices />
+            <ReactNative />
         </>
     )
 }
