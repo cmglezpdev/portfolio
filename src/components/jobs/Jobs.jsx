@@ -54,7 +54,7 @@ const myJobs = [
 export function Job() {
   return (
     <div id='works'>
-      <Title text={"Work experience"} />
+      <Title text={"Experience"} />
 
       <ol className="timeline">
         {myJobs.map((job, i) => (
