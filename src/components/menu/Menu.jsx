@@ -23,12 +23,12 @@ export const Menu = () => {
                     <a href="#about" className='nav__link'>About</a>
                     <div className="underline"></div>
                 </li>
-                <li className="nav__item" linkref-menu="skills">
-                    <a href="#skills" className='nav__link'>Skills</a>
-                    <div className="underline"></div>
-                </li>
                 <li className="nav__item" linkref-menu="works">
                     <a href="#works" className='nav__link'>Works</a>
+                    <div className="underline"></div>
+                </li>
+                <li className="nav__item" linkref-menu="skills">
+                    <a href="#skills" className='nav__link'>Skills</a>
                     <div className="underline"></div>
                 </li>
                 <li className="nav__item" linkref-menu="contact">
