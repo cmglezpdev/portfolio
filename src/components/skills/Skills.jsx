@@ -1,6 +1,14 @@
 import { useState } from 'react';
 
-import { Astro, NextJs, CPlusPlus, CSharp, Css, Django, Express, Firebase, GraphQL, Html, JavaScript, MongoDB, MySQL, NestJs, NodeJs, Python, React, Typescript, Sass, Redux, ReactNative, MaterialUI, Docker, Postgres, DotNet, Rust } from '../icons';
+import { 
+    NextJs, CPlusPlus, 
+    CSharp, GraphQL, 
+    JavaScript, MongoDB, MySQL, 
+    NestJs, NodeJs, Python, React, 
+    Typescript, Docker, Postgres, 
+    DotNet, AmazonWebServices, Supabase, 
+    OpenAI, ClaudeAI, HuggingFace
+} from '../icons';
 import { Title } from '../';
 import './skills.scss';
 
@@ -15,8 +23,6 @@ export const Skills = () => {
                 return <StrongSection />
             case 2:
                 return <LearningSection />
-            case 3:
-                return <InterestedSection />
             default:
                 return;
         }
@@ -36,10 +42,6 @@ export const Skills = () => {
                     className={selected === 2 ? 'active-section' : ''}
                     onClick={() => setSelected(2)}
                 >Learning</div>
-                <div 
-                    className={selected === 3 ? 'active-section' : ''}
-                    onClick={() => setSelected(3)}
-                >Interested</div>
             </div>
 
             <div className='skill-icons'>
@@ -53,23 +55,24 @@ export const Skills = () => {
 const StrongSection = () => {
     return (
         <>
-            <Html />
-            <Css />
             <JavaScript />
             <Typescript />
             <React />
             <NextJs />
             <NestJs />
-            <Redux />
-            <Sass />
-            <MaterialUI />
-            <Firebase />
             <NodeJs />
-            <Express />
             <MongoDB />
             <Python />
             <CSharp />
             <CPlusPlus />
+            <GraphQL />
+            <Docker />
+            <MySQL />
+            <DotNet />
+            <Postgres />
+            <Supabase />
+            <OpenAI />
+            <ClaudeAI />
         </>
     )
 }
@@ -77,24 +80,8 @@ const StrongSection = () => {
 const LearningSection = () => {
     return (
         <>
-            <Astro />
-            <Docker />
-            <MySQL />
-            <DotNet />
-            <Postgres />
+            {/* <HuggingFace /> */}
+            <AmazonWebServices />
         </>
     )
-}
-
-const InterestedSection = () => {
-
-    return (
-        <>
-            <GraphQL /> 
-            <Django />
-            <ReactNative />
-            <Rust />
-        </>
-    )
-
 }

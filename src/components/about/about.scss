@@ -4,7 +4,7 @@
 .container-about {
     // border: 1px solid  cadetblue;
 
-    margin: 200px 0;
+    margin: 100px 0;
     
     .about-information {
         display: flex;
@@ -12,12 +12,20 @@
 
         .photo {
             width: 100%;
-            margin: 0 auto;
+            
+            .photo-lazy {
+                width: 100%;
+                margin: auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
 
-            img {
-                max-width: 100%;
-                object-fit: fill;
+                img {
+                    max-width: 250px;
+                    object-fit: fill;
+                }
             }
+        
         }
 
         .description {
@@ -41,18 +49,29 @@
 @media (min-width: 768px) {
     .container-about {
         .about-information {
-            display: block;
-       
-            .photo img {
-                width: 45%;
-                shape-image-threshold: 0.5;
-                margin-left: 20px;
-                float: right;
-            }
+            display: grid;
+            grid-template-columns: 300px 1fr;
+
+            .photo {
+                .photo-lazy {
+                    img {
+                        width: 100%;
+                        shape-image-threshold: 0.5;
+                        // margin-left: 20px;
+                        // float: right;
+                    }
+                }
+            } 
+            
 
             .description {
                 // width: 60%;
                 text-align: justify;
+                p span {
+                    text-align: left;
+                    font-weight: bold;
+                    font-size: 24px;
+                }
             }
         }
     }

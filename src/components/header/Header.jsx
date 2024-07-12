@@ -30,7 +30,7 @@ export const Header = () => {
             </h2>
 
             <p className='header-minidescription'>
-                I'm passionate of Computer Science and Software Development.
+                Software Developer and Computer Science Student.
             </p>
             
             <a href="#works">
