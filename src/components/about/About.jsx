@@ -1,12 +1,13 @@
 import LazyLoad from 'react-lazy-load';
 
 import './about.scss';
-// import me from '../../props/me.webp';
 import { Title } from '../';
 
 
 
 export const About = () => {
+    const age = new Date().getFullYear() - 2001 - (new Date().getMonth() + 1 < 6 ? 1 : 0)
+
     return (
         <div className="container-about" id="about">
             <Title text={"About"}/>
@@ -14,7 +15,7 @@ export const About = () => {
             <div className='about-information'>
                 <div className="description">
                     <p>
-                        My name is Carlos Manuel and I am 23 years old. I discovered programming in 2016 during an elective Informatics course in high school, where 
+                        My name is Carlos Manuel and I am {age} years old. I discovered programming in 2016 during an elective Informatics course in high school, where 
                         I participated in Competitive Programming contests. Although I didn't always achieve the desired results, 
                         I managed to rank in the <span className='text-hightlight'>top 10 in two national competitions</span>.
                     </p>
