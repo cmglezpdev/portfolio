@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="650" viewBox="0 0 1000 650">
+  <defs><pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".8" fill="#cbd0d9"/></pattern><filter id="s"><feDropShadow dy="10" stdDeviation="15" flood-opacity=".07"/></filter></defs>
+  <rect width="1000" height="650" fill="#e8eaf0"/><rect width="1000" height="650" fill="url(#dots)"/>
+  <g filter="url(#s)"><rect x="100" y="80" width="800" height="490" rx="10" fill="#fbfbfa" stroke="#cfd3dc"/>
+  <path d="M100 135H900" stroke="#e0e2e7"/>
+  <text x="133" y="115" font-family="sans-serif" font-size="20" font-weight="700" fill="#24262a">linkseek<tspan fill="#194cff">↗</tspan></text><text x="751" y="112" font-family="monospace" font-size="10" fill="#757b85">YOUR COLLECTION</text>
+  <text x="140" y="194" font-family="sans-serif" font-size="27" font-weight="600" fill="#24262a">Good links. Kept close.</text>
+  <rect x="742" y="167" width="113" height="34" rx="4" fill="#194cff"/><text x="761" y="189" font-family="sans-serif" font-size="12" fill="white">+ Save a link</text>
+  <rect x="140" y="224" width="715" height="37" rx="4" fill="#f2f3f5" stroke="#e0e2e7"/><circle cx="159" cy="242" r="5" fill="none" stroke="#8a8f99"/><path d="m163 246 4 4" stroke="#8a8f99"/><text x="182" y="247" font-family="sans-serif" font-size="11" fill="#8a8f99">Find a saved idea...</text>
+  <g><rect x="140" y="289" width="225" height="227" rx="5" fill="white" stroke="#e0e2e7"/><rect x="151" y="300" width="203" height="99" rx="3" fill="#edf0e9"/>
+  <path d="M181 370v-30h37v30zm38-15 37-30 35 30 35-25" fill="none" stroke="#a8b59d" stroke-width="3"/>
+  <text x="157" y="425" font-family="monospace" font-size="9" fill="#8a8f99">SYSTEM DESIGN</text><text x="157" y="450" font-family="sans-serif" font-size="14" fill="#24262a">Understanding the system</text><path d="M157 466h160m-160 10h129" stroke="#e0e2e7" stroke-width="5"/></g>
+  <g><rect x="385" y="289" width="225" height="227" rx="5" fill="white" stroke="#e0e2e7"/><rect x="396" y="300" width="203" height="99" rx="3" fill="#e8ecff"/>
+  <circle cx="460" cy="349" r="16" fill="none" stroke="#194cff"/><circle cx="534" cy="349" r="16" fill="none" stroke="#194cff"/><path d="M476 349h42" stroke="#194cff"/><circle cx="497" cy="349" r="4" fill="#194cff"/>
+  <text x="402" y="425" font-family="monospace" font-size="9" fill="#8a8f99">APPLIED AI</text><text x="402" y="450" font-family="sans-serif" font-size="14" fill="#24262a">Tools that work together</text><path d="M402 466h160m-160 10h129" stroke="#e0e2e7" stroke-width="5"/></g>
+  <g><rect x="630" y="289" width="225" height="227" rx="5" fill="white" stroke="#e0e2e7"/><rect x="641" y="300" width="203" height="99" rx="3" fill="#eeece8"/>
+  <path d="M695 370v-40h90v40m-70-20h50m-50 10h30" stroke="#b5aa97" stroke-width="3" fill="none"/>
+  <text x="647" y="425" font-family="monospace" font-size="9" fill="#8a8f99">ENGINEERING</text><text x="647" y="450" font-family="sans-serif" font-size="14" fill="#24262a">Notes for the next build</text><path d="M647 466h160m-160 10h129" stroke="#e0e2e7" stroke-width="5"/></g></g>
+</svg>

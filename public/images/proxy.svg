@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="650" viewBox="0 0 1000 650">
+  <defs><pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" fill="none" stroke="#d2d4ce" stroke-width=".6"/></pattern></defs>
+  <rect width="1000" height="650" fill="#e9eae5"/><rect width="1000" height="650" fill="url(#grid)"/>
+  <text x="75" y="95" font-family="monospace" font-size="12" letter-spacing="2" fill="#74796d">A SMALL COMPATIBILITY LAYER</text>
+  <path d="M280 235H400m200 0h120" stroke="#a1a797" stroke-width="2" stroke-dasharray="5 5"/><path d="m388 230 10 5-10 5m320-10 10 5-10 5" fill="none" stroke="#a1a797" stroke-width="2"/>
+  <rect x="75" y="180" width="205" height="110" rx="6" fill="#f9faf6" stroke="#c6cbbd"/><text x="111" y="230" font-family="sans-serif" font-size="21" fill="#242820">OpenWhispr</text><text x="112" y="255" font-family="monospace" font-size="11" fill="#74796d">DESKTOP CLIENT</text>
+  <rect x="400" y="165" width="200" height="140" rx="6" fill="#194cff"/><text x="438" y="225" font-family="sans-serif" font-size="24" fill="white">The proxy</text><text x="430" y="253" font-family="monospace" font-size="11" fill="#d8e0ff">NODE.JS · DOCKER</text>
+  <rect x="720" y="180" width="205" height="110" rx="6" fill="#f9faf6" stroke="#c6cbbd"/><text x="759" y="230" font-family="sans-serif" font-size="21" fill="#242820">AI Gateway</text><text x="766" y="255" font-family="monospace" font-size="11" fill="#74796d">TRANSCRIPTION</text>
+  <path d="M500 305v55" stroke="#194cff" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <rect x="235" y="360" width="530" height="200" rx="8" fill="#252824"/><path d="M235 399H765" stroke="#41463b"/>
+  <circle cx="257" cy="380" r="4" fill="#636a5b"/><circle cx="273" cy="380" r="4" fill="#636a5b"/><circle cx="289" cy="380" r="4" fill="#636a5b"/>
+  <text x="548" y="384" font-family="monospace" font-size="10" fill="#a0a891">LOCAL USAGE · SQLITE</text>
+  <text x="260" y="434" font-family="monospace" font-size="13" fill="#c3d4ff">$ docker compose up</text>
+  <text x="260" y="466" font-family="monospace" font-size="12" fill="#c1c7b7">→ Forward transcription request</text>
+  <text x="260" y="493" font-family="monospace" font-size="12" fill="#c1c7b7">→ Return compatible response</text>
+  <text x="260" y="520" font-family="monospace" font-size="12" fill="#c1c7b7">→ Record usage and estimated cost</text>
+</svg>

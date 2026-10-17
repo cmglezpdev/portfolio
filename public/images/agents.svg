@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="650" viewBox="0 0 1000 650">
+  <defs><pattern id="g" width="25" height="25" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".8" fill="#ccd0c5"/></pattern></defs><rect width="1000" height="650" fill="#e9ece7"/><rect width="1000" height="650" fill="url(#g)"/>
+  <text x="75" y="80" font-family="monospace" font-size="12" letter-spacing="2" fill="#6e7567">BUSINESS ACTIONS, WITH USER CONTROL</text>
+  <g fill="none" stroke="#b1b9a7" stroke-width="2"><path d="M500 205v90m0 90v55m-290 0v-15h580v15m-580-15h580"/><path d="M500 250H210v45m290-45h290v45" stroke-dasharray="4 5"/></g>
+  <rect x="350" y="115" width="300" height="90" rx="6" fill="#194cff"/><text x="391" y="153" font-family="sans-serif" font-size="22" fill="white">Configurable agent</text><text x="403" y="179" font-family="monospace" font-size="11" fill="#dce3ff">MODEL + SYSTEM PROMPT</text>
+  <g fill="#fafbf8" stroke="#cbd0c3"><rect x="100" y="295" width="220" height="90" rx="6"/><rect x="390" y="295" width="220" height="90" rx="6"/><rect x="680" y="295" width="220" height="90" rx="6"/></g>
+  <g font-family="sans-serif" font-size="20" fill="#292e25"><text x="157" y="335">Company</text><text x="148" y="361">documents</text><text x="440" y="349">Approvals</text><text x="711" y="335">External MCP</text><text x="737" y="361">connections</text></g>
+  <g fill="#fafbf8" stroke="#cbd0c3"><rect x="100" y="440" width="220" height="90" rx="6"/><rect x="390" y="440" width="220" height="90" rx="6"/><rect x="680" y="440" width="220" height="90" rx="6"/></g>
+  <g font-family="sans-serif" font-size="20" fill="#292e25"><text x="155" y="491">Operations</text><text x="448" y="491">Commerce</text><text x="725" y="491">Other modules</text></g>
+  <text x="283" y="590" font-family="monospace" font-size="11" letter-spacing="1" fill="#6e7567">PERMISSIONS · USAGE LIMITS · PLAN BUDGETS</text>
+</svg>

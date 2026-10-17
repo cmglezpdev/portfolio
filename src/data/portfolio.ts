@@ -1,0 +1,175 @@
+import type { AdditionalWork, EarlierExperience, Experience, Profile, Project } from '../types/portfolio';
+
+export const profile: Profile = {
+  name: 'Carlos Manuel González',
+  shortName: 'Carlos Manuel',
+  title: 'Software Engineer & AI Engineer',
+  email: 'cmglezpdev@gmail.com',
+  location: 'Mexico',
+  description: 'Software Engineer and AI Engineer based in Mexico. Full-stack applications, backend systems, and practical AI integrations with TypeScript, Node.js, React, AI agents, RAG, and MCP.',
+  // Add an image under public/images/ and set its absolute site path here.
+  portrait: null,
+  socials: [
+    { label: 'GitHub', url: 'https://github.com/cmglezpdev' },
+    { label: 'LinkedIn', url: 'https://www.linkedin.com/in/cmglezpdev/' },
+    { label: 'X / Twitter', url: 'https://twitter.com/cmglezpdev' },
+  ],
+};
+
+export const experience: Experience[] = [
+  {
+    company: 'AOShield Solutions',
+    period: 'Sep 2026 — Present',
+    current: true,
+    context: 'Healthcare software · Canada',
+    roles: [{ title: 'Full-stack engineering', period: 'Sep 2026 — Present' }],
+    description: 'Building healthcare software for Canadian care teams, working across the frontend and a .NET backend.',
+    points: ['Contributing to an existing platform for patient information, clinical workflows, and appointment management.'],
+    tags: ['Full-stack development', '.NET', 'Healthcare'],
+  },
+  {
+    company: 'Dara Services',
+    period: 'Oct 2023 — Aug 2026',
+    current: false,
+    context: 'SaaS, payments & applied AI',
+    roles: [
+      { title: 'Lead Software Engineer', period: 'Jan — Aug 2026' },
+      { title: 'Backend Software Engineer', period: 'Oct 2023 — Jan 2026' },
+    ],
+    description: 'Built payment systems and business software, then led a new agency platform with configurable AI agents.',
+    points: [
+      'Built a remittance backend handling up to 9,000 transactions per month.',
+      'Implemented AI agents with tool calling, RAG, MCP connections, usage budgets, and approval flows. Used by a small group of early users.',
+      'Reduced deployment times by 50% and GitHub Actions costs by 80% through CI/CD and Docker improvements.',
+    ],
+    tags: ['TypeScript', 'NestJS', 'React', 'PostgreSQL', 'AI agents', 'System design'],
+    caseStudy: '/work/dara-platform/',
+  },
+];
+
+export const earlierExperience: EarlierExperience[] = [
+  { company: 'Dasmex', title: 'Full Stack Developer', period: 'Aug — Nov 2023', description: 'Built Next.js features and integrated MercadoPago and PayPal for a pet services platform.' },
+  { company: 'NTSprint', title: 'Software Engineer Intern', period: 'Feb — Mar 2023', description: 'Maintained ASP.NET web interfaces and worked with SQL for a real estate application.' },
+];
+
+export const projects: Project[] = [
+  {
+    slug: 'nativo',
+    name: 'Nativo',
+    category: 'Personal product',
+    headline: 'English practice, built around what I actually read.',
+    summary: 'An assisted reading app that brings articles, generated audio, vocabulary tracking, and AI feedback into one place.',
+    status: 'In active development',
+    visual: 'nativo',
+    image: null,
+    featured: true,
+    tags: ['Full-stack', 'Applied AI', 'Text-to-speech', 'Language learning', 'Stripe'],
+    links: [{ label: 'Visit Nativo', url: 'https://soundlikenative.com' }],
+    sourceNote: 'Private source code',
+    overview: 'I built Nativo to practice English with content I already wanted to read. It combines assisted reading with generated audio, pronunciation, and vocabulary tracking. I use the reading workflow regularly myself.',
+    problem: 'Reading articles, listening to them, and tracking unfamiliar words usually meant switching between tools. I wanted to keep the original article formatting and study it in one place.',
+    contributions: [
+      'Built content import with Markdown and HTML formatting, preserving headings and images.',
+      'Integrated full-document audio generation, playback, and pronunciation for selected words or phrases.',
+      'Added vocabulary highlighting and familiarity levels, including an option to ignore items.',
+      'Used AI to identify idioms and phrasal verbs in imported content.',
+      'Implemented an AI writing checker with suggestions users can accept or dismiss, and Stripe subscriptions.',
+    ],
+    decisions: [
+      { title: 'Keep the source context', text: 'Preserving article formatting matters when images and headings are part of what makes a piece understandable.' },
+      { title: 'Build around daily use', text: 'Reading and listening receive most of my attention because they are the workflows I use to practice English.' },
+    ],
+    outcome: 'The reading and listening workflow is usable and part of my own English practice. The writing checker works, but still needs improvement in how it locates errors. Adoption is currently limited to personal use and a small circle.',
+    next: 'Vocabulary summaries and Anki export are ideas for future work, not current features.',
+  },
+  {
+    slug: 'linkseek',
+    name: 'Linkseek',
+    category: 'Personal product',
+    headline: 'A place for links worth coming back to.',
+    summary: 'A bookmark manager with descriptions, images, and relationships between links. Built to keep saved information useful.',
+    status: 'Working product',
+    visual: 'linkseek',
+    image: null,
+    featured: true,
+    tags: ['Full-stack', 'Bookmark management', 'Product development', 'Stripe'],
+    links: [{ label: 'Visit Linkseek', url: 'https://linkseek.app' }],
+    sourceNote: 'Private source code',
+    overview: 'Linkseek is a web application for saving links with enough context to find and understand them later. Bookmarks can have a title, description, image, and relationships to other links.',
+    problem: 'A saved URL alone is easy to forget. I wanted a visual collection that preserved why a link mattered and how it related to other things I had saved.',
+    contributions: [
+      'Built the bookmark management workflow and visual web interface.',
+      'Added editable titles, descriptions, images, and relationships between saved links.',
+      'Integrated subscriptions with Stripe.',
+    ],
+    decisions: [
+      { title: 'Keep AI plans honest', text: 'Automatic page extraction and AI descriptions did not become a dependable feature. Scraping reliability and infrastructure costs made that approach unsuitable for this version.' },
+      { title: 'Explore access through MCP', text: 'A future MCP server could let people work with their bookmarks through an AI client they already use. This integration has not been built.' },
+    ],
+    outcome: 'A working bookmark manager used by a small circle. The current product is about organizing links; it does not yet offer the planned MCP integration or automated AI descriptions.',
+    next: 'I am considering a free model and an MCP integration. Both remain future decisions.',
+  },
+  {
+    slug: 'openwhispr-proxy',
+    name: 'OpenWhispr Proxy',
+    category: 'Open-source tool',
+    headline: 'A small bridge between two tools I use.',
+    summary: 'An OpenAI-compatible proxy connecting OpenWhispr to Vercel AI Gateway, with local usage and cost tracking.',
+    status: 'Open source',
+    visual: 'proxy',
+    image: null,
+    featured: true,
+    tags: ['Backend', 'AI integration', 'Node.js', 'Docker', 'SQLite'],
+    links: [{ label: 'View source', url: 'https://github.com/cmglezpdev/openwhispr-proxy' }],
+    sourceNote: 'Public source code',
+    overview: 'I wanted OpenWhispr to use Vercel AI Gateway for audio transcription. I built a local proxy that accepts OpenAI-compatible requests, forwards them to the gateway, and returns the response in the format the client expects.',
+    problem: 'The tools did not connect directly for the transcription workflow I needed. A small compatibility layer let me use them together without modifying the client.',
+    contributions: [
+      'Built the Node.js proxy for transcription and chat requests.',
+      'Added local SQLite records for usage and estimated cost.',
+      'Documented local setup and Docker execution.',
+    ],
+    decisions: [
+      { title: 'Solve the compatibility gap', text: 'The proxy keeps the client workflow familiar and handles the provider boundary in one small service.' },
+      { title: 'Keep it local', text: 'This is a tool for individual use. Its current handling of different API keys has concurrency limitations, so I do not present it as a multi-user service.' },
+    ],
+    outcome: 'A focused utility for my own transcription workflow, with public source code. Usage data lives in SQLite; there is no reporting dashboard.',
+    next: 'A simple usage report could make the stored data easier to inspect, but has not been implemented.',
+  },
+  {
+    slug: 'dara-platform',
+    name: 'Dara agency platform',
+    category: 'Professional work · Dara Services',
+    headline: 'Configurable AI agents for business operations.',
+    summary: 'An agency platform combining business modules with AI agents, tool calling, retrieval, and controlled access to business actions.',
+    status: 'Small early-user rollout',
+    visual: 'agents',
+    image: null,
+    featured: false,
+    tags: ['AI engineering', 'Full-stack', 'TypeScript', 'RAG', 'MCP', 'Tool calling', 'Access control'],
+    links: [],
+    sourceNote: 'Private company code',
+    overview: 'As Lead Software Engineer at Dara, I worked on a new platform where agencies could subscribe to business modules and allocate resources to their businesses. The AI layer let business owners configure agents and use tools to work with those modules.',
+    problem: 'The platform needed to support multiple businesses, subscription limits, and permissions. Adding agents meant those same boundaries also had to apply when a model requested an action.',
+    contributions: [
+      'Led the technical redesign into a NestJS and React monorepo with a modular monolithic architecture.',
+      'Implemented configurable agents with model selection, system prompts, internal tools, and external MCP connections.',
+      'Added retrieval over uploaded company documents and an MCP connection to the existing remittance system.',
+      'Implemented tool approval flows, request and token limits, plan budgets, and support for user-provided API keys.',
+      'Built business modules and full-stack observability with Grafana, Loki, Tempo, and Prometheus.',
+    ],
+    decisions: [
+      { title: 'Revisit service boundaries', text: 'The earlier product used microservices. For the new platform, a modular monolithic approach reduced the complexity of coordinating a broad set of business modules.' },
+      { title: 'Treat model actions as business actions', text: 'Giving an agent a tool did not replace permissions or approval. The user still needed control over whether an action could proceed.' },
+      { title: 'Reuse the existing remittance system', text: 'An MCP server exposed information from the separate remittance system without requiring a migration into the new platform.' },
+    ],
+    outcome: 'The agent workflow was used by roughly three early users. It demonstrated the integrations, but the platform did not reach broad adoption before I left in August 2026. Public customer-facing agents did not receive a public rollout.',
+    next: 'This is a retrospective of my own contribution. The separate remittance backend remained in operation; the earlier commerce product had closed.',
+  },
+];
+
+export const additionalWork: AdditionalWork[] = [
+  { name: 'Veta', description: 'YouTube transcripts, chapters, and prompts, ready for an AI-assisted workflow.', tag: 'CLI · Developer tooling', url: 'https://github.com/cmglezpdev/veta' },
+  { name: 'System design lab', description: 'A URL shortener for measuring bottlenecks and experimenting with scalability.', tag: 'Backend · Observability', url: 'https://github.com/cmglezpdev/link-shortener-scalability-lab' },
+  { name: 'Supabase contribution', description: 'Fixed permissions in the SQL example for the automatic embeddings guide.', tag: 'Documentation · Merged', url: 'https://github.com/supabase/supabase/pull/35600' },
+];
