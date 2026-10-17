@@ -64,7 +64,11 @@ const capabilities = [
           <p class="mt-5 max-w-xs text-sm leading-7 text-muted">Production systems, changing requirements, and the people who rely on them.</p>
           <a href="#work" class="mt-6 inline-flex min-h-10 items-center gap-2 font-mono text-[10px] text-muted hover:text-accent">Then, the side projects <span aria-hidden="true">↓</span></a>
         </div>
-        <div class="relative border-l border-line pl-7 sm:pl-9">
+        <div data-scroll-track class="relative border-l border-line pl-7 sm:pl-9">
+          <div aria-hidden="true" class="pointer-events-none absolute -left-px inset-y-0 z-10 w-px">
+            <span data-scroll-progress class="absolute top-0 w-px bg-accent"></span>
+            <span data-scroll-marker class="absolute -left-[6px] flex size-[13px] items-center justify-center rounded-full bg-accent shadow-[0_0_0_5px_#f6f6f3]"><span class="size-1 rounded-full bg-white"></span></span>
+          </div>
           {experience.map((job, index) => <article class:list={['relative', index > 0 && 'mt-10 border-t border-line pt-9']}>
             <span aria-hidden="true" class:list={['absolute -left-[33px] size-[9px] rounded-full border-2 border-paper sm:-left-[41px]', job.current ? 'top-2 bg-accent ring-4 ring-accent/10' : 'top-11 bg-ink']} />
             <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
@@ -91,10 +95,10 @@ const capabilities = [
         <div><p class="mb-5 font-mono text-[10px] uppercase tracking-[.18em] text-muted"><span class="mr-3 text-accent">02</span> Selected work</p><h2 id="work-heading" class="text-4xl font-medium tracking-[-.055em] sm:text-5xl">Built out of curiosity<span class="text-accent">.</span></h2></div>
         <p class="max-w-[16rem] text-xs leading-6 text-muted">Personal products and small tools.<br />Things I wanted to exist, so I built them.</p>
       </div>
-      <div data-work-track class="relative">
+      <div data-scroll-track class="relative">
         <div aria-hidden="true" class="pointer-events-none absolute top-0 -bottom-2 -left-6 hidden w-px bg-line lg:block">
-          <span data-work-progress class="absolute top-0 w-px bg-accent"></span>
-          <span data-work-marker class="absolute -left-[6px] flex size-[13px] items-center justify-center rounded-[3px] bg-accent shadow-[0_0_0_5px_#f6f6f3]"><span class="size-1 rotate-45 bg-white"></span></span>
+          <span data-scroll-progress class="absolute top-0 w-px bg-accent"></span>
+          <span data-scroll-marker class="absolute -left-[6px] flex size-[13px] items-center justify-center rounded-[3px] bg-accent shadow-[0_0_0_5px_#f6f6f3]"><span class="size-1 rotate-45 bg-white"></span></span>
         </div>
         <div class="grid gap-x-8 gap-y-10 md:grid-cols-2">{featured.map((project, index) => <ProjectCard project={project} index={index} wide={index === 0} />)}</div>
       </div>
