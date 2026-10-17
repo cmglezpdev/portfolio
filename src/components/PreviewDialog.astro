@@ -1,0 +1,14 @@
+---
+import Icon from './Icon.astro';
+---
+<dialog id="project-preview" aria-labelledby="preview-title" aria-describedby="preview-description" class="fixed inset-0 m-auto max-h-[90dvh] w-[calc(100%-2rem)] max-w-5xl overflow-y-auto rounded-md border border-line bg-paper p-0 text-ink shadow-2xl backdrop:bg-ink/65 backdrop:backdrop-blur-sm">
+  <div class="flex items-center justify-between gap-4 border-b border-line px-5 py-4 sm:px-7">
+    <div><h2 id="preview-title" class="text-lg font-semibold tracking-tight"></h2><p id="preview-caption" class="mt-1 font-mono text-[10px] text-muted"></p></div>
+    <button type="button" data-close-preview aria-label="Close preview" class="flex size-11 shrink-0 items-center justify-center rounded-full border border-line transition-colors hover:border-accent hover:text-accent"><Icon name="close" class="size-5" /></button>
+  </div>
+  <div data-preview-image class="bg-white"></div>
+  <div class="flex flex-wrap items-center justify-between gap-5 border-t border-line px-5 py-5 sm:px-7">
+    <p id="preview-description" class="max-w-xl text-sm leading-6 text-muted"></p>
+    <a data-preview-link href="/" class="inline-flex min-h-11 items-center gap-2 rounded-sm bg-accent px-4 text-xs font-semibold text-white hover:bg-ink">Read project <Icon name="arrow" /></a>
+  </div>
+</dialog>

@@ -1,0 +1,9 @@
+---
+import type { Project } from '../types/portfolio';
+interface Props { project: Project; loading?: 'eager' | 'lazy'; }
+const { project, loading = 'lazy' } = Astro.props;
+// Replace with a real screenshot path when one is available.
+const image = project.image || `/images/${project.visual}.svg`;
+const caption = project.image ? 'Project screenshot' : ['proxy', 'agents'].includes(project.visual) ? 'Integration diagram' : 'Interface illustration';
+---
+<img src={image} alt={`${project.name}: ${caption.toLowerCase()}`} width="1000" height="650" loading={loading} decoding="async" class="block h-full w-full object-cover transition-transform duration-700 motion-safe:group-hover/preview:scale-[1.025]" />
