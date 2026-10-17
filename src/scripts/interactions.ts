@@ -17,16 +17,15 @@ function initProjectAnimations(): void {
   document.querySelectorAll('[data-project-card]').forEach((card) => reveal.observe(card));
 }
 
-function initWorkProgress(): void {
-  const track = document.querySelector('[data-work-track]');
-  const marker = document.querySelector('[data-work-marker]');
-  const progress = document.querySelector('[data-work-progress]');
-  if (!(track instanceof HTMLElement) || !(marker instanceof HTMLElement) || !(progress instanceof HTMLElement)) return;
+function initScrollTimeline(track: HTMLElement): void {
+  const marker = track.querySelector('[data-scroll-marker]');
+  const progress = track.querySelector('[data-scroll-progress]');
+  if (!(marker instanceof HTMLElement) || !(progress instanceof HTMLElement)) return;
 
   let scheduled = false;
   const update = (): void => {
     const rect = track.getBoundingClientRect();
-    const distance = Math.max(0, Math.min(rect.height - 13, window.innerHeight * 0.55 - rect.top));
+    const distance = Math.max(0, Math.min(rect.height - marker.offsetHeight, window.innerHeight * 0.55 - rect.top));
     marker.hidden = reducedMotion.matches;
     progress.hidden = reducedMotion.matches;
     marker.style.transform = `translateY(${distance}px)`;
@@ -42,6 +41,12 @@ function initWorkProgress(): void {
   window.addEventListener('resize', schedule, { passive: true });
   reducedMotion.addEventListener('change', schedule);
   update();
+}
+
+function initScrollProgress(): void {
+  document.querySelectorAll('[data-scroll-track]').forEach((track) => {
+    if (track instanceof HTMLElement) initScrollTimeline(track);
+  });
 }
 
 function initSectionNavigation(): void {
@@ -104,6 +109,6 @@ function initProjectPreview(): void {
 }
 
 initProjectAnimations();
-initWorkProgress();
+initScrollProgress();
 initSectionNavigation();
 initProjectPreview();
