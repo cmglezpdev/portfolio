@@ -14,26 +14,43 @@ export interface Profile {
   socials: Link[];
 }
 
+export interface EmploymentPeriod {
+  start: string;
+  end?: string;
+}
+
 export interface Experience {
   company: string;
-  period: string;
+  logo: string;
+  period: EmploymentPeriod;
   current: boolean;
-  context: string;
-  roles: { title: string; period: string }[];
-  description: string;
-  points: string[];
-  tags: string[];
-  caseStudy?: string;
+  context?: string;
+  roles: {
+    title: string;
+    period: EmploymentPeriod;
+    description: string;
+    points: string[];
+    tags: string[];
+    caseStudy?: string;
+  }[];
 }
 
 export interface EarlierExperience {
   company: string;
+  logo: string;
   title: string;
-  period: string;
+  period: EmploymentPeriod;
+  description: string;
+  points: string[];
+  tags: string[];
+}
+
+export interface ProjectImage {
+  src: string;
   description: string;
 }
 
-export interface Project {
+interface ProjectDetails {
   slug: string;
   name: string;
   category: string;
@@ -41,22 +58,23 @@ export interface Project {
   summary: string;
   status: string;
   visual: 'nativo' | 'linkseek' | 'proxy' | 'agents';
-  image: string | null;
+  images: ProjectImage[];
   featured: boolean;
   tags: string[];
   links: Link[];
   sourceNote: string;
   overview: string;
-  problem: string;
-  contributions: string[];
   decisions: { title: string; text: string }[];
-  outcome: string;
-  next: string;
 }
+
+export type Project = ProjectDetails & (
+  | { format?: undefined; howItWorks: string[] }
+  | { format: 'case-study'; problem: string; contributions: string[]; outcome: string; next: string }
+);
 
 export interface AdditionalWork {
   name: string;
   description: string;
   tag: string;
-  url: string;
+  url?: string;
 }

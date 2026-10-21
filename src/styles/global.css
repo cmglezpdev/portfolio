@@ -3,6 +3,24 @@
 @theme {
   --font-sans: "Manrope Variable", sans-serif;
   --font-mono: "IBM Plex Mono", monospace;
+  /* Typography roles. rem values below equal 13/15/16/17/18/24px at a 16px root.
+     Use text-body for paragraphs and bullets; text-lead for the introduction;
+     text-role for job/subsection titles; text-control for links and buttons;
+     text-meta for dates, captions and tags; text-company for employers.
+     Keep display headings on their existing responsive scale. */
+  --text-meta: 0.8125rem;
+  --text-meta--line-height: 1.25rem;
+  --text-control: 0.9375rem;
+  --text-control--line-height: 1.375rem;
+  --text-role: 1rem;
+  --text-role--line-height: 1.5rem;
+  --text-body: 1.0625rem;
+  --text-body--line-height: 1.75rem;
+  --text-lead: 1.125rem;
+  --text-lead--line-height: 1.8125rem;
+  --text-company: 1.5rem;
+  --text-company--line-height: 2rem;
+
   --color-paper: #f6f6f3;
   --color-ink: #202120;
   --color-muted: #62645f;

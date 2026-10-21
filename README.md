@@ -40,13 +40,14 @@ In an environment that cannot write Astro's global telemetry configuration, pref
 
 The Astro configuration is `astro.config.ts`. Content, browser interactions, and static endpoints use TypeScript, with Astro's strict configuration and JavaScript source disabled. Run `pnpm check` separately from `pnpm build`; building alone does not check types.
 
-Add a portrait under `public/images/`, then set `profile.portrait` to its site path, for example `/images/carlos.webp`. The initial version uses a monogram placeholder. Add a real screenshot under the same directory and set a project's `image` field to its site path. Nativo and Linkseek currently use explicitly labeled interface illustrations; the other projects use integration diagrams.
+Store the profile portrait at `public/images/profile/`. Store project screenshots as WebP under `public/images/projects/<project>/`, then list their paths and short alt descriptions in the project's `images` field. Company marks live under `public/images/companies/`. Raw screenshots used during conversion stay in the local, ignored `projects-images/` folder.
 
 The supplied PDF is preserved at the repository root. It is not offered as a current résumé because it predates AOShield and still lists Dara as current employment. Replace it with an updated version before adding a download link.
 
 ## Structure and behavior
 
-- Experience comes before selected work. Dara's two roles appear under one employer.
+- Experience comes before selected work. Dara's two career stages appear under one employer, each with its own description, contributions, and technologies.
+- Dara's professional case study returns to experience. Personal-project navigation stays within Nativo, Linkseek, and OpenWhispr Proxy.
 - Project pages include the problem, Carlos's contribution, decisions, outcome, and limitations.
 - Real links use normal HTML anchors. The image dialog, entry animation, and scroll marker progressively enhance the static page.
 - The native dialog supports Escape, focus containment, return to its trigger, and a close button.
@@ -75,7 +76,7 @@ These features make content available for crawling; they do not guarantee indexi
 
 References: [Astro and Tailwind](https://docs.astro.build/en/guides/styling/#tailwind), [Tailwind's Astro integration](https://tailwindcss.com/docs/installation/framework-guides/astro), [Google's AI search guidance](https://developers.google.com/search/docs/appearance/ai-features).
 
-Interview decisions and content sources are recorded in `docs/portfolio-brief.md`; domain vocabulary lives in `CONTEXT.md`.
+Interview decisions and content sources are recorded in `docs/portfolio-brief.md`; domain vocabulary lives in `CONTEXT.md`. QR Generator is listed at https://qr-generator.linkseek.app/.
 
 ## Verification
 

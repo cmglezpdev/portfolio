@@ -5,21 +5,21 @@ import Tag from './Tag.astro';
 import type { Project } from '../types/portfolio';
 interface Props { project: Project; index: number; wide?: boolean; }
 const { project, index, wide = false } = Astro.props;
-const caption = project.image ? 'Screenshot' : project.visual === 'proxy' ? 'Integration diagram' : 'Interface illustration';
+const caption = project.images.length ? 'Screenshot' : project.visual === 'proxy' ? 'Integration diagram' : 'Interface illustration';
 ---
 <article data-project-card class:list={['group/project relative min-w-0 border-t border-line pt-6', wide && 'md:col-span-2']}>
   <div class:list={['grid gap-6', wide && 'md:grid-cols-[1.35fr_1fr] md:gap-10']}>
     <button type="button" data-preview data-title={project.name} data-description={project.headline} data-href={`/work/${project.slug}/`} data-caption={caption} aria-label={`Enlarge ${project.name} ${caption.toLowerCase()}`} class="group/preview relative block w-full cursor-zoom-in overflow-hidden rounded-sm border border-line text-left">
       <ProjectPreview project={project} />
       <span class="absolute right-3 bottom-3 flex size-8 items-center justify-center rounded-full border border-white/70 bg-white/85 text-ink backdrop-blur-sm transition-colors group-hover/preview:bg-accent group-hover/preview:text-white"><Icon name="plus" /></span>
-      <span class="absolute bottom-3 left-3 rounded-sm bg-paper/90 px-2 py-1 font-mono text-[8px] text-muted sm:text-[9px]">{caption}</span>
+      <span class="absolute bottom-3 left-3 rounded-sm bg-paper/90 px-2 py-1 font-mono text-meta text-muted">{caption}{project.images.length > 1 && ` · ${project.images.length} photos`}</span>
     </button>
     <div class:list={['flex flex-col items-start', wide ? 'py-2 md:justify-center' : 'pb-3']}>
-      <p class="mb-4 flex w-full items-center justify-between font-mono text-[10px] uppercase tracking-[.13em] text-muted"><span>{project.category}</span><span class="text-accent">0{index + 1}</span></p>
+      <p class="mb-4 flex w-full items-center justify-between font-mono text-meta uppercase tracking-[.13em] text-muted"><span>{project.category}</span><span class="text-accent">0{index + 1}</span></p>
       <h3 class="text-2xl font-semibold tracking-[-.04em] sm:text-3xl"><a href={`/work/${project.slug}/`} class="inline-flex items-center gap-3 transition-colors hover:text-accent">{project.name}<Icon name="external" class="size-5 text-muted transition-transform group-hover/project:-translate-y-0.5 group-hover/project:translate-x-0.5" /></a></h3>
-      <p class="mt-3 max-w-md text-sm leading-7 text-muted">{project.summary}</p>
+      <p class="mt-3 max-w-md text-body text-muted">{project.summary}</p>
       <div class="mt-5 flex flex-wrap gap-1.5">{project.tags.map((label) => <Tag label={label} />)}</div>
-      <a href={`/work/${project.slug}/`} class="mt-6 inline-flex min-h-10 items-center gap-2 text-xs font-semibold transition-colors hover:text-accent">Explore project <Icon name="arrow" /></a>
+      <a href={`/work/${project.slug}/`} class="mt-6 inline-flex min-h-10 items-center gap-2 text-control font-semibold transition-colors hover:text-accent">Explore project <Icon name="arrow" /></a>
     </div>
   </div>
 </article>

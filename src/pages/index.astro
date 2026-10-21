@@ -4,13 +4,14 @@ import Icon from '../components/Icon.astro';
 import Tag from '../components/Tag.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import PreviewDialog from '../components/PreviewDialog.astro';
+import EmploymentPeriod from '../components/EmploymentPeriod.astro';
 import { profile, experience, earlierExperience, projects, additionalWork } from '../data/portfolio';
 const featured = projects.filter((project) => project.featured);
 const capabilities = [
-  { title: 'Build products', text: 'TypeScript · Node.js · NestJS · React · Next.js · PostgreSQL' },
-  { title: 'Integrate AI', text: 'AI agents · Tool calling · RAG · MCP · Model gateways' },
-  { title: 'Ship & understand', text: 'Docker · CI/CD · Grafana · Distributed systems' },
-  { title: 'Keep exploring', text: 'AWS · Terraform · Infrastructure experiments' },
+  { title: 'Build applications', text: 'TypeScript · NestJS · React · C# / .NET · PostgreSQL' },
+  { title: 'Engineer AI features', text: 'Vercel AI SDK · Tool calling · RAG · MCP · Evaluation' },
+  { title: 'Deploy & operate', text: 'Docker · Dokploy · CI/CD · Grafana · AWS S3' },
+  { title: 'Explore infrastructure', text: 'AWS · Terraform · Deploy, test, and tear down' },
 ];
 ---
 <Layout>
@@ -20,50 +21,50 @@ const capabilities = [
         <div class="absolute inset-0 bg-[linear-gradient(to_right,#2021200a_1px,transparent_1px),linear-gradient(to_bottom,#2021200a_1px,transparent_1px)] bg-size-[40px_40px] mask-[radial-gradient(ellipse_at_75%_20%,black,transparent_68%)]"></div>
         <div class="absolute -top-16 right-0 size-96 rounded-full bg-accent/4 blur-3xl"></div>
       </div>
-      <div class="mb-10 flex flex-wrap items-center gap-x-4 gap-y-2 font-mono text-[10px] text-muted sm:mb-12">
+      <div class="mb-10 flex flex-wrap items-center gap-x-4 gap-y-2 font-mono text-meta text-muted sm:mb-12">
         <span class="inline-flex items-center gap-2"><span class="size-1.5 rounded-full bg-accent"></span>BASED IN MEXICO</span>
         <span aria-hidden="true" class="text-line">/</span>
         <span>OPEN TO REMOTE OPPORTUNITIES</span>
       </div>
       <div class="grid items-center gap-10 md:grid-cols-[1fr_230px] lg:grid-cols-[1fr_270px] lg:gap-16">
         <div>
-          <p class="mb-5 text-sm text-muted">Hi, I'm <span class="font-semibold text-ink">Carlos Manuel González</span>.</p>
+          <p class="mb-5 text-body text-muted">Hi, I'm <span class="font-semibold text-ink">Carlos Manuel González</span>.</p>
           <h1 id="intro-heading" class="max-w-3xl text-[clamp(2.65rem,6.1vw,4.75rem)] leading-[1.08] font-medium tracking-[-.065em]">Building software.<br /><span class="text-accent">Making AI useful.</span></h1>
-          <p class="mt-7 text-sm font-semibold tracking-[-.01em] sm:text-base">Software Engineer <span class="mx-1 font-normal text-muted">&</span> AI Engineer</p>
-          <p class="mt-3 max-w-[32rem] text-sm leading-7 text-muted sm:text-[15px]">I build full-stack applications, backend systems, and AI integrations. My work spans SaaS platforms, payments, and agents that can take action.</p>
+          <p class="mt-7 text-role font-semibold tracking-[-.01em]">{profile.title}</p>
+          <p class="mt-3 max-w-[32rem] text-lead text-muted">{profile.description}</p>
           <div class="mt-8 flex flex-wrap items-center gap-3 sm:gap-6">
-            <a href="#work" class="group inline-flex min-h-12 items-center gap-4 rounded-sm bg-ink px-5 text-xs font-medium text-white transition-colors hover:bg-accent">Explore my work <Icon name="arrow" class="size-4 transition-transform group-hover:translate-x-1" /></a>
-            <a href={`mailto:${profile.email}`} class="inline-flex min-h-12 items-center gap-2 px-1 text-xs font-medium transition-colors hover:text-accent">Get in touch <Icon name="external" class="size-4" /></a>
-            <a href="/cv.pdf" download="cv.pdf" class="inline-flex min-h-12 items-center gap-2 px-1 text-xs font-medium transition-colors hover:text-accent">Download CV <Icon name="download" class="size-4" /><span class="sr-only">, PDF</span></a>
+            <a href="#work" class="group inline-flex min-h-12 items-center gap-4 rounded-sm bg-ink px-5 text-control font-medium text-white transition-colors hover:bg-accent">Explore my work <Icon name="arrow" class="size-4 transition-transform group-hover:translate-x-1" /></a>
+            <a href={`mailto:${profile.email}`} class="inline-flex min-h-12 items-center gap-2 px-1 text-control font-medium transition-colors hover:text-accent">Get in touch <Icon name="external" class="size-4" /></a>
+            <a href="/cv.pdf" download="cv.pdf" class="inline-flex min-h-12 items-center gap-2 px-1 text-control font-medium transition-colors hover:text-accent">Download CV <Icon name="download" class="size-4" /><span class="sr-only">, PDF</span></a>
           </div>
         </div>
         <figure class="relative hidden md:block">
           <div class="absolute -top-3 -right-3 -bottom-3 left-3 border border-line" aria-hidden="true"></div>
           <div class="relative flex aspect-[.83] flex-col items-center justify-center overflow-hidden border border-line bg-[#e8e9e3]">
-            {profile.portrait ? <img src={profile.portrait} alt="Carlos Manuel González" width="540" height="650" class="absolute inset-0 h-full w-full object-cover grayscale" /> : <>
+            {profile.portrait ? <img src={profile.portrait} alt="Carlos Manuel González" width="540" height="599" class="absolute inset-0 h-full w-full object-cover grayscale" /> : <>
               <div aria-hidden="true" class="absolute inset-0 bg-[radial-gradient(#20212025_1px,transparent_1px)] bg-size-[12px_12px] mask-[radial-gradient(ellipse,black,transparent_75%)]"></div>
               <span aria-hidden="true" class="relative font-sans text-8xl font-medium tracking-[-.12em] text-ink/65">cm<span class="text-accent">.</span></span>
-              <span class="absolute bottom-5 font-mono text-[9px] tracking-[.12em] text-muted">PORTRAIT PLACEHOLDER</span>
+              <span class="absolute bottom-5 font-mono text-meta tracking-[.12em] text-muted">PORTRAIT PLACEHOLDER</span>
             </>}
             <span aria-hidden="true" class="absolute top-3 left-3 size-3 border-t border-l border-ink/40"></span>
             <span aria-hidden="true" class="absolute right-3 bottom-3 size-3 border-r border-b border-ink/40"></span>
           </div>
-          <figcaption class="relative mt-6 flex justify-between font-mono text-[9px] text-muted"><span>HUMAN BEHIND THE CODE</span><span class="text-accent">[ CM / 01 ]</span></figcaption>
+          <figcaption class="relative mt-6 flex justify-between font-mono text-meta uppercase text-muted"><span>{profile.shortName}</span><span class="text-accent">{profile.location}</span></figcaption>
         </figure>
       </div>
       <div class="mt-14 flex flex-wrap items-center justify-between gap-6 border-t border-line pt-6 lg:mt-20">
-        <p class="font-mono text-[10px] text-muted">FULL-STACK THINKING. BACKEND DEPTH.</p>
-        <div class="flex flex-wrap gap-5">{profile.socials.map((social) => <a href={social.url} target="_blank" rel="noopener noreferrer" class="inline-flex min-h-8 items-center gap-1.5 font-mono text-[10px] text-muted transition-colors hover:text-accent">{social.label}<Icon name="external" class="size-3" /><span class="sr-only">, opens in a new tab</span></a>)}</div>
+        <p class="font-mono text-meta text-muted">FULL-STACK THINKING. AI-POWERED APPLICATIONS. BACKEND DEPTH.</p>
+        <div class="flex flex-wrap gap-5">{profile.socials.map((social) => <a href={social.url} target="_blank" rel="noopener noreferrer" class="inline-flex min-h-8 items-center gap-1.5 font-mono text-meta text-muted transition-colors hover:text-accent">{social.label}<Icon name="external" class="size-3" /><span class="sr-only">, opens in a new tab</span></a>)}</div>
       </div>
     </section>
 
     <section id="experience" aria-labelledby="experience-heading" class="scroll-mt-8 border-b border-line py-16 sm:py-20 lg:py-24">
       <div class="grid gap-10 lg:grid-cols-[.85fr_2fr] lg:gap-16">
         <div>
-          <p class="mb-5 font-mono text-[10px] uppercase tracking-[.18em] text-muted"><span class="mr-3 text-accent">01</span> Experience</p>
-          <h2 id="experience-heading" class="text-4xl leading-[1.15] font-medium tracking-[-.055em]">Where I've<br class="hidden lg:block" /> put it to work<span class="text-accent">.</span></h2>
-          <p class="mt-5 max-w-xs text-sm leading-7 text-muted">Production systems, changing requirements, and the people who rely on them.</p>
-          <a href="#work" class="mt-6 inline-flex min-h-10 items-center gap-2 font-mono text-[10px] text-muted hover:text-accent">Then, the side projects <span aria-hidden="true">↓</span></a>
+          <p class="mb-5 font-mono text-meta uppercase tracking-[.18em] text-muted"><span class="mr-3 text-accent">01</span> Experience</p>
+          <h2 id="experience-heading" class="text-4xl leading-[1.15] font-medium tracking-[-.055em]">Where I've<br class="hidden lg:block" /> worked<span class="text-accent">.</span></h2>
+          <p class="mt-5 max-w-xs text-body text-muted">My work across healthcare software, SaaS platforms, payments, and AI applications.</p>
+          <a href="#work" class="mt-6 inline-flex min-h-10 items-center gap-2 font-mono text-meta text-muted hover:text-accent">Then, the side projects <span aria-hidden="true">↓</span></a>
         </div>
         <div data-scroll-track class="relative border-l border-line pl-7 sm:pl-9">
           <div aria-hidden="true" class="pointer-events-none absolute -left-px inset-y-0 z-10 w-px">
@@ -73,19 +74,27 @@ const capabilities = [
           {experience.map((job, index) => <article class:list={['relative', index > 0 && 'mt-10 border-t border-line pt-9']}>
             <span aria-hidden="true" class:list={['absolute -left-[33px] size-[9px] rounded-full border-2 border-paper sm:-left-[41px]', job.current ? 'top-2 bg-accent ring-4 ring-accent/10' : 'top-11 bg-ink']} />
             <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
-              <h3 class="text-xl font-semibold tracking-[-.04em]">{job.company}</h3>
-              <p class="font-mono text-[10px] text-muted">{job.period}</p>
+              <h3 class="flex items-center gap-3 text-company font-semibold tracking-[-.04em]"><img src={job.logo} alt="" width="40" height="40" loading="lazy" decoding="async" class="size-10 shrink-0 rounded-sm border border-line bg-white object-contain" /><span>{job.company}</span></h3>
+              <p class="font-mono text-meta text-muted"><EmploymentPeriod period={job.period} /></p>
             </div>
-            <p class="mt-2 font-mono text-[10px] text-muted">{job.context}</p>
-            <div class="mt-5 flex flex-col gap-2">{job.roles.map((role) => <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1"><p class="text-xs font-semibold">{role.title}</p>{job.roles.length > 1 && <span class="font-mono text-[9px] text-muted">{role.period}</span>}</div>)}</div>
-            <p class="mt-4 text-sm leading-7 text-muted">{job.description}</p>
-            <ul class="mt-3 space-y-2">{job.points.map((point) => <li class="flex gap-3 text-xs leading-6 text-muted"><span class="mt-2.5 size-1 shrink-0 rounded-full bg-ink/35" aria-hidden="true" /><span>{point}</span></li>)}</ul>
-            <div class="mt-5 flex flex-wrap gap-1.5">{job.tags.map((label) => <Tag label={label} />)}</div>
-            {job.caseStudy && <a href={job.caseStudy} class="mt-4 inline-flex min-h-10 items-center gap-2 text-xs font-semibold text-accent hover:underline">Inside the AI platform <Icon name="arrow" /></a>}
+            {job.context && <p class="mt-2 font-mono text-meta text-muted">{job.context}</p>}
+            <div class="mt-5 space-y-7">{job.roles.map((role, roleIndex) => <div class:list={[roleIndex > 0 && 'border-t border-line pt-6']}>
+              <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1"><h4 class="text-role font-semibold">{role.title}</h4>{job.roles.length > 1 && <span class="font-mono text-meta text-muted"><EmploymentPeriod period={role.period} /></span>}</div>
+              <p class="mt-4 text-body text-muted">{role.description}</p>
+              <ul class="mt-3 space-y-2">{role.points.map((point) => <li class="flex gap-3 text-body text-muted"><span class="mt-2.5 size-1 shrink-0 rounded-full bg-ink/35" aria-hidden="true" /><span>{point}</span></li>)}</ul>
+              <div class="mt-5 flex flex-wrap gap-1.5">{role.tags.map((label) => <Tag label={label} />)}</div>
+              {role.caseStudy && <a href={role.caseStudy} class="mt-4 inline-flex min-h-10 items-center gap-2 text-control font-semibold text-accent hover:underline">Inside the AI platform <Icon name="arrow" /></a>}
+            </div>)}</div>
           </article>)}
           <details class="group mt-7 border-t border-line pt-3">
-            <summary class="flex min-h-12 cursor-pointer list-none items-center justify-between text-xs font-medium text-muted transition-colors hover:text-accent [&::-webkit-details-marker]:hidden">Earlier experience <span class="transition-transform group-open:rotate-45"><Icon name="plus" /></span></summary>
-            <div class="space-y-6 pt-4 pb-2">{earlierExperience.map((job) => <article><div class="flex flex-wrap justify-between gap-2"><h3 class="text-sm font-semibold">{job.company}</h3><p class="font-mono text-[9px] text-muted">{job.period}</p></div><p class="mt-1 text-xs text-muted">{job.title}</p><p class="mt-2 text-xs leading-6 text-muted">{job.description}</p></article>)}</div>
+            <summary class="flex min-h-12 cursor-pointer list-none items-center justify-between text-control font-medium text-muted transition-colors hover:text-accent [&::-webkit-details-marker]:hidden">Earlier experience <span class="transition-transform group-open:rotate-45"><Icon name="plus" /></span></summary>
+            <div class="space-y-6 pt-4 pb-2">{earlierExperience.map((job) => <article>
+              <div class="flex flex-wrap items-center justify-between gap-2"><h3 class="flex items-center gap-3 text-role font-semibold"><img src={job.logo} alt="" width="40" height="40" loading="lazy" decoding="async" class="size-10 shrink-0 rounded-sm border border-line bg-white object-contain" /><span>{job.company}</span></h3><p class="font-mono text-meta text-muted"><EmploymentPeriod period={job.period} /></p></div>
+              <p class="mt-1 text-role font-semibold">{job.title}</p>
+              <p class="mt-2 text-body text-muted">{job.description}</p>
+              <ul class="mt-3 space-y-2">{job.points.map((point) => <li class="flex gap-3 text-body text-muted"><span class="mt-2.5 size-1 shrink-0 rounded-full bg-ink/35" aria-hidden="true" /><span>{point}</span></li>)}</ul>
+              <div class="mt-4 flex flex-wrap gap-1.5">{job.tags.map((label) => <Tag label={label} />)}</div>
+            </article>)}</div>
           </details>
         </div>
       </div>
@@ -93,8 +102,8 @@ const capabilities = [
 
     <section id="work" aria-labelledby="work-heading" class="scroll-mt-8 py-16 sm:py-20 lg:py-24">
       <div class="mb-10 flex flex-wrap items-end justify-between gap-6">
-        <div><p class="mb-5 font-mono text-[10px] uppercase tracking-[.18em] text-muted"><span class="mr-3 text-accent">02</span> Selected work</p><h2 id="work-heading" class="text-4xl font-medium tracking-[-.055em] sm:text-5xl">Built out of curiosity<span class="text-accent">.</span></h2></div>
-        <p class="max-w-[16rem] text-xs leading-6 text-muted">Personal products and small tools.<br />Things I wanted to exist, so I built them.</p>
+        <div><p class="mb-5 font-mono text-meta uppercase tracking-[.18em] text-muted"><span class="mr-3 text-accent">02</span> Selected work</p><h2 id="work-heading" class="text-4xl font-medium tracking-[-.055em] sm:text-5xl">Built out of curiosity<span class="text-accent">.</span></h2></div>
+        <p class="max-w-[20rem] text-body text-muted">Personal products and small tools.<br />Things I wanted to exist, so I built them.</p>
       </div>
       <div data-scroll-track class="relative">
         <div aria-hidden="true" class="pointer-events-none absolute top-0 -bottom-2 -left-6 hidden w-px bg-line lg:block">
@@ -104,21 +113,25 @@ const capabilities = [
         <div class="grid gap-x-8 gap-y-10 md:grid-cols-2">{featured.map((project, index) => <ProjectCard project={project} index={index} wide={index === 0} />)}</div>
       </div>
       <div class="mt-14 border-t border-line pt-7">
-        <div class="mb-4 flex flex-wrap items-center justify-between gap-4"><h3 class="font-mono text-[10px] uppercase tracking-[.15em] text-muted">Also on my workbench</h3><a href="https://github.com/cmglezpdev?tab=repositories" target="_blank" rel="noopener noreferrer" class="inline-flex min-h-9 items-center gap-2 font-mono text-[10px] text-muted hover:text-accent">More on GitHub <Icon name="external" class="size-3" /><span class="sr-only">, opens in a new tab</span></a></div>
-        {additionalWork.map((item) => <a href={item.url} target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between gap-5 border-b border-line py-5 transition-colors hover:text-accent"><div><div class="flex flex-wrap items-center gap-x-4 gap-y-2"><h4 class="text-sm font-semibold">{item.name}</h4><span class="font-mono text-[9px] text-muted">{item.tag}</span></div><p class="mt-2 max-w-xl text-xs leading-6 text-muted">{item.description}</p></div><Icon name="external" class="size-4 shrink-0 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" /><span class="sr-only">, opens in a new tab</span></a>)}
+        <div class="mb-4 flex flex-wrap items-center justify-between gap-4"><h3 class="font-mono text-meta uppercase tracking-[.15em] text-muted">Also on my workbench</h3><a href="https://github.com/cmglezpdev?tab=repositories" target="_blank" rel="noopener noreferrer" class="inline-flex min-h-9 items-center gap-2 font-mono text-meta text-muted hover:text-accent">More on GitHub <Icon name="external" class="size-3" /><span class="sr-only">, opens in a new tab</span></a></div>
+        {additionalWork.map((item) => {
+          const Entry = item.url ? 'a' : 'div';
+          return <Entry href={item.url} target={item.url ? '_blank' : undefined} rel={item.url ? 'noopener noreferrer' : undefined} class:list={['group flex items-center justify-between gap-5 border-b border-line py-5', item.url && 'transition-colors hover:text-accent']}><div><div class="flex flex-wrap items-center gap-x-4 gap-y-2"><h4 class="text-role font-semibold">{item.name}</h4><span class="font-mono text-meta text-muted">{item.tag}</span></div><p class="mt-2 max-w-xl text-body text-muted">{item.description}</p></div>{item.url && <><Icon name="external" class="size-4 shrink-0 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" /><span class="sr-only">, opens in a new tab</span></>}</Entry>;
+        })}
       </div>
     </section>
 
     <section id="about" aria-labelledby="about-heading" class="scroll-mt-8 border-t border-line py-16 sm:py-20 lg:py-24">
-      <p class="mb-5 font-mono text-[10px] uppercase tracking-[.18em] text-muted"><span class="mr-3 text-accent">03</span> A little about me</p>
+      <p class="mb-5 font-mono text-meta uppercase tracking-[.18em] text-muted"><span class="mr-3 text-accent">03</span> A little about me</p>
       <div class="grid gap-10 md:grid-cols-2 md:gap-16">
         <div>
           <h2 id="about-heading" class="text-4xl leading-[1.15] font-medium tracking-[-.055em]">I learn by building.<br />Then taking it apart<span class="text-accent">.</span></h2>
-          <p class="mt-6 text-sm leading-7 text-muted">I'm a Cuban software engineer based in Mexico, with a Computer Science degree from the University of Havana. I've worked across frontend and backend, with most of my professional experience rooted in backend systems.</p>
-          <p class="mt-4 text-sm leading-7 text-muted">These days I'm focused on full-stack products and practical AI engineering. Outside work, I build tools I use myself, practice English with Nativo, and explore AWS by deploying infrastructure with Terraform, testing it, and tearing it down.</p>
-          <p class="mt-6 inline-flex items-center gap-2 font-mono text-[10px] text-muted"><span class="size-1.5 rounded-full bg-accent"></span>Always something in progress.</p>
+          <p class="mt-6 text-body text-muted">I'm a Cuban software engineer based in Mexico and a Computer Science graduate of the University of Havana. I started in backend development, building services for payments and business operations, then took on technical leadership and full-stack product development.</p>
+          <p class="mt-4 text-body text-muted">My focus is AI application engineering: connecting models to useful tools and data, building the user experience around them, and working through permissions, reliability, and cost. I've built these features in a business platform and in products I use myself.</p>
+          <p class="mt-4 text-body text-muted">Nativo is part of how my wife and I practice English. OpenWhispr Proxy supports my daily dictation workflow. I also study AWS and Terraform by deploying small systems, testing them, documenting the decisions, and tearing them down.</p>
+          <p class="mt-6 inline-flex items-center gap-2 font-mono text-meta text-muted"><span class="size-1.5 rounded-full bg-accent"></span>Always something in progress.</p>
         </div>
-        <div class="grid grid-cols-1 content-start gap-x-6 gap-y-6 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2">{capabilities.map((item, index) => <div class="border-t border-line pt-4"><span class="font-mono text-[9px] text-accent">0{index + 1} /</span><h3 class="mt-3 text-sm font-semibold">{item.title}</h3><p class="mt-2 text-xs leading-6 text-muted">{item.text}</p></div>)}</div>
+        <div class="grid grid-cols-1 content-start gap-x-6 gap-y-6 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2">{capabilities.map((item, index) => <div class="border-t border-line pt-4"><span class="font-mono text-meta text-accent">0{index + 1} /</span><h3 class="mt-3 text-role font-semibold">{item.title}</h3><p class="mt-2 text-body text-muted">{item.text}</p></div>)}</div>
       </div>
     </section>
   </div>

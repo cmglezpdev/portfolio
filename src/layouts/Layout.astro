@@ -14,7 +14,7 @@ interface Props {
   noindex?: boolean;
 }
 
-const { title = `${profile.name} | Software Engineer & AI Engineer`, description = profile.description, project, noindex = false } = Astro.props;
+const { title = `${profile.name} | ${profile.title}`, description = profile.description, project, noindex = false } = Astro.props;
 const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : undefined;
 const structuredData = {
   '@context': 'https://schema.org',

@@ -6,15 +6,15 @@ import Icon from './Icon.astro';
   <section id="contact" aria-labelledby="contact-heading" class="scroll-mt-10 border-t border-line py-16 sm:py-24">
     <div class="flex flex-wrap items-start justify-between gap-8">
       <div>
-        <p class="mb-5 font-mono text-[10px] uppercase tracking-[.18em] text-muted">Have a role in mind?</p>
+        <p class="mb-5 font-mono text-meta uppercase tracking-[.18em] text-muted">Have a role in mind?</p>
         <h2 id="contact-heading" class="text-4xl font-medium tracking-[-.06em] sm:text-6xl">Let's build something<span class="text-accent">.</span></h2>
-        <p class="mt-5 max-w-md text-sm leading-7 text-muted">Open to software engineering, full-stack, and AI engineering opportunities. Based in Mexico, working remotely.</p>
+        <p class="mt-5 max-w-md text-body text-muted">Open to software engineering, full-stack, and AI engineering opportunities. Based in Mexico, working remotely.</p>
       </div>
       <a href={`mailto:${profile.email}`} class="group mt-2 flex size-16 shrink-0 items-center justify-center rounded-full border border-ink transition-colors hover:border-accent hover:bg-accent hover:text-white" aria-label={`Email ${profile.email}`}><Icon name="external" class="size-7 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" /></a>
     </div>
-    <a href={`mailto:${profile.email}`} class="mt-7 inline-block break-all border-b border-ink/30 pb-1 text-sm transition-colors hover:border-accent hover:text-accent">{profile.email}</a>
+    <a href={`mailto:${profile.email}`} class="mt-7 inline-block break-all border-b border-ink/30 pb-1 text-body transition-colors hover:border-accent hover:text-accent">{profile.email}</a>
   </section>
-  <div class="flex flex-wrap items-center justify-between gap-x-8 gap-y-4 border-t border-line py-7 font-mono text-[10px] text-muted">
+  <div class="flex flex-wrap items-center justify-between gap-x-8 gap-y-4 border-t border-line py-7 font-mono text-meta text-muted">
     <p>© {new Date().getUTCFullYear()} Carlos Manuel González</p>
     <div class="flex flex-wrap gap-6">{profile.socials.map((social) => <a href={social.url} target="_blank" rel="noopener noreferrer" class="inline-flex min-h-8 items-center gap-1.5 hover:text-accent">{social.label}<Icon name="external" class="size-3" /><span class="sr-only">, opens in a new tab</span></a>)}</div>
     <a href="#top" class="inline-flex min-h-8 items-center gap-2 hover:text-accent">Back to top <span aria-hidden="true">↑</span></a>
