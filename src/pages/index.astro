@@ -10,8 +10,8 @@ const featured = projects.filter((project) => project.featured);
 const capabilities = [
   { title: 'Build applications', text: 'TypeScript · NestJS · React · C# / .NET · PostgreSQL' },
   { title: 'Engineer AI features', text: 'Vercel AI SDK · Tool calling · RAG · MCP · Evaluation' },
-  { title: 'Deploy & operate', text: 'Docker · Dokploy · CI/CD · Grafana · AWS S3' },
-  { title: 'Explore infrastructure', text: 'AWS · Terraform · Deploy, test, and tear down' },
+  { title: 'Deploy & operate', text: 'Docker · Dokploy · CI/CD · Grafana · AWS' },
+  { title: 'Explore infrastructure', text: 'AWS · Terraform · Infrastructure as code' },
 ];
 ---
 <Layout>
@@ -125,10 +125,9 @@ const capabilities = [
       <p class="mb-5 font-mono text-meta uppercase tracking-[.18em] text-muted"><span class="mr-3 text-accent">03</span> A little about me</p>
       <div class="grid gap-10 md:grid-cols-2 md:gap-16">
         <div>
-          <h2 id="about-heading" class="text-4xl leading-[1.15] font-medium tracking-[-.055em]">I learn by building.<br />Then taking it apart<span class="text-accent">.</span></h2>
+          <h2 id="about-heading" class="text-4xl leading-[1.15] font-medium tracking-[-.055em]">I learn by building<span class="text-accent">.</span></h2>
           <p class="mt-6 text-body text-muted">I'm a Cuban software engineer based in Mexico and a Computer Science graduate of the University of Havana. I started in backend development, building services for payments and business operations, then took on technical leadership and full-stack product development.</p>
-          <p class="mt-4 text-body text-muted">My focus is AI application engineering: connecting models to useful tools and data, building the user experience around them, and working through permissions, reliability, and cost. I've built these features in a business platform and in products I use myself.</p>
-          <p class="mt-4 text-body text-muted">Nativo is part of how my wife and I practice English. OpenWhispr Proxy supports my daily dictation workflow. I also study AWS and Terraform by deploying small systems, testing them, documenting the decisions, and tearing them down.</p>
+          <p class="mt-4 text-body text-muted">I work across backend services, full-stack products, and AI-powered applications. I'm especially interested in scalable systems, software architecture, and system design. I'm growing my AI engineering practice by building AI features and full AI applications. In my daily work, I use coding agents for implementation, review, and iteration.</p>
           <p class="mt-6 inline-flex items-center gap-2 font-mono text-meta text-muted"><span class="size-1.5 rounded-full bg-accent"></span>Always something in progress.</p>
         </div>
         <div class="grid grid-cols-1 content-start gap-x-6 gap-y-6 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2">{capabilities.map((item, index) => <div class="border-t border-line pt-4"><span class="font-mono text-meta text-accent">0{index + 1} /</span><h3 class="mt-3 text-role font-semibold">{item.title}</h3><p class="mt-2 text-body text-muted">{item.text}</p></div>)}</div>
