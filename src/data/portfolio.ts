@@ -6,7 +6,7 @@ export const profile: Profile = {
   title: 'AI Software Engineer',
   email: 'cmglezpdev@gmail.com',
   location: 'Mexico',
-  description: 'I build multi-tenant SaaS platforms, payment systems, and full-stack applications. Focused on AI-powered applications, agentic workflows, and tool integrations. I\'m passionate about AI engineering, system design, and modern software development practices. Hold a B.Sc. in Computer Science.',
+  description: 'I build backend services, payment systems, and full-stack SaaS products, including AI-powered applications with agentic workflows. I care about scalable systems, software architecture, and system design. I use coding agents in my daily development workflow. B.Sc. in Computer Science.',
   portrait: '/images/profile/carlos-manuel.webp',
   socials: [
     { label: 'GitHub', url: 'https://github.com/cmglezpdev' },
@@ -216,7 +216,7 @@ export const projects: Project[] = [
 export const additionalWork: AdditionalWork[] = [
   { name: 'Veta', description: 'Extracts YouTube video and playlist transcripts and prepares prompts for an AI agent to turn them into timestamped learning notes.', tag: 'CLI · Developer tooling', url: 'https://github.com/cmglezpdev/veta' },
   { name: 'QR Generator', description: 'A free QR-code generator with configurable styles and no account required. Shared publicly, with feedback from people using it.', tag: 'Web tool · QR codes', url: 'https://qr-generator.linkseek.app/' },
-  { name: 'AWS & Terraform lab', description: 'Infrastructure exercises I deploy, test, and tear down, with architecture diagrams and explanations of service choices.', tag: 'Cloud · Learning projects', url: 'https://github.com/cmglezpdev/terraform-aws-lab' },
+  { name: 'AWS & Terraform lab', description: 'Hands-on AWS and Terraform exercises with deployment tests, architecture diagrams, and notes on service choices.', tag: 'Cloud · Learning projects', url: 'https://github.com/cmglezpdev/terraform-aws-lab' },
   // { name: 'System design lab', description: 'A URL-shortener experiment exploring load testing, caching, and PostgreSQL replication.', tag: 'Backend · Learning project', url: 'https://github.com/cmglezpdev/link-shortener-scalability-lab' },
   { name: 'Supabase contribution', description: 'Fixed permissions in the SQL example for the automatic embeddings guide.', tag: 'Documentation · Merged', url: 'https://github.com/supabase/supabase/pull/35600' },
 ];
