@@ -22,3 +22,12 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# Local interview preparation, not portfolio content
+/.private-notes/
+
+# Temporary source images; optimized WebP assets live under public/images/
+/projects-images/
+/banner.png
+/dashboard.png
+/orbstack-icon.png

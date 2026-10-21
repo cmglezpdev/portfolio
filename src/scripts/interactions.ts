@@ -74,23 +74,61 @@ function initProjectPreview(): void {
   const imageContainer = dialog.querySelector('[data-preview-image]');
   const projectLink = dialog.querySelector('[data-preview-link]');
   const closeButton = dialog.querySelector('[data-close-preview]');
+  const controls = dialog.querySelector('[data-preview-controls]');
+  const counter = dialog.querySelector('[data-preview-counter]');
+  const fullImageLink = dialog.querySelector('[data-preview-full-image]');
+  const previousButton = dialog.querySelector('[data-preview-previous]');
+  const nextButton = dialog.querySelector('[data-preview-next]');
+  let slides: HTMLImageElement[] = [];
+  let currentIndex = 0;
   let previousOverflow = '';
+
+  function showSlide(index: number): void {
+    if (!slides.length || !imageContainer || !description) return;
+    currentIndex = (index + slides.length) % slides.length;
+    const image = slides[currentIndex].cloneNode(true);
+    if (!(image instanceof HTMLImageElement)) return;
+    image.loading = 'eager';
+    image.className = 'block h-full w-full object-contain';
+    imageContainer.replaceChildren(image);
+    description.textContent = image.alt;
+    if (counter) counter.textContent = `${currentIndex + 1} / ${slides.length}`;
+    if (fullImageLink instanceof HTMLAnchorElement) {
+      const largestSrc = image.srcset
+        .split(',')
+        .map((candidate) => candidate.trim().split(/\s+/))
+        .filter((candidate) => candidate.length > 1)
+        .sort((left, right) => Number.parseInt(right[1], 10) - Number.parseInt(left[1], 10))[0]?.[0];
+      fullImageLink.href = largestSrc || image.currentSrc || image.src;
+    }
+  }
+
+  previousButton?.addEventListener('click', () => showSlide(currentIndex - 1));
+  nextButton?.addEventListener('click', () => showSlide(currentIndex + 1));
+  dialog.addEventListener('keydown', (event) => {
+    if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+    event.preventDefault();
+    showSlide(currentIndex + (event.key === 'ArrowRight' ? 1 : -1));
+  });
 
   document.querySelectorAll('[data-preview]').forEach((button) => {
     button.addEventListener('click', () => {
-      const source = button.querySelector('img');
+      const source = button.querySelector('img[data-preview-main]');
       if (!(source instanceof HTMLImageElement)) return;
       if (!(button instanceof HTMLElement) || !title || !description || !caption || !imageContainer || !projectLink) return;
       title.textContent = button.dataset.title || 'Project preview';
-      description.textContent = button.dataset.description || '';
       caption.textContent = button.dataset.caption || '';
       projectLink.setAttribute('href', button.dataset.href || '/#work');
-      const image = source.cloneNode(true);
-      if (image instanceof HTMLImageElement) {
-        image.loading = 'eager';
-        image.className = 'block h-auto w-full';
-      }
-      imageContainer.replaceChildren(image);
+      slides = [source];
+      button.querySelectorAll('template[data-preview-slide]').forEach((template) => {
+        if (!(template instanceof HTMLTemplateElement)) return;
+        const image = template.content.querySelector('img[data-preview-main]');
+        if (image instanceof HTMLImageElement) slides.push(image);
+      });
+      if (controls instanceof HTMLElement) controls.hidden = false;
+      if (previousButton instanceof HTMLButtonElement) previousButton.hidden = slides.length < 2;
+      if (nextButton instanceof HTMLButtonElement) nextButton.hidden = slides.length < 2;
+      showSlide(0);
       previousOverflow = document.documentElement.style.overflow;
       document.documentElement.style.overflow = 'hidden';
       dialog.showModal();

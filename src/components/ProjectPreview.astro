@@ -2,8 +2,16 @@
 import type { Project } from '../types/portfolio';
 interface Props { project: Project; loading?: 'eager' | 'lazy'; }
 const { project, loading = 'lazy' } = Astro.props;
-// Replace with a real screenshot path when one is available.
-const image = project.image || `/images/${project.visual}.svg`;
-const caption = project.image ? 'Project screenshot' : ['proxy', 'agents'].includes(project.visual) ? 'Integration diagram' : 'Interface illustration';
+const caption = ['proxy', 'agents'].includes(project.visual) ? 'Integration diagram' : 'Interface illustration';
+const slides = project.images.length ? project.images : [{ src: `/images/${project.visual}.svg`, description: `${project.name}: ${caption.toLowerCase()}.` }];
+const imageClass = 'relative z-10 block h-full w-full object-contain transition-transform duration-700 motion-safe:group-hover/preview:scale-[1.025]';
 ---
-<img src={image} alt={`${project.name}: ${caption.toLowerCase()}`} width="1000" height="650" loading={loading} decoding="async" class="block h-full w-full object-cover transition-transform duration-700 motion-safe:group-hover/preview:scale-[1.025]" />
+<div class="relative isolate aspect-[1000/650] w-full overflow-hidden bg-paper">
+  {slides.map((slide, index) => index === 0 ? (
+    <img data-preview-main src={slide.src} alt={slide.description} loading={loading} decoding="async" class={imageClass} />
+  ) : (
+    <template data-preview-slide>
+      <img data-preview-main src={slide.src} alt={slide.description} decoding="async" />
+    </template>
+  ))}
+</div>
