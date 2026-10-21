@@ -1,5 +1,29 @@
 # Portfolio brief
 
+## Latest interview notes
+
+### Confirmed content structure
+
+- Keep Dara as one employer with two separate career stages. Each stage has its own description, contributions, technologies, and dates: earlier backend/microservices work and later technical leadership on the new modular monolith. Do not blend both architectures into one project.
+- The CI improvements belong to the transition around the beginning of technical leadership, before work on the new platform.
+- Keep the current homepage hierarchy: professional experience, collapsed earlier experience, selected personal projects, workbench, and About.
+- Dara's AI case study is linked from employment. It is not a featured personal project or the next item in personal-project navigation.
+- Keep Nativo first, followed by Linkseek and OpenWhispr Proxy. Other tools and contributions receive compact workbench descriptions. QR Generator is at https://qr-generator.linkseek.app/.
+- Revise summaries, project details, and About in place. No redesign is requested. Use the supplied project screenshots as WebP files under `public/images/projects/`.
+- The local portfolio copy has been revised from the interviews. Nothing was posted or deployed publicly.
+
+Follow-up interviews expanded the work inventory and surfaced discrepancies in earlier dates, usage counts, and Linkseek billing details. Resolve those discrepancies before publishing; do not silently choose one account.
+
+- Primary target is AI application engineering backed by full-stack delivery. Keep international and Mexico-based opportunities open, with English public content and no compensation figures.
+- Private-source projects can use general architecture and permitted screenshots as evidence. Public source code is unnecessary.
+- Dara operations experience is principally self-hosted Docker/Dokploy, plus actual AWS S3 document storage configured through CDK. Azure at AOShield is an existing environment Carlos has not configured. AWS/Terraform projects are practical learning exercises.
+- Carlos wants CI/CD improvements expressed as percentages, without spending amounts. Clarified build timings support approximately 60–70% shorter typical CI builds; the recalled ranges do not establish an 80% improvement. Keep build time, deployment time, and spending separate.
+- Dara technical leadership was functional, not a formal title promotion: initially coordinated approximately five developers, then assumed broader implementation as staffing reduced. Final title wording remains open.
+- Last actual work at Dara was in late August 2026. September in LinkedIn was chosen for duration display; use actual employment dates, pending contractual confirmation.
+- AOShield contributions include production C# API refactoring across entities to adopt existing authorization patterns, related React changes, defect fixes, and smaller shared-package improvements.
+- Dara's scheduled agent execution was internally tested and unfinished in its tool restriction controls; distinguish it from the interactive agent deployment.
+- Nativo has a reported development evaluation workflow, but exact accuracy, cost savings, model names, and dataset size are unverified.
+
 ## Confirmed constraints
 
 - All public portfolio content will be in English.
@@ -33,7 +57,7 @@
 The current GitHub profile README provides the canonical public names below. Final selection and project claims still require review.
 
 - Nativo: language learning through formatted content import, generated audio, assisted reading, word familiarity tracking, idiom/phrasal-verb detection, and writing feedback. Writing feedback needs refinement. Stripe subscriptions are implemented. Vocabulary summaries and Anki export are future ideas. Website: https://soundlikenative.com.
-- Linkseek: bookmark management with editable titles, descriptions, images, and relationships. Naming was confirmed in the interview. Stripe subscriptions exist; a future free model and MCP integration are being considered. Automatic AI descriptions and MCP access are not current capabilities. Website: https://linkseek.app.
+- Linkseek: bookmark management with editable titles, descriptions, images, and relationships. Naming was confirmed in the earlier interview. Payment configuration is unverified; latest recollection is a one-time payment, possibly optional, without active charges. Do not claim subscriptions or a functioning checkout until checked. MCP integration is a future idea. Automatic AI descriptions and MCP access are not current capabilities. Website: https://linkseek.app.
 - veta: CLI that extracts YouTube transcripts into Markdown with chapters, timestamps, and agent prompts. It does not call an LLM or generate summaries itself. Repository: https://github.com/cmglezpdev/veta.
 - openwhispr-proxy: compatibility proxy between OpenWhispr and Vercel AI Gateway. Repository: https://github.com/cmglezpdev/openwhispr-proxy.
 - AWS/Terraform learning projects: deployed and destroyed to explore services; repository identification pending.
@@ -64,7 +88,7 @@ These ideas are proposals, not settled requirements.
 
 - Final review of drafted English copy and public descriptions of company work.
 - Exact AOShield job title.
-- Portrait and real project screenshots.
+- Final review of the portrait and project screenshots.
 - An updated résumé PDF, if a download link is desired.
 - Final public domain and deployment host.
 - The specific AI-accessibility scoring tool mentioned by the user was not identified or run. The first draft uses static HTML and standard crawlability metadata instead.
