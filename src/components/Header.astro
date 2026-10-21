@@ -1,0 +1,17 @@
+---
+import Icon from './Icon.astro';
+const isHome = Astro.url.pathname === '/';
+const section = (id: string) => `${isHome ? '' : '/'}#${id}`;
+---
+<header class="relative z-20 mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 border-b border-line px-5 py-5 sm:flex-nowrap sm:px-8 lg:px-12">
+  <a href="/" aria-label="Carlos Manuel, home" class="group flex min-h-11 items-center gap-2 font-mono text-control font-medium tracking-tight">
+    <span class="flex size-8 items-center justify-center rounded-sm bg-ink text-meta text-paper transition-colors group-hover:bg-accent">cm<span class="text-white/50">.</span></span>
+    <span class="hidden sm:inline">carlos manuel<span class="text-accent">.</span></span>
+  </a>
+  <nav aria-label="Main navigation" class="flex items-center gap-2 text-control sm:gap-7">
+    <a href={section('experience')} data-nav="experience" class="flex min-h-11 items-center text-muted transition-colors hover:text-accent aria-[current=location]:text-accent">Experience</a>
+    <a href={section('work')} data-nav="work" class="flex min-h-11 items-center text-muted transition-colors hover:text-accent aria-[current=location]:text-accent">Work</a>
+    <a href={section('about')} data-nav="about" class="flex min-h-11 items-center text-muted transition-colors hover:text-accent aria-[current=location]:text-accent">About</a>
+    <a href={section('contact')} class="inline-flex min-h-10 items-center gap-2 rounded-sm bg-ink px-2 text-paper transition-colors hover:bg-accent sm:px-4">Let's talk <Icon name="external" class="hidden size-3.5 sm:block" /></a>
+  </nav>
+</header>

@@ -1,0 +1,24 @@
+---
+import Icon from './Icon.astro';
+---
+<dialog id="project-preview" aria-labelledby="preview-title" aria-describedby="preview-description" class="fixed inset-0 m-auto max-h-[90dvh] w-[calc(100%-2rem)] max-w-5xl overflow-y-auto rounded-md border border-line bg-paper p-0 text-ink shadow-2xl backdrop:bg-ink/65 backdrop:backdrop-blur-sm">
+  <div class="flex items-center justify-between gap-4 border-b border-line px-5 py-4 sm:px-7">
+    <div><h2 id="preview-title" class="text-lg font-semibold tracking-tight"></h2><p id="preview-caption" class="mt-1 font-mono text-meta text-muted"></p></div>
+    <button type="button" data-close-preview aria-label="Close preview" class="flex size-11 shrink-0 items-center justify-center rounded-full border border-line transition-colors hover:border-accent hover:text-accent"><Icon name="close" class="size-5" /></button>
+  </div>
+  <div data-preview-image class="relative flex h-[min(60dvh,42rem)] items-center justify-center overflow-hidden bg-paper"></div>
+  <div data-preview-controls class="border-t border-line px-5 py-3 sm:px-7">
+    <div class="flex items-center justify-between gap-4">
+      <button type="button" data-preview-previous aria-label="Previous image" aria-controls="preview-description" class="flex size-11 items-center justify-center rounded-full border border-line hover:border-accent hover:text-accent"><Icon name="arrow" class="size-5 rotate-180" /></button>
+      <div class="flex flex-col items-center gap-1">
+        <p data-preview-counter aria-live="polite" aria-atomic="true" class="font-mono text-meta text-muted"></p>
+        <a data-preview-full-image href="/" target="_blank" rel="noopener noreferrer" class="inline-flex min-h-8 items-center gap-1.5 text-control font-semibold text-accent hover:text-ink">Open full size <Icon name="external" class="size-3.5" /><span class="sr-only">, opens in a new tab</span></a>
+      </div>
+      <button type="button" data-preview-next aria-label="Next image" aria-controls="preview-description" class="flex size-11 items-center justify-center rounded-full border border-line hover:border-accent hover:text-accent"><Icon name="arrow" class="size-5" /></button>
+    </div>
+  </div>
+  <div class="flex flex-wrap items-center justify-between gap-5 border-t border-line px-5 py-5 sm:px-7">
+    <p id="preview-description" aria-live="polite" aria-atomic="true" class="min-w-0 flex-1 basis-64 text-body text-muted"></p>
+    <a data-preview-link href="/" class="inline-flex min-h-11 shrink-0 items-center gap-2 rounded-sm bg-accent px-4 text-control font-semibold text-white hover:bg-ink">Read project <Icon name="arrow" /></a>
+  </div>
+</dialog>

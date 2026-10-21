@@ -1,0 +1,68 @@
+---
+import type { GetStaticPaths, InferGetStaticPropsType } from 'astro';
+import Layout from '../../layouts/Layout.astro';
+import Icon from '../../components/Icon.astro';
+import Tag from '../../components/Tag.astro';
+import ProjectPreview from '../../components/ProjectPreview.astro';
+import PreviewDialog from '../../components/PreviewDialog.astro';
+import { projects } from '../../data/portfolio';
+
+export const getStaticPaths = (() => {
+  return projects.map((project) => ({ params: { slug: project.slug }, props: { project } }));
+}) satisfies GetStaticPaths;
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+const { project } = Astro.props;
+const isCaseStudy = project.format === 'case-study';
+const relatedProjects = projects.filter((item) => item.featured === project.featured);
+const nextProject = relatedProjects.length > 1 ? relatedProjects[(relatedProjects.findIndex((item) => item.slug === project.slug) + 1) % relatedProjects.length] : null;
+const backLink = project.featured ? '/#work' : '/#experience';
+const backLabel = project.featured ? 'Back to selected work' : 'Back to experience';
+const caption = project.images.length ? 'Project screenshot' : ['proxy', 'agents'].includes(project.visual) ? 'Integration diagram' : 'Interface illustration';
+---
+<Layout title={`${project.name} | Carlos Manuel González`} description={project.summary} project={project}>
+  <article class="mx-auto max-w-6xl px-5 pt-10 sm:px-8 sm:pt-16 lg:px-12">
+    <a href={backLink} class="mb-10 inline-flex min-h-10 items-center gap-2 font-mono text-meta text-muted hover:text-accent"><span aria-hidden="true">←</span> {backLabel}</a>
+    <header>
+      <div class="flex flex-wrap items-center gap-x-5 gap-y-2 font-mono text-meta uppercase tracking-[.12em] text-muted"><span>{project.category}</span><span class="inline-flex items-center gap-2 normal-case tracking-normal"><span class="size-1.5 rounded-full bg-accent" />{project.status}</span></div>
+      <h1 class="mt-5 text-5xl font-medium tracking-[-.065em] sm:text-7xl">{project.name}<span class="text-accent">.</span></h1>
+      <p class="mt-5 max-w-2xl text-xl leading-relaxed tracking-[-.025em] text-muted sm:text-2xl">{project.headline}</p>
+      <div class="mt-6 flex flex-wrap gap-2">{project.tags.map((label) => <Tag label={label} />)}</div>
+      <div class="my-8 flex flex-wrap items-center gap-4">{project.links.map((link) => <a href={link.url} target="_blank" rel="noopener noreferrer" class="inline-flex min-h-11 items-center gap-3 rounded-sm bg-ink px-5 text-control text-white transition-colors hover:bg-accent">{link.label}<Icon name="external" /><span class="sr-only">, opens in a new tab</span></a>)}<span class="font-mono text-meta text-muted">{project.sourceNote}</span></div>
+    </header>
+    {!isCaseStudy && <figure>
+      <button type="button" data-preview data-title={project.name} data-description={project.headline} data-href={`/work/${project.slug}/`} data-caption={caption} aria-label={`Enlarge ${project.name} ${caption.toLowerCase()}`} class="group/preview relative block w-full cursor-zoom-in overflow-hidden rounded-sm border border-line"><ProjectPreview project={project} loading="eager" /><span class="absolute right-5 bottom-5 flex size-11 items-center justify-center rounded-full border border-line bg-white/90 transition-colors group-hover/preview:bg-accent group-hover/preview:text-white"><Icon name="plus" class="size-5" /></span></button>
+      <figcaption class="mt-3 font-mono text-meta text-muted">{project.images[0]?.description || caption}{!project.images.length && ' · A visual explanation of the project, not a product screenshot.'}</figcaption>
+    </figure>}
+    <div class="mt-12 grid gap-10 border-t border-line pt-10 pb-16 lg:grid-cols-[.65fr_2fr] lg:gap-20 lg:pb-24">
+      <aside>
+        <h2 class="font-mono text-meta uppercase tracking-[.15em] text-muted">{isCaseStudy ? 'Case study' : 'Project'}</h2>
+        <nav aria-label="Project sections" class="mt-5 flex flex-wrap gap-x-5 gap-y-3 text-control lg:flex-col lg:items-start">
+          <a href="#overview" class="hover:text-accent">{isCaseStudy ? 'Context' : 'Overview'}</a>
+          <a href={isCaseStudy ? '#contribution' : '#how-it-works'} class="hover:text-accent">{isCaseStudy ? 'My role' : 'How it works'}</a>
+          {project.decisions.length > 0 && <a href="#decisions" class="hover:text-accent">{isCaseStudy ? 'Engineering decisions' : 'Technical decisions'}</a>}
+          {isCaseStudy && <a href="#outcome" class="hover:text-accent">Early use & lessons</a>}
+        </nav>
+      </aside>
+      <div class="space-y-12">
+        <section id="overview" class="scroll-mt-10">
+          <h2 class="text-2xl font-semibold tracking-[-.04em]">{isCaseStudy ? 'The product and its constraints' : 'Overview'}</h2>
+          <p class="mt-4 text-body text-muted">{project.overview}</p>
+          {project.format === 'case-study' && <p class="mt-4 text-body text-muted">{project.problem}</p>}
+        </section>
+        {project.format === 'case-study' ? (
+          <section id="contribution" class="scroll-mt-10"><h2 class="text-2xl font-semibold tracking-[-.04em]">My role</h2><ul class="mt-5 space-y-4">{project.contributions.map((item) => <li class="flex gap-4 text-body text-muted"><span class="mt-2.5 size-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true" /><span>{item}</span></li>)}</ul></section>
+        ) : (
+          <section id="how-it-works" class="scroll-mt-10">
+            <h2 class="text-2xl font-semibold tracking-[-.04em]">How it works</h2>
+            {project.howItWorks.map((paragraph) => <p class="mt-4 text-body text-muted">{paragraph}</p>)}
+          </section>
+        )}
+        {project.decisions.length > 0 && <section id="decisions" class="scroll-mt-10"><h2 class="text-2xl font-semibold tracking-[-.04em]">{isCaseStudy ? 'Engineering decisions' : 'Technical decisions'}</h2><div class="mt-5 space-y-6">{project.decisions.map((decision, index) => <div class="border-t border-line pt-5"><p class="font-mono text-meta text-accent">0{index + 1}</p><h3 class="mt-2 text-role font-semibold">{decision.title}</h3><p class="mt-2 text-body text-muted">{decision.text}</p></div>)}</div></section>}
+        {project.format === 'case-study' && <section id="outcome" class="scroll-mt-10 border-l-2 border-accent pl-5"><h2 class="text-2xl font-semibold tracking-[-.04em]">Early use and what I would simplify</h2><p class="mt-4 text-body text-muted">{project.outcome}</p><p class="mt-4 text-body text-muted">{project.next}</p></section>}
+      </div>
+    </div>
+    {nextProject ? <a href={`/work/${nextProject.slug}/`} class="group flex flex-wrap items-center justify-between gap-6 border-t border-line py-10 transition-colors hover:text-accent"><span><span class="font-mono text-meta uppercase tracking-[.14em] text-muted">Next project</span><span class="mt-2 block text-3xl font-medium tracking-[-.05em]">{nextProject.name}</span></span><Icon name="arrow" class="size-7 transition-transform group-hover:translate-x-1" /></a> : <a href={backLink} class="inline-flex min-h-12 items-center gap-3 border-t border-line py-10 text-body hover:text-accent">{backLabel}<Icon name="arrow" /></a>}
+  </article>
+  <PreviewDialog />
+</Layout>

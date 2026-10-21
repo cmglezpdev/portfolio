@@ -1,0 +1,21 @@
+---
+import type { EmploymentPeriod } from '../types/portfolio';
+import { formatEmploymentPeriod } from '../utils/employment-period';
+
+interface Props {
+  period: EmploymentPeriod;
+}
+
+const { period } = Astro.props;
+---
+<span data-current-employment-start={period.end ? undefined : period.start}>{formatEmploymentPeriod(period)}</span>
+
+<script>
+  import { formatEmploymentPeriod } from '../utils/employment-period';
+
+  // Keep current-role durations fresh between static site deployments.
+  document.querySelectorAll<HTMLElement>('[data-current-employment-start]').forEach((element) => {
+    const start = element.dataset.currentEmploymentStart;
+    if (start) element.textContent = formatEmploymentPeriod({ start });
+  });
+</script>

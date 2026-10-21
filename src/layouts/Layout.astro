@@ -1,0 +1,73 @@
+---
+import '@fontsource-variable/manrope';
+import '@fontsource/ibm-plex-mono/400.css';
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { profile } from '../data/portfolio';
+import type { Project } from '../types/portfolio';
+
+interface Props {
+  title?: string;
+  description?: string;
+  project?: Project;
+  noindex?: boolean;
+}
+
+const { title = `${profile.name} | ${profile.title}`, description = profile.description, project, noindex = false } = Astro.props;
+const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : undefined;
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': project ? 'WebPage' : 'ProfilePage',
+  ...(canonical ? { url: canonical } : {}),
+  mainEntity: project ? {
+    '@type': 'CreativeWork',
+    name: project.name,
+    description: project.summary,
+    keywords: project.tags.join(', '),
+    ...(canonical ? { url: canonical } : {}),
+    creator: { '@type': 'Person', name: profile.name },
+  } : {
+    '@type': 'Person',
+    name: profile.name,
+    jobTitle: profile.title,
+    description: profile.description,
+    ...(Astro.site ? { url: Astro.site.href } : {}),
+    sameAs: profile.socials.map(({ url }) => url),
+    knowsAbout: ['Software engineering', 'Full-stack development', 'AI engineering', 'TypeScript', 'Node.js', 'React', 'AI agents', 'RAG', 'Model Context Protocol'],
+  },
+};
+---
+<!doctype html>
+<html lang="en" class="scroll-smooth motion-reduce:scroll-auto">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#f6f6f3" />
+    {noindex && <meta name="robots" content="noindex" />}
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    {canonical && <link rel="canonical" href={canonical} />}
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    {canonical && <meta property="og:url" content={canonical} />}
+    <meta property="og:image" content={Astro.site ? new URL('/social-card.png', Astro.site).href : '/social-card.png'} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Carlos Manuel González, Software Engineer and AI Engineer" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <title>{title}</title>
+    {!noindex && <script type="application/ld+json" set:html={JSON.stringify(structuredData).replace(/</g, '\\u003c')} />}
+  </head>
+  <body id="top" class="bg-paper font-sans text-ink antialiased selection:bg-accent selection:text-white [&_a]:decoration-1 [&_a]:underline-offset-4 [&_:focus-visible]:outline-2 [&_:focus-visible]:outline-offset-4 [&_:focus-visible]:outline-accent">
+    <a href="#main" class="fixed top-3 left-3 z-50 -translate-y-24 rounded-sm bg-ink px-5 py-3 text-white focus:translate-y-0">Skip to content</a>
+    <Header />
+    <main id="main"><slot /></main>
+    <Footer />
+    <script src="../scripts/interactions.ts"></script>
+  </body>
+</html>
