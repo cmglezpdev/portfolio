@@ -13,6 +13,9 @@ A specific product or technical initiative that can be described independently o
 **Selected work**:
 A curated selection of projects presented to help visitors assess Carlos's work.
 
+**Project overview**:
+A product-focused account of what an application does, how someone uses it, and the reasons for relevant engineering choices. It does not require adoption anecdotes or future plans.
+
 **Case study**:
 A public account of a project's problem, Carlos's contribution, technical decisions, and outcome. It distinguishes delivered capabilities from future ideas.
 
@@ -27,3 +30,24 @@ A project delivered within paid employment. Public descriptions must distinguish
 
 **Personal project**:
 A project Carlos builds outside his employment, often for his own use. It may be useful evidence of engineering work without having a large audience.
+
+**AI application engineering**:
+Software engineering that integrates AI models into user-facing products or operational workflows. This is the intended role focus for Carlos's positioning.
+
+**Delivered capability**:
+Functionality implemented and available in a stated environment. Its description distinguishes internal testing, production availability, and actual use.
+
+**Planned capability**:
+An idea or incomplete feature that belongs in follow-up notes, rather than a description of current product behavior.
+
+**Agency**:
+A business tenant in Dara's later modular platform, with its own users and business data.
+
+**Permission**:
+An allowed or denied action on a business entity, potentially subject to conditions on supported attributes.
+
+**Role**:
+A configurable grouping of permissions assigned to users.
+
+**Tool approval**:
+A user's decision to allow or deny a proposed agent action. It is distinct from the permissions governing access to business data and operations.
