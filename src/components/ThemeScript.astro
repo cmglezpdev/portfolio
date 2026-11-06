@@ -12,6 +12,8 @@
       root.dataset.theme = resolved;
       root.dataset.themePreference = preference;
       document.querySelector('meta[name="theme-color"]')?.setAttribute('content', resolved === 'dark' ? '#171a19' : '#f6f6f3');
+      document.querySelectorAll('[data-theme-menu]').forEach((menu) => { menu.hidden = false; });
+      document.querySelector('[data-theme-menu] summary')?.setAttribute('aria-label', `Color theme: ${preference}`);
       document.querySelectorAll('[data-theme-choice]').forEach((button) => {
         button.setAttribute('aria-pressed', String(button.dataset.themeChoice === preference));
       });
@@ -39,6 +41,9 @@
       if (!menu) return;
       closeMenu();
       menu.querySelector('summary')?.focus();
+    });
+    document.addEventListener('focusin', (event) => {
+      if (event.target instanceof Element && !event.target.closest('[data-theme-menu]')) closeMenu();
     });
     system.addEventListener('change', apply);
     window.addEventListener('storage', (event) => {

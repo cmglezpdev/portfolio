@@ -4,8 +4,8 @@ import ThemeSelector from './ThemeSelector.astro';
 const isHome = Astro.url.pathname === '/';
 const section = (id: string) => `${isHome ? '' : '/'}#${id}`;
 ---
-<header class="relative z-20 mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 border-b border-line px-5 py-5 lg:flex-nowrap sm:px-8 lg:px-12">
-  <a href="/" aria-label="Carlos Manuel, home" class="group flex min-h-11 items-center gap-2 font-mono text-control font-medium tracking-tight">
+<header class="sticky top-0 z-20 bg-paper mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 border-b border-line px-5 py-5 lg:flex-nowrap sm:px-8 lg:px-12">
+  <a href="/" aria-label="cm. Carlos Manuel, home" class="group flex min-h-11 items-center gap-2 font-mono text-control font-medium tracking-tight">
     <span class="flex size-8 items-center justify-center rounded-sm bg-ink text-meta text-paper transition-colors group-hover:bg-accent group-hover:text-on-accent">cm<span class="opacity-50">.</span></span>
     <span class="hidden sm:inline">carlos manuel<span class="text-accent">.</span></span>
   </a>
@@ -14,6 +14,6 @@ const section = (id: string) => `${isHome ? '' : '/'}#${id}`;
     <a href={section('experience')} data-nav="experience" class="flex min-h-11 items-center text-muted transition-colors hover:text-accent aria-[current=location]:text-accent">Experience</a>
     <a href={section('work')} data-nav="work" class="flex min-h-11 items-center text-muted transition-colors hover:text-accent aria-[current=location]:text-accent">Work</a>
     <a href={section('about')} data-nav="about" class="flex min-h-11 items-center text-muted transition-colors hover:text-accent aria-[current=location]:text-accent">About</a>
-    <a href={section('contact')} class="inline-flex min-h-10 items-center gap-2 rounded-sm bg-ink px-2 text-paper transition-colors hover:bg-accent hover:text-on-accent sm:px-4">Let's talk <Icon name="external" class="hidden size-3.5 sm:block" /></a>
+    <a href={section('contact')} class="inline-flex min-h-11 items-center gap-2 rounded-sm bg-ink px-2 text-paper transition-colors hover:bg-accent hover:text-on-accent sm:px-4">Let's talk <Icon name="arrow" class="hidden size-3.5 sm:block" /></a>
   </nav>
 </header>

@@ -3,7 +3,7 @@
 @theme {
   --font-sans: "Manrope Variable", sans-serif;
   --font-mono: "IBM Plex Mono", monospace;
-  /* Typography roles. rem values below equal 13/15/16/17/18/24px at a 16px root.
+  /* Typography roles. rem values below equal 13/15/17/18/24px at a 16px root.
      Use text-body for paragraphs and bullets; text-lead for the introduction;
      text-role for job/subsection titles; text-control for links and buttons;
      text-meta for dates, captions and tags; text-company for employers.
@@ -12,8 +12,8 @@
   --text-meta--line-height: 1.25rem;
   --text-control: 0.9375rem;
   --text-control--line-height: 1.375rem;
-  --text-role: 1rem;
-  --text-role--line-height: 1.5rem;
+  --text-role: 1.125rem;
+  --text-role--line-height: 1.75rem;
   --text-body: 1.0625rem;
   --text-body--line-height: 1.75rem;
   --text-lead: 1.125rem;
@@ -24,6 +24,8 @@
   --color-paper: light-dark(#f6f6f3, #171a19);
   --color-ink: light-dark(#202120, #eceee8);
   --color-muted: light-dark(#62645f, #a6ada5);
+  --color-copy: light-dark(#484b46, #c5cbc3);
+  --color-edge: light-dark(#7d8277, #758176);
   --color-line: light-dark(#dcded7, #363e38);
   --color-accent: light-dark(#194cff, #91a8ff);
   --color-on-accent: light-dark(#ffffff, #171a19);
@@ -33,3 +35,15 @@
 :root { color-scheme: light dark; }
 :root[data-theme="light"] { color-scheme: light; }
 :root[data-theme="dark"] { color-scheme: dark; }
+
+/* Link states remain visible without distinguishing blue from gray. */
+a.text-muted:hover { text-decoration-line: underline; }
+[data-nav][aria-current="location"] { text-decoration: underline 2px; text-underline-offset: 8px; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: 0s !important; }
+}
+
+/* Keep anchor targets below the persistent navigation in both header layouts. */
+:root { --navigation-offset: 10rem; }
+@media (min-width: 64rem) { :root { --navigation-offset: 6.5rem; } }
+:where(main section[id], footer section[id]) { scroll-margin-top: var(--navigation-offset); }

@@ -7,10 +7,10 @@ import Icon from './Icon.astro';
     <div class="flex flex-wrap items-start justify-between gap-8">
       <div>
         <p class="mb-5 font-mono text-meta uppercase tracking-[.18em] text-muted">Have an opportunity or project in mind?</p>
-        <h2 id="contact-heading" class="text-4xl font-medium tracking-[-.06em] sm:text-6xl">Let's build something<span class="text-accent">.</span></h2>
-        <p class="mt-5 max-w-md text-body text-muted">Open to software engineering, full-stack, and AI engineering opportunities. Based in Mexico, working remotely.</p>
+        <h2 id="contact-heading" class="text-4xl font-medium tracking-[-.045em] sm:text-6xl">Let's build something<span class="text-accent">.</span></h2>
+        <p class="mt-5 max-w-md text-body text-copy">Open to software engineering, full-stack, and AI engineering opportunities. Based in Mexico, working remotely.</p>
       </div>
-      <a href={`mailto:${profile.email}`} class="group mt-2 flex size-16 shrink-0 items-center justify-center rounded-full border border-ink transition-colors hover:border-accent hover:bg-accent hover:text-on-accent" aria-label={`Email ${profile.email}`}><Icon name="external" class="size-7 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" /></a>
+      <a href={`mailto:${profile.email}`} class="group mt-2 flex size-16 shrink-0 items-center justify-center rounded-full border border-ink transition-colors hover:border-accent hover:bg-accent hover:text-on-accent" aria-label={`Email ${profile.email}`}><Icon name="mail" class="size-7 transition-transform motion-safe:group-hover:-translate-y-0.5 motion-safe:group-hover:translate-x-0.5" /></a>
     </div>
     <a href={`mailto:${profile.email}`} class="mt-7 inline-block break-all border-b border-ink/30 pb-1 text-body transition-colors hover:border-accent hover:text-accent">{profile.email}</a>
   </section>
