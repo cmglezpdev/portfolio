@@ -11,7 +11,7 @@ const caption = project.images.length ? 'Screenshot' : project.visual === 'proxy
   <div class:list={['grid gap-6', wide && 'md:grid-cols-[1.35fr_1fr] md:gap-10']}>
     <button type="button" data-preview data-title={project.name} data-description={project.headline} data-href={`/work/${project.slug}/`} data-caption={caption} aria-label={`Enlarge ${project.name} ${caption.toLowerCase()}`} class="group/preview relative block w-full cursor-zoom-in overflow-hidden rounded-sm border border-line text-left">
       <ProjectPreview project={project} />
-      <span class="absolute right-3 bottom-3 flex size-8 items-center justify-center rounded-full border border-white/70 bg-white/85 text-ink backdrop-blur-sm transition-colors group-hover/preview:bg-accent group-hover/preview:text-white"><Icon name="plus" /></span>
+      <span class="absolute right-3 bottom-3 flex size-8 items-center justify-center rounded-full border border-line bg-paper/90 text-ink backdrop-blur-sm transition-colors group-hover/preview:bg-accent group-hover/preview:text-on-accent"><Icon name="plus" /></span>
       <span class="absolute bottom-3 left-3 rounded-sm bg-paper/90 px-2 py-1 font-mono text-meta text-muted">{caption}{project.images.length > 1 && ` · ${project.images.length} photos`}</span>
     </button>
     <div class:list={['flex flex-col items-start', wide ? 'py-2 md:justify-center' : 'pb-3']}>

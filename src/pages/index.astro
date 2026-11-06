@@ -18,7 +18,7 @@ const capabilities = [
   <div class="mx-auto max-w-6xl px-5 sm:px-8 lg:px-12">
     <section aria-labelledby="intro-heading" class="relative isolate border-b border-line pt-14 pb-9 sm:pt-20 sm:pb-10 lg:pt-24">
       <div aria-hidden="true" class="pointer-events-none absolute -inset-x-5 top-0 -z-10 h-[540px] overflow-hidden sm:-inset-x-8 lg:-inset-x-12">
-        <div class="absolute inset-0 bg-[linear-gradient(to_right,#2021200a_1px,transparent_1px),linear-gradient(to_bottom,#2021200a_1px,transparent_1px)] bg-size-[40px_40px] mask-[radial-gradient(ellipse_at_75%_20%,black,transparent_68%)]"></div>
+        <div class="absolute inset-0 bg-[linear-gradient(to_right,color-mix(in_srgb,var(--color-ink)_4%,transparent)_1px,transparent_1px),linear-gradient(to_bottom,color-mix(in_srgb,var(--color-ink)_4%,transparent)_1px,transparent_1px)] bg-size-[40px_40px] mask-[radial-gradient(ellipse_at_75%_20%,black,transparent_68%)]"></div>
         <div class="absolute -top-16 right-0 size-96 rounded-full bg-accent/4 blur-3xl"></div>
       </div>
       <div class="mb-10 flex flex-wrap items-center gap-x-4 gap-y-2 font-mono text-meta text-muted sm:mb-12">
@@ -33,16 +33,16 @@ const capabilities = [
           <p class="mt-7 text-role font-semibold tracking-[-.01em]">{profile.title}</p>
           <p class="mt-3 max-w-[32rem] text-lead text-muted">{profile.description}</p>
           <div class="mt-8 flex flex-wrap items-center gap-3 sm:gap-6">
-            <a href="#work" class="group inline-flex min-h-12 items-center gap-4 rounded-sm bg-ink px-5 text-control font-medium text-white transition-colors hover:bg-accent">Explore my work <Icon name="arrow" class="size-4 transition-transform group-hover:translate-x-1" /></a>
+            <a href="#work" class="group inline-flex min-h-12 items-center gap-4 rounded-sm bg-ink px-5 text-control font-medium text-paper hover:text-on-accent transition-colors hover:bg-accent">Explore my work <Icon name="arrow" class="size-4 transition-transform group-hover:translate-x-1" /></a>
             <a href={`mailto:${profile.email}`} class="inline-flex min-h-12 items-center gap-2 px-1 text-control font-medium transition-colors hover:text-accent">Get in touch <Icon name="external" class="size-4" /></a>
             <a href="/cv.pdf" download="cv.pdf" class="inline-flex min-h-12 items-center gap-2 px-1 text-control font-medium transition-colors hover:text-accent">Download CV <Icon name="download" class="size-4" /><span class="sr-only">, PDF</span></a>
           </div>
         </div>
         <figure class="relative hidden md:block">
           <div class="absolute -top-3 -right-3 -bottom-3 left-3 border border-line" aria-hidden="true"></div>
-          <div class="relative flex aspect-[.83] flex-col items-center justify-center overflow-hidden border border-line bg-[#e8e9e3]">
+          <div class="relative flex aspect-[.83] flex-col items-center justify-center overflow-hidden border border-line bg-surface">
             {profile.portrait ? <img src={profile.portrait} alt="Carlos Manuel González" width="540" height="599" class="absolute inset-0 h-full w-full object-cover grayscale" /> : <>
-              <div aria-hidden="true" class="absolute inset-0 bg-[radial-gradient(#20212025_1px,transparent_1px)] bg-size-[12px_12px] mask-[radial-gradient(ellipse,black,transparent_75%)]"></div>
+              <div aria-hidden="true" class="absolute inset-0 bg-[radial-gradient(color-mix(in_srgb,var(--color-ink)_15%,transparent)_1px,transparent_1px)] bg-size-[12px_12px] mask-[radial-gradient(ellipse,black,transparent_75%)]"></div>
               <span aria-hidden="true" class="relative font-sans text-8xl font-medium tracking-[-.12em] text-ink/65">cm<span class="text-accent">.</span></span>
               <span class="absolute bottom-5 font-mono text-meta tracking-[.12em] text-muted">PORTRAIT PLACEHOLDER</span>
             </>}
@@ -69,7 +69,7 @@ const capabilities = [
         <div data-scroll-track class="relative border-l border-line pl-7 sm:pl-9">
           <div aria-hidden="true" class="pointer-events-none absolute -left-px inset-y-0 z-10 w-px">
             <span data-scroll-progress class="absolute top-0 w-px bg-accent"></span>
-            <span data-scroll-marker class="absolute -left-[6px] flex size-[13px] items-center justify-center rounded-full bg-accent shadow-[0_0_0_5px_#f6f6f3]"><span class="size-1 rounded-full bg-white"></span></span>
+            <span data-scroll-marker class="absolute -left-[6px] flex size-[13px] items-center justify-center rounded-full bg-accent shadow-[0_0_0_5px_var(--color-paper)]"><span class="size-1 rounded-full bg-white"></span></span>
           </div>
           {experience.map((job, index) => <article class:list={['relative', index > 0 && 'mt-10 border-t border-line pt-9']}>
             <span aria-hidden="true" class:list={['absolute -left-[33px] size-[9px] rounded-full border-2 border-paper sm:-left-[41px]', job.current ? 'top-2 bg-accent ring-4 ring-accent/10' : 'top-11 bg-ink']} />
@@ -108,7 +108,7 @@ const capabilities = [
       <div data-scroll-track class="relative">
         <div aria-hidden="true" class="pointer-events-none absolute top-0 -bottom-2 -left-6 hidden w-px bg-line lg:block">
           <span data-scroll-progress class="absolute top-0 w-px bg-accent"></span>
-          <span data-scroll-marker class="absolute -left-[6px] flex size-[13px] items-center justify-center rounded-[3px] bg-accent shadow-[0_0_0_5px_#f6f6f3]"><span class="size-1 rotate-45 bg-white"></span></span>
+          <span data-scroll-marker class="absolute -left-[6px] flex size-[13px] items-center justify-center rounded-[3px] bg-accent shadow-[0_0_0_5px_var(--color-paper)]"><span class="size-1 rotate-45 bg-white"></span></span>
         </div>
         <div class="grid gap-x-8 gap-y-10 md:grid-cols-2">{featured.map((project, index) => <ProjectCard project={project} index={index} wide={index === 0} />)}</div>
       </div>

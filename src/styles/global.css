@@ -21,9 +21,15 @@
   --text-company: 1.5rem;
   --text-company--line-height: 2rem;
 
-  --color-paper: #f6f6f3;
-  --color-ink: #202120;
-  --color-muted: #62645f;
-  --color-line: #dcded7;
-  --color-accent: #194cff;
+  --color-paper: light-dark(#f6f6f3, #171a19);
+  --color-ink: light-dark(#202120, #eceee8);
+  --color-muted: light-dark(#62645f, #a6ada5);
+  --color-line: light-dark(#dcded7, #363e38);
+  --color-accent: light-dark(#194cff, #91a8ff);
+  --color-on-accent: light-dark(#ffffff, #171a19);
+  --color-surface: light-dark(#e8e9e3, #252c27);
 }
+
+:root { color-scheme: light dark; }
+:root[data-theme="light"] { color-scheme: light; }
+:root[data-theme="dark"] { color-scheme: dark; }

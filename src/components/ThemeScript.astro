@@ -1,0 +1,50 @@
+<!-- Apply the saved preference before the page paints. -->
+<script is:inline>
+  (() => {
+    const root = document.documentElement;
+    const system = window.matchMedia('(prefers-color-scheme: dark)');
+    const parse = (value) => value === 'light' || value === 'dark' ? value : 'system';
+    let preference = 'system';
+    try { preference = parse(localStorage.getItem('theme')); } catch {}
+
+    const apply = () => {
+      const resolved = preference === 'system' ? (system.matches ? 'dark' : 'light') : preference;
+      root.dataset.theme = resolved;
+      root.dataset.themePreference = preference;
+      document.querySelector('meta[name="theme-color"]')?.setAttribute('content', resolved === 'dark' ? '#171a19' : '#f6f6f3');
+      document.querySelectorAll('[data-theme-choice]').forEach((button) => {
+        button.setAttribute('aria-pressed', String(button.dataset.themeChoice === preference));
+      });
+    };
+
+    apply();
+    document.addEventListener('DOMContentLoaded', apply, { once: true });
+    const closeMenu = () => {
+      document.querySelectorAll('[data-theme-menu]').forEach((menu) => { menu.open = false; });
+    };
+    document.addEventListener('click', (event) => {
+      if (!(event.target instanceof Element)) return;
+      const choice = event.target.closest('[data-theme-choice]');
+      if (choice instanceof HTMLButtonElement) {
+        preference = parse(choice.dataset.themeChoice);
+        try { localStorage.setItem('theme', preference); } catch {}
+        apply();
+        closeMenu();
+        choice.closest('[data-theme-menu]')?.querySelector('summary')?.focus();
+      } else if (!event.target.closest('[data-theme-menu]')) closeMenu();
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key !== 'Escape') return;
+      const menu = document.querySelector('[data-theme-menu][open]');
+      if (!menu) return;
+      closeMenu();
+      menu.querySelector('summary')?.focus();
+    });
+    system.addEventListener('change', apply);
+    window.addEventListener('storage', (event) => {
+      if (event.key !== 'theme' && event.key !== null) return;
+      preference = parse(event.newValue);
+      apply();
+    });
+  })();
+</script>
