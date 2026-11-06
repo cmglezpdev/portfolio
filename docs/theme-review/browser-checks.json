@@ -1,0 +1,342 @@
+{
+  "mobile": [
+    {
+      "toolIcon": {
+        "_tag": "website",
+        "pageUrl": "http://localhost:4321/"
+      },
+      "value": {
+        "broken": [],
+        "fonts": true,
+        "h1": "Building software.Making AI useful.",
+        "overflow": false,
+        "route": "/",
+        "theme": "light",
+        "width": 312
+      }
+    },
+    {
+      "toolIcon": {
+        "_tag": "website",
+        "pageUrl": "http://localhost:4321/"
+      },
+      "value": {
+        "broken": [],
+        "fonts": true,
+        "h1": "Building software.Making AI useful.",
+        "overflow": false,
+        "route": "/",
+        "theme": "dark",
+        "width": 312
+      }
+    },
+    {
+      "toolIcon": {
+        "_tag": "website",
+        "pageUrl": "http://localhost:4321/work/nativo/"
+      },
+      "value": {
+        "broken": [],
+        "fonts": true,
+        "h1": "Nativo.",
+        "overflow": false,
+        "route": "/work/nativo/",
+        "theme": "light",
+        "width": 312
+      }
+    },
+    {
+      "toolIcon": {
+        "_tag": "website",
+        "pageUrl": "http://localhost:4321/work/nativo/"
+      },
+      "value": {
+        "broken": [],
+        "fonts": true,
+        "h1": "Nativo.",
+        "overflow": false,
+        "route": "/work/nativo/",
+        "theme": "dark",
+        "width": 312
+      }
+    },
+    {
+      "toolIcon": {
+        "_tag": "website",
+        "pageUrl": "http://localhost:4321/work/linkseek/"
+      },
+      "value": {
+        "broken": [],
+        "fonts": true,
+        "h1": "LinkSeek.",
+        "overflow": false,
+        "route": "/work/linkseek/",
+        "theme": "light",
+        "width": 312
+      }
+    },
+    {
+      "toolIcon": {
+        "_tag": "website",
+        "pageUrl": "http://localhost:4321/work/linkseek/"
+      },
+      "value": {
+        "broken": [],
+        "fonts": true,
+        "h1": "LinkSeek.",
+        "overflow": false,
+        "route": "/work/linkseek/",
+        "theme": "dark",
+        "width": 312
+      }
+    },
+    {
+      "toolIcon": {
+        "_tag": "website",
+        "pageUrl": "http://localhost:4321/work/openwhispr-proxy/"
+      },
+      "value": {
+        "broken": [],
+        "fonts": true,
+        "h1": "OpenWhispr Proxy.",
+        "overflow": false,
+        "route": "/work/openwhispr-proxy/",
+        "theme": "light",
+        "width": 312
+      }
+    },
+    {
+      "toolIcon": {
+        "_tag": "website",
+        "pageUrl": "http://localhost:4321/work/openwhispr-proxy/"
+      },
+      "value": {
+        "broken": [],
+        "fonts": true,
+        "h1": "OpenWhispr Proxy.",
+        "overflow": false,
+        "route": "/work/openwhispr-proxy/",
+        "theme": "dark",
+        "width": 312
+      }
+    },
+    {
+      "toolIcon": {
+        "_tag": "website",
+        "pageUrl": "http://localhost:4321/work/dara-platform/"
+      },
+      "value": {
+        "broken": [],
+        "fonts": true,
+        "h1": "Dara agency platform.",
+        "overflow": false,
+        "route": "/work/dara-platform/",
+        "theme": "light",
+        "width": 312
+      }
+    },
+    {
+      "toolIcon": {
+        "_tag": "website",
+        "pageUrl": "http://localhost:4321/work/dara-platform/"
+      },
+      "value": {
+        "broken": [],
+        "fonts": true,
+        "h1": "Dara agency platform.",
+        "overflow": false,
+        "route": "/work/dara-platform/",
+        "theme": "dark",
+        "width": 312
+      }
+    },
+    {
+      "toolIcon": {
+        "_tag": "website",
+        "pageUrl": "http://localhost:4321/404.html"
+      },
+      "value": {
+        "broken": [],
+        "fonts": true,
+        "h1": "Nothing built here.Yet.",
+        "overflow": false,
+        "route": "/404.html",
+        "theme": "light",
+        "width": 312
+      }
+    },
+    {
+      "toolIcon": {
+        "_tag": "website",
+        "pageUrl": "http://localhost:4321/404.html"
+      },
+      "value": {
+        "broken": [],
+        "fonts": true,
+        "h1": "Nothing built here.Yet.",
+        "overflow": false,
+        "route": "/404.html",
+        "theme": "dark",
+        "width": 312
+      }
+    }
+  ],
+  "desktop": [
+    {
+      "toolIcon": {
+        "_tag": "website",
+        "pageUrl": "http://localhost:4321/"
+      },
+      "value": {
+        "bodyColor": "rgb(72, 75, 70)",
+        "overflow": false,
+        "route": "/",
+        "theme": "light",
+        "width": 1200
+      }
+    },
+    {
+      "toolIcon": {
+        "_tag": "website",
+        "pageUrl": "http://localhost:4321/"
+      },
+      "value": {
+        "bodyColor": "rgb(197, 203, 195)",
+        "overflow": false,
+        "route": "/",
+        "theme": "dark",
+        "width": 1200
+      }
+    },
+    {
+      "toolIcon": {
+        "_tag": "website",
+        "pageUrl": "http://localhost:4321/work/nativo/"
+      },
+      "value": {
+        "bodyColor": "rgb(72, 75, 70)",
+        "overflow": false,
+        "route": "/work/nativo/",
+        "theme": "light",
+        "width": 1200
+      }
+    },
+    {
+      "toolIcon": {
+        "_tag": "website",
+        "pageUrl": "http://localhost:4321/work/nativo/"
+      },
+      "value": {
+        "bodyColor": "rgb(197, 203, 195)",
+        "overflow": false,
+        "route": "/work/nativo/",
+        "theme": "dark",
+        "width": 1200
+      }
+    },
+    {
+      "toolIcon": {
+        "_tag": "website",
+        "pageUrl": "http://localhost:4321/work/linkseek/"
+      },
+      "value": {
+        "bodyColor": "rgb(72, 75, 70)",
+        "overflow": false,
+        "route": "/work/linkseek/",
+        "theme": "light",
+        "width": 1200
+      }
+    },
+    {
+      "toolIcon": {
+        "_tag": "website",
+        "pageUrl": "http://localhost:4321/work/linkseek/"
+      },
+      "value": {
+        "bodyColor": "rgb(197, 203, 195)",
+        "overflow": false,
+        "route": "/work/linkseek/",
+        "theme": "dark",
+        "width": 1200
+      }
+    },
+    {
+      "toolIcon": {
+        "_tag": "website",
+        "pageUrl": "http://localhost:4321/work/openwhispr-proxy/"
+      },
+      "value": {
+        "bodyColor": "rgb(72, 75, 70)",
+        "overflow": false,
+        "route": "/work/openwhispr-proxy/",
+        "theme": "light",
+        "width": 1200
+      }
+    },
+    {
+      "toolIcon": {
+        "_tag": "website",
+        "pageUrl": "http://localhost:4321/work/openwhispr-proxy/"
+      },
+      "value": {
+        "bodyColor": "rgb(197, 203, 195)",
+        "overflow": false,
+        "route": "/work/openwhispr-proxy/",
+        "theme": "dark",
+        "width": 1200
+      }
+    },
+    {
+      "toolIcon": {
+        "_tag": "website",
+        "pageUrl": "http://localhost:4321/work/dara-platform/"
+      },
+      "value": {
+        "bodyColor": "rgb(72, 75, 70)",
+        "overflow": false,
+        "route": "/work/dara-platform/",
+        "theme": "light",
+        "width": 1200
+      }
+    },
+    {
+      "toolIcon": {
+        "_tag": "website",
+        "pageUrl": "http://localhost:4321/work/dara-platform/"
+      },
+      "value": {
+        "bodyColor": "rgb(197, 203, 195)",
+        "overflow": false,
+        "route": "/work/dara-platform/",
+        "theme": "dark",
+        "width": 1200
+      }
+    },
+    {
+      "toolIcon": {
+        "_tag": "website",
+        "pageUrl": "http://localhost:4321/404.html"
+      },
+      "value": {
+        "bodyColor": "rgb(72, 75, 70)",
+        "overflow": false,
+        "route": "/404.html",
+        "theme": "light",
+        "width": 1200
+      }
+    },
+    {
+      "toolIcon": {
+        "_tag": "website",
+        "pageUrl": "http://localhost:4321/404.html"
+      },
+      "value": {
+        "bodyColor": "rgb(197, 203, 195)",
+        "overflow": false,
+        "route": "/404.html",
+        "theme": "dark",
+        "width": 1200
+      }
+    }
+  ]
+}

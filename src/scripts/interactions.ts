@@ -52,16 +52,24 @@ function initScrollProgress(): void {
 function initSectionNavigation(): void {
   if (!('IntersectionObserver' in window)) return;
 
-  const navigation = new IntersectionObserver((entries) => {
-    for (const entry of entries) {
-      if (!entry.isIntersecting) continue;
-      document.querySelectorAll('[data-nav]').forEach((link) => {
-        if (link.getAttribute('data-nav') === entry.target.id) link.setAttribute('aria-current', 'location');
-        else link.removeAttribute('aria-current');
-      });
+  const sections = [...document.querySelectorAll('[data-nav]')].flatMap((link) => {
+    const section = document.getElementById(link.getAttribute('data-nav') || '');
+    return section ? [{ link, section }] : [];
+  });
+  const update = (): void => {
+    const position = window.innerHeight * 0.35;
+    for (const { link, section } of sections) {
+      const bounds = section.getBoundingClientRect();
+      if (bounds.top <= position && bounds.bottom > position) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
     }
-  }, { rootMargin: '-15% 0px -55% 0px' });
-  document.querySelectorAll('section[id]').forEach((section) => navigation.observe(section));
+  };
+  // Recompute all sections, including exits, so returning to the hero clears
+  // the previous selection. The narrow observer band matches the reading point.
+  const navigation = new IntersectionObserver(update, { rootMargin: '-35% 0px -64% 0px' });
+  sections.forEach(({ section }) => navigation.observe(section));
+  window.addEventListener('resize', update);
+  update();
 }
 
 function initProjectPreview(): void {
@@ -112,10 +120,12 @@ function initProjectPreview(): void {
   });
 
   document.querySelectorAll('[data-preview]').forEach((button) => {
-    button.addEventListener('click', () => {
+    button.addEventListener('click', (event) => {
+      if (event instanceof MouseEvent && (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey)) return;
       const source = button.querySelector('img[data-preview-main]');
       if (!(source instanceof HTMLImageElement)) return;
       if (!(button instanceof HTMLElement) || !title || !description || !caption || !imageContainer || !projectLink) return;
+      event.preventDefault();
       title.textContent = button.dataset.title || 'Project preview';
       caption.textContent = button.dataset.caption || '';
       projectLink.setAttribute('href', button.dataset.href || '/#work');
