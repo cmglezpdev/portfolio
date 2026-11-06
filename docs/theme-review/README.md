@@ -4,7 +4,7 @@ Base: `feat/theme-selector` at `14adb25`. Fixes: `fix/theme-review-polish`.
 
 ## Review cycle
 
-Two independent initial reviews used the requested Sonnet 5.5 high and GPT 6.1 high models. Both inspected the source and computed contrast, but the server was unavailable during that round. Sonnet scored 7.8/10; GPT scored 8.5/10. Their full reports are preserved in this directory. Scores use contrast 30%, consistency 20%, typography 20%, interaction/accessibility 20%, and presentation/naming 10%. The second round scored 7.7 from Sonnet and 9.3 from GPT. Sonnet caught a color/font-size utility collision during the first pass; GPT found stale active-navigation state. Both issues were fixed. Sonnet acceptance reached 9.5/10, rounded from 9.46, on commit 434988f. GPT scored the earlier dd93b42 revision 9.5/10; its acceptance check of 434988f is pending. Scores describe the version each reviewer inspected, not a certification.
+Two independent initial reviews used the requested Sonnet 5.5 high and GPT 6.1 high models. Both inspected the source and computed contrast, but the server was unavailable during that round. Sonnet scored 7.8/10; GPT scored 8.5/10. Their full reports are preserved in this directory. Scores use contrast 30%, consistency 20%, typography 20%, interaction/accessibility 20%, and presentation/naming 10%. The second round scored 7.7 from Sonnet and 9.3 from GPT. Sonnet caught a color/font-size utility collision during the first pass; GPT found stale active-navigation state. Both issues were fixed. Sonnet acceptance reached 9.5/10, rounded from 9.46, on commit 434988f. GPT acceptance also reached 9.5/10, raw 9.52, on the same implementation commit 434988f. Scores describe the version each reviewer inspected, not a certification.
 
 ## Findings and changes by area
 
@@ -61,7 +61,7 @@ Annotations were temporarily drawn over the actual page in the browser and captu
 
 ## Remaining verification
 
-Sonnet acceptance passed at 9.5/10, rounded from 9.46. GPT acceptance of the latest revision is pending. Automated checks do not establish screen-reader quality, 200% zoom behavior, cross-browser support, or every gallery slide. These limits must remain visible when reporting the final score.
+Sonnet acceptance passed at 9.5/10, rounded from 9.46. GPT acceptance also passed at 9.5/10, raw 9.52. Automated checks do not establish screen-reader quality, 200% zoom behavior, cross-browser support, or every gallery slide. These limits must remain visible when reporting the final score.
 
 ## Iteration history
 
@@ -74,3 +74,35 @@ The second pass also scopes hover underlines to muted text links, gives preview 
 Sonnet scored the third revision 9.3/10. Its full report is sonnet-third.md. The color/size collision, rendered text contrast, theme persistence, stable image area and focus restoration passed. The follow-up makes the header and desktop project navigation sticky, with responsive anchor offsets; it preserves Ctrl/Cmd/Shift/Alt clicks on image links, uses copy color for the hero lead, and reserves space for gallery descriptions to reduce shifting. The scroll check measured the desktop header at top 0, bottom 85px, with the Work section at 104px and its active indicator visible. Modified-click checks confirmed none of the four modifiers was intercepted. Sonnet acceptance verified these fixes and scored 9.5/10, rounded from 9.46. The phone header remains tall at 141px, and very short phone viewports scroll the modal. These are documented tradeoffs.
 
 Sonnet acceptance report: [sonnet-acceptance.md](sonnet-acceptance.md).
+
+## Final result
+
+Both requested models, at high effort, accepted implementation commit 434988f at 9.5/10 to one decimal. Sonnet's raw score is 9.46; GPT's raw score is 9.52. Published commit metadata differs because publication used the connected GitHub API; the reviewed source files are identical. Subsequent changes add reports and screenshots only.
+
+| Reviewer | Initial | Second | Third | Acceptance |
+| --- | --- | --- | --- | --- |
+| Sonnet 5.5 high | 7.8 | 7.7 | 9.3 | 9.5, raw 9.46 |
+| GPT 6.1 high | 8.5 | 9.3 | 9.5 | 9.5, raw 9.52 |
+
+[GPT acceptance report](gpt-acceptance.md) and [Sonnet acceptance report](sonnet-acceptance.md) document exactly what was tested. GPT found no confirmed actionable defect. Its dark-phone anchor retest was inconclusive after browser timeouts; this state must not be counted as independently passed. The short-phone header and scrollable modal remain documented tradeoffs. Neither score certifies full accessibility conformance.
+
+PR: https://github.com/cmglezpdev/portfolio/pull/4, targeting feat/theme-selector. The PR description contains the changes, validation, score history and annotated screenshots.
+
+## Changed source files
+
+| File | Purpose |
+| --- | --- |
+| [global.css](../../src/styles/global.css) | Copy/edge colors, role sizing, underlines, reduced motion and header anchor offsets. |
+| [ThemeSelector.astro](../../src/components/ThemeSelector.astro) | Visible option names, popup fill/border, native summary and no-JS visibility. |
+| [ThemeScript.astro](../../src/components/ThemeScript.astro) | Announce current preference, reveal available controls, close on focus leaving. |
+| [Header.astro](../../src/components/Header.astro) | Sticky navigation, accessible wordmark, larger contact target and internal arrow. |
+| [interactions.ts](../../src/scripts/interactions.ts) | Accurate section tracking and progressive image-link behavior with modifier preservation. |
+| [PreviewDialog.astro](../../src/components/PreviewDialog.astro) | Strong control borders, stable mobile image region and reserved description height. |
+| [ProjectCard.astro](../../src/components/ProjectCard.astro) | Accurate image labels, internal arrows, named Explore links and image-link fallback. |
+| [index.astro](../../src/pages/index.astro) | Readable prose and hero lead, type spacing, mail icon and motion-safe arrows. |
+| [work/[slug].astro](../../src/pages/work/[slug].astro) | 65ch prose, sticky section navigation, preview links and consistent typography. |
+| [Footer.astro](../../src/components/Footer.astro) | Mail icon, readable prose and motion-safe transform. |
+| [404.astro](../../src/pages/404.astro) | Readable prose and matching button corners. |
+| [portfolio.ts](../../src/data/portfolio.ts) | LinkSeek and AI capitalization. |
+| [check-theme-contrast.mjs](../../scripts/check-theme-contrast.mjs) | Rerunnable palette thresholds and color/font-size collision check. |
+| [audit-rendered-theme.js](../../scripts/audit-rendered-theme.js) | Browser text contrast, font-size and overflow evidence. |
