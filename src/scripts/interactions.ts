@@ -50,13 +50,13 @@ function initScrollProgress(): void {
 }
 
 function initSectionNavigation(): void {
-  if (!('IntersectionObserver' in window)) return;
-
   const sections = [...document.querySelectorAll('[data-nav]')].flatMap((link) => {
     const section = document.getElementById(link.getAttribute('data-nav') || '');
     return section ? [{ link, section }] : [];
   });
+  let scheduled = false;
   const update = (): void => {
+    scheduled = false;
     const position = window.innerHeight * 0.35;
     for (const { link, section } of sections) {
       const bounds = section.getBoundingClientRect();
@@ -64,11 +64,14 @@ function initSectionNavigation(): void {
       else link.removeAttribute('aria-current');
     }
   };
-  // Recompute all sections, including exits, so returning to the hero clears
-  // the previous selection. The narrow observer band matches the reading point.
-  const navigation = new IntersectionObserver(update, { rootMargin: '-35% 0px -64% 0px' });
-  sections.forEach(({ section }) => navigation.observe(section));
-  window.addEventListener('resize', update);
+  const schedule = (): void => {
+    if (scheduled) return;
+    scheduled = true;
+    window.requestAnimationFrame(update);
+  };
+  // Read the current geometry once per frame, including after jumps and exits.
+  window.addEventListener('scroll', schedule, { passive: true });
+  window.addEventListener('resize', schedule, { passive: true });
   update();
 }
 
