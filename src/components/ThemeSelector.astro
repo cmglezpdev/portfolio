@@ -1,0 +1,37 @@
+---
+import Icon from './Icon.astro';
+
+const choices = [
+  { value: 'light', label: 'Light theme', icon: 'sun' },
+  { value: 'dark', label: 'Dark theme', icon: 'moon' },
+  { value: 'system', label: 'System theme', icon: 'monitor' },
+] satisfies Array<{ value: string; label: string; icon: 'sun' | 'moon' | 'monitor' }>;
+---
+<details data-theme-menu class="relative order-2 lg:order-3">
+  <summary role="button" tabindex="0" aria-label="Color theme" title="Color theme" class="flex size-11 cursor-pointer list-none items-center justify-center rounded-sm border border-line text-muted hover:border-accent hover:text-accent [&::-webkit-details-marker]:hidden">
+    <span class="sr-only">Color theme</span>
+    {choices.map(({ value, icon }) => <span data-theme-icon={value}><Icon name={icon} class="size-5" /></span>)}
+  </summary>
+  <div role="group" aria-label="Color theme options" class="absolute right-0 z-30 mt-2 flex gap-1 rounded-sm border border-line bg-paper p-1 shadow-lg">
+    {choices.map(({ value, label, icon }) => (
+      <button type="button" data-theme-choice={value} aria-label={label} title={label} class="flex size-11 cursor-pointer items-center justify-center rounded-sm text-muted hover:bg-ink/5 hover:text-accent">
+        <Icon name={icon} class="size-5" />
+      </button>
+    ))}
+  </div>
+</details>
+
+<style>
+  [data-theme-icon] { display: none; }
+  :global(:root:not([data-theme-preference])) [data-theme-icon="system"],
+  :global(:root[data-theme-preference="light"]) [data-theme-icon="light"],
+  :global(:root[data-theme-preference="dark"]) [data-theme-icon="dark"],
+  :global(:root[data-theme-preference="system"]) [data-theme-icon="system"] { display: block; }
+
+  :global(:root[data-theme-preference="light"]) [data-theme-choice="light"],
+  :global(:root[data-theme-preference="dark"]) [data-theme-choice="dark"],
+  :global(:root[data-theme-preference="system"]) [data-theme-choice="system"] {
+    background: var(--color-accent);
+    color: var(--color-on-accent);
+  }
+</style>
