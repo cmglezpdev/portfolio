@@ -15,6 +15,23 @@ export const profile: Profile = {
   ],
 };
 
+export const sectionIntros = {
+  experience: 'My work across healthcare software, SaaS platforms, payments, and AI applications.',
+  work: ['Personal products and small tools.', 'Things I wanted to exist, so I built them.'],
+};
+
+export const about: string[] = [
+  'I\'m a Cuban software engineer based in Mexico and a Computer Science graduate of the University of Havana. I started in backend development, building services for payments and business operations, then took on technical leadership and full-stack product development.',
+  'I work across backend services, full-stack products, and AI-powered applications. I\'m especially interested in scalable systems, software architecture, and system design. I\'m growing my AI engineering practice by building AI features and full AI applications. In my daily work, I use coding agents for implementation, review, and iteration.',
+];
+
+export const capabilities: { title: string; text: string }[] = [
+  { title: 'Build applications', text: 'TypeScript · NestJS · React · C# / .NET · PostgreSQL' },
+  { title: 'Engineer AI features', text: 'Vercel AI SDK · Tool calling · RAG · MCP · Evaluation' },
+  { title: 'Deploy & operate', text: 'Docker · Dokploy · CI/CD · Grafana · AWS' },
+  { title: 'Explore infrastructure', text: 'AWS · Terraform · Infrastructure as code' },
+];
+
 export const experience: Experience[] = [
   {
     company: 'AOShield Solutions',

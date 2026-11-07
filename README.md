@@ -56,13 +56,11 @@ The supplied PDF is preserved at the repository root. It is not offered as a cur
 
 ## Before publishing
 
-Set the actual public origin when building:
+The public origin is `https://cmglezp.dev`, set as the default `site` in `astro.config.ts`. It supplies canonical URLs, structured-data URLs, sitemap entries, and absolute links in `llms.txt`. Set `SITE_URL` at build time to override it, for example when testing another domain:
 
 ```sh
-SITE_URL=https://your-domain.example pnpm build
+SITE_URL=https://staging.example pnpm build
 ```
-
-The example is a placeholder, not a configured domain. `SITE_URL` supplies canonical URLs, structured-data URLs, and sitemap entries. Without it, the local build deliberately omits canonical URLs and produces an empty sitemap rather than publishing a made-up origin.
 
 Deploy `dist/` to a static host. Configure the host to serve `404.html` for unknown routes. No deployment was performed as part of the local design draft.
 
@@ -70,11 +68,30 @@ Review the job title at AOShield, public descriptions of company work, project c
 
 ## Search and machine readability
 
-The build includes ordinary static HTML, descriptive page titles, descriptions, semantic headings, internal project links, Person/ProfilePage JSON-LD, `robots.txt`, a sitemap, and a convenience `llms.txt` index. Essential text does not require JavaScript. Project tags describe implemented capabilities; Linkseek's proposed MCP integration is not labeled as a current capability.
+Agents and crawlers read the same static HTML as people; essential text does not require JavaScript. On top of that the build emits:
 
-These features make content available for crawling; they do not guarantee indexing, ranking, or inclusion in AI answers. `llms.txt` is a supplementary index, not a requirement or certification. No external AI-accessibility score has been claimed.
+- Semantic landmarks (`header`, `nav`, `main`, `footer`), one `h1` per page, descriptive titles, meta descriptions, canonical URLs, Open Graph metadata, and Person/ProfilePage JSON-LD whose fields match visible text.
+- `robots.txt` (RFC 9309) that allows search engines and user-initiated AI agents but disallows AI training crawlers, and `sitemap.xml`. See [docs/ai-crawler-access.md](docs/ai-crawler-access.md) for the policy, the Vercel firewall settings that back it up, and what to redo if the host changes.
+- Markdown copies of every page at `<page URL>/index.html.md` (for example `/work/nativo/index.html.md`), advertised with `<link rel="alternate" type="text/markdown">`.
+- `/llms.txt`, an index in the llmstxt.org format, and `/llms-full.txt`, the whole portfolio as one markdown document.
 
-References: [Astro and Tailwind](https://docs.astro.build/en/guides/styling/#tailwind), [Tailwind's Astro integration](https://tailwindcss.com/docs/installation/framework-guides/astro), [Google's AI search guidance](https://developers.google.com/search/docs/appearance/ai-features).
+All of these are generated from `src/data/portfolio.ts` by `src/utils/markdown.ts`, so the HTML and markdown cannot drift. Edit copy in the data file, not in the page templates.
+
+After `pnpm build`, run `pnpm check:agents` to verify the output: `llms.txt` structure and link resolution, a markdown alternate on every page, one `h1` and `main` per page, valid JSON-LD, and that every list item and paragraph in the HTML also appears in `llms-full.txt`.
+
+What this does not do: these features make content available; they do not guarantee indexing, ranking, or inclusion in AI answers. Google states that it needs no `llms.txt`, AI text files, or special markup for AI Overviews and AI Mode, and that such files neither help nor harm Search. `llms.txt` is a community proposal, and no AI provider documents that it honors it. It is kept because it is cheap and may help tools that fetch it at inference time. Crawl and training controls belong in `robots.txt` and the host firewall.
+
+LinkSeek's MCP integration is implemented but still being tested, so no public page describes it yet. Deliberately not implemented: MCP server cards, A2A agent cards, and WebMCP. They are for sites that expose actions to agents; this portfolio is read-only. Their specifications are still drafts.
+
+Primary references:
+
+- [Google: AI features and your website](https://developers.google.com/search/docs/appearance/ai-features) and [optimizing for generative AI features](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide)
+- [Google: Profile page structured data](https://developers.google.com/search/docs/appearance/structured-data/profile-page) and [schema.org Person](https://schema.org/Person)
+- [llmstxt.org: the /llms.txt proposal](https://llmstxt.org/)
+- [RFC 9309: Robots Exclusion Protocol](https://www.rfc-editor.org/rfc/rfc9309.html)
+- Crawler documentation: [OpenAI](https://developers.openai.com/api/docs/bots), [Anthropic](https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler), [Perplexity](https://docs.perplexity.ai/docs/resources/perplexity-crawlers)
+- [W3C ARIA Authoring Practices: Landmark regions](https://www.w3.org/WAI/ARIA/apg/practices/landmark-regions/)
+- [Astro and Tailwind](https://docs.astro.build/en/guides/styling/#tailwind), [Tailwind's Astro integration](https://tailwindcss.com/docs/installation/framework-guides/astro)
 
 Interview decisions and content sources are recorded in `docs/portfolio-brief.md`; domain vocabulary lives in `CONTEXT.md`. QR Generator is listed at https://qr-generator.linkseek.app/.
 

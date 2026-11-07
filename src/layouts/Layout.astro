@@ -5,7 +5,8 @@ import '../styles/global.css';
 import Header from '../components/Header.astro';
 import ThemeScript from '../components/ThemeScript.astro';
 import Footer from '../components/Footer.astro';
-import { profile } from '../data/portfolio';
+import { experience, profile } from '../data/portfolio';
+import { markdownPath } from '../utils/markdown';
 import type { Project } from '../types/portfolio';
 import Analytics from '@vercel/analytics/astro';
 
@@ -18,6 +19,8 @@ interface Props {
 
 const { title = `${profile.name} | ${profile.title}`, description = profile.description, project, noindex = false } = Astro.props;
 const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : undefined;
+const absolute = (path: string) => Astro.site ? new URL(path, Astro.site).href : path;
+const currentEmployer = experience.find((job) => job.current)?.company;
 const structuredData = {
   '@context': 'https://schema.org',
   '@type': project ? 'WebPage' : 'ProfilePage',
@@ -34,6 +37,11 @@ const structuredData = {
     name: profile.name,
     jobTitle: profile.title,
     description: profile.description,
+    email: profile.email,
+    ...(profile.portrait ? { image: absolute(profile.portrait) } : {}),
+    homeLocation: { '@type': 'Country', name: profile.location },
+    alumniOf: { '@type': 'CollegeOrUniversity', name: 'University of Havana' },
+    ...(currentEmployer ? { worksFor: { '@type': 'Organization', name: currentEmployer } } : {}),
     ...(Astro.site ? { url: Astro.site.href } : {}),
     sameAs: profile.socials.map(({ url }) => url),
     knowsAbout: ['Software engineering', 'Full-stack development', 'AI engineering', 'TypeScript', 'Node.js', 'React', 'AI agents', 'RAG', 'Model Context Protocol'],
@@ -46,23 +54,29 @@ const structuredData = {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
+    <meta name="author" content={profile.name} />
     <meta name="theme-color" content="#f6f6f3" />
     <ThemeScript />
     {noindex && <meta name="robots" content="noindex" />}
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     {canonical && <link rel="canonical" href={canonical} />}
+    {!noindex && <link rel="sitemap" type="application/xml" href="/sitemap.xml" />}
+    {!noindex && <link rel="alternate" type="text/markdown" href={markdownPath(Astro.url.pathname)} />}
+    {!noindex && <link rel="describedby" type="text/plain" href="/llms.txt" title="llms.txt" />}
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={profile.name} />
     <meta property="og:locale" content="en_US" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     {canonical && <meta property="og:url" content={canonical} />}
-    <meta property="og:image" content={Astro.site ? new URL('/social-card.png', Astro.site).href : '/social-card.png'} />
+    <meta property="og:image" content={absolute('/social-card.png')} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="Carlos Manuel González, Software Engineer and AI Engineer" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={absolute('/social-card.png')} />
     <title>{title}</title>
     <Analytics />
     {!noindex && <script type="application/ld+json" set:html={JSON.stringify(structuredData).replace(/</g, '\\u003c')} />}
