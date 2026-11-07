@@ -10,6 +10,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "check": "astro check",
+    "check:agents": "node scripts/check-agent-readiness.mjs",
     "preview": "astro preview",
     "astro": "astro"
   },

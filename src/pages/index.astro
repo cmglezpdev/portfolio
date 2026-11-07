@@ -5,14 +5,8 @@ import Tag from '../components/Tag.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import PreviewDialog from '../components/PreviewDialog.astro';
 import EmploymentPeriod from '../components/EmploymentPeriod.astro';
-import { profile, experience, earlierExperience, projects, additionalWork } from '../data/portfolio';
+import { profile, experience, earlierExperience, projects, additionalWork, about, capabilities, sectionIntros } from '../data/portfolio';
 const featured = projects.filter((project) => project.featured);
-const capabilities = [
-  { title: 'Build applications', text: 'TypeScript · NestJS · React · C# / .NET · PostgreSQL' },
-  { title: 'Engineer AI features', text: 'Vercel AI SDK · Tool calling · RAG · MCP · Evaluation' },
-  { title: 'Deploy & operate', text: 'Docker · Dokploy · CI/CD · Grafana · AWS' },
-  { title: 'Explore infrastructure', text: 'AWS · Terraform · Infrastructure as code' },
-];
 ---
 <Layout>
   <div class="mx-auto max-w-6xl px-5 sm:px-8 lg:px-12">
@@ -63,7 +57,7 @@ const capabilities = [
         <div>
           <p class="mb-5 font-mono text-meta uppercase tracking-[.18em] text-muted"><span class="mr-3 text-accent">01</span> Experience</p>
           <h2 id="experience-heading" class="text-4xl leading-[1.15] font-medium tracking-[-.03em]">Where I've<br class="hidden lg:block" /> worked<span class="text-accent">.</span></h2>
-          <p class="mt-5 max-w-xs text-body text-copy">My work across healthcare software, SaaS platforms, payments, and AI applications.</p>
+          <p class="mt-5 max-w-xs text-body text-copy">{sectionIntros.experience}</p>
           <a href="#work" class="mt-6 inline-flex min-h-10 items-center gap-2 font-mono text-meta text-muted hover:text-accent">Then, the side projects <span aria-hidden="true">↓</span></a>
         </div>
         <div data-scroll-track class="relative border-l border-line pl-7 sm:pl-9">
@@ -103,7 +97,7 @@ const capabilities = [
     <section id="work" aria-labelledby="work-heading" class="scroll-mt-8 py-16 sm:py-20 lg:py-24">
       <div class="mb-10 flex flex-wrap items-end justify-between gap-6">
         <div><p class="mb-5 font-mono text-meta uppercase tracking-[.18em] text-muted"><span class="mr-3 text-accent">02</span> Selected work</p><h2 id="work-heading" class="text-4xl font-medium tracking-[-.03em] sm:text-5xl">Built out of curiosity<span class="text-accent">.</span></h2></div>
-        <p class="max-w-[20rem] text-body text-copy">Personal products and small tools.<br />Things I wanted to exist, so I built them.</p>
+        <p class="max-w-[20rem] text-body text-copy">{sectionIntros.work[0]}<br />{sectionIntros.work[1]}</p>
       </div>
       <div data-scroll-track class="relative">
         <div aria-hidden="true" class="pointer-events-none absolute top-0 -bottom-2 -left-6 hidden w-px bg-line lg:block">
@@ -126,8 +120,7 @@ const capabilities = [
       <div class="grid gap-10 md:grid-cols-2 md:gap-16">
         <div>
           <h2 id="about-heading" class="text-4xl leading-[1.15] font-medium tracking-[-.03em]">I learn by building<span class="text-accent">.</span></h2>
-          <p class="mt-6 text-body text-copy">I'm a Cuban software engineer based in Mexico and a Computer Science graduate of the University of Havana. I started in backend development, building services for payments and business operations, then took on technical leadership and full-stack product development.</p>
-          <p class="mt-4 text-body text-copy">I work across backend services, full-stack products, and AI-powered applications. I'm especially interested in scalable systems, software architecture, and system design. I'm growing my AI engineering practice by building AI features and full AI applications. In my daily work, I use coding agents for implementation, review, and iteration.</p>
+          {about.map((paragraph, index) => <p class:list={[index === 0 ? 'mt-6' : 'mt-4', 'text-body text-copy']}>{paragraph}</p>)}
           <p class="mt-6 inline-flex items-center gap-2 font-mono text-meta text-muted"><span class="size-1.5 rounded-full bg-accent"></span>Always something in progress.</p>
         </div>
         <div class="grid grid-cols-1 content-start gap-x-6 gap-y-6 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2">{capabilities.map((item, index) => <div class="border-t border-line pt-4"><span class="font-mono text-meta text-accent">0{index + 1} /</span><h3 class="mt-3 text-role font-semibold">{item.title}</h3><p class="mt-2 text-body text-copy">{item.text}</p></div>)}</div>
