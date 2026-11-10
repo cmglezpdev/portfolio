@@ -35,24 +35,27 @@ export const capabilities: { title: string; text: string }[] = [
 export const experience: Experience[] = [
   {
     company: 'AOShield Solutions',
+    location: 'Canada · Remote',
     logo: '/images/companies/aoshield.webp',
     period: { start: '2026-09' },
     current: true,
-    context: 'Healthcare software · Canada',
+    context: 'Healthcare software',
     roles: [{
-      title: 'Full-stack Developer',
+      title: 'Software Engineer',
       period: { start: '2026-09' },
       description: 'Developing healthcare software for a Canadian client, working primarily on the C# / .NET Core API and related React and TypeScript interfaces in an Azure-hosted environment.',
       points: [
         'Modernizing legacy API workflows across multiple entities to use the platform\'s shared claims-based authorization patterns.',
         'Shipping fixes and refactoring application services and shared packages used across the API and frontend.',
-        'Participating in planning and code reviews, with API and frontend changes integrated into production.',
+        'Participating in sprint planning and code reviews, delivering product integrations and deploying API and frontend changes to production.',
+        'Helping individual teammates adopt AI-assisted development through hands-on guidance on MCP, reusable skills, and workflow automation, including generating and automating tests for parts of the codebase.',
       ],
       tags: ['C#', '.NET Core', 'React', 'TypeScript', 'Azure'],
     }],
   },
   {
     company: 'Dara Services',
+    location: 'Odessa, Texas, United States · Remote',
     logo: '/images/companies/dara.webp',
     period: { start: '2023-10', end: '2026-09' },
     current: false,
@@ -93,6 +96,7 @@ export const experience: Experience[] = [
 export const earlierExperience: EarlierExperience[] = [
   {
     company: 'DasMex',
+    location: 'Mexico · Remote',
     logo: '/images/companies/dasmex.webp',
     title: 'Full-stack Developer',
     period: { start: '2023-08', end: '2023-11' },
@@ -106,6 +110,7 @@ export const earlierExperience: EarlierExperience[] = [
   },
   {
     company: 'NTSprint',
+    location: 'Seattle, Washington, United States · Remote',
     logo: '/images/companies/ntsprint.webp',
     title: 'Software Engineer Intern',
     period: { start: '2023-02', end: '2023-03' },

@@ -21,6 +21,7 @@ export interface EmploymentPeriod {
 
 export interface Experience {
   company: string;
+  location: string;
   logo: string;
   period: EmploymentPeriod;
   current: boolean;
@@ -37,6 +38,7 @@ export interface Experience {
 
 export interface EarlierExperience {
   company: string;
+  location: string;
   logo: string;
   title: string;
   period: EmploymentPeriod;

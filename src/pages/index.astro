@@ -71,7 +71,8 @@ const featured = projects.filter((project) => project.featured);
               <h3 class="flex items-center gap-3 text-company font-semibold tracking-[-.03em]"><img src={job.logo} alt="" width="40" height="40" loading="lazy" decoding="async" class="size-10 shrink-0 rounded-sm border border-line bg-white object-contain" /><span>{job.company}</span></h3>
               <p class="font-mono text-meta text-muted"><EmploymentPeriod period={job.period} /></p>
             </div>
-            {job.context && <p class="mt-2 font-mono text-meta text-muted">{job.context}</p>}
+            <p class="mt-2 font-mono text-meta text-muted">{job.location}</p>
+            {job.context && <p class="mt-1 font-mono text-meta text-muted">{job.context}</p>}
             <div class="mt-5 space-y-7">{job.roles.map((role, roleIndex) => <div class:list={[roleIndex > 0 && 'border-t border-line pt-6']}>
               <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1"><h4 class="text-role font-semibold">{role.title}</h4>{job.roles.length > 1 && <span class="font-mono text-meta text-muted"><EmploymentPeriod period={role.period} /></span>}</div>
               <p class="mt-4 text-body text-copy">{role.description}</p>
@@ -84,6 +85,7 @@ const featured = projects.filter((project) => project.featured);
             <summary class="flex min-h-12 cursor-pointer list-none items-center justify-between text-control font-medium text-muted transition-colors hover:text-accent [&::-webkit-details-marker]:hidden">Earlier experience <span class="transition-transform group-open:rotate-45"><Icon name="plus" /></span></summary>
             <div class="space-y-6 pt-4 pb-2">{earlierExperience.map((job) => <article>
               <div class="flex flex-wrap items-center justify-between gap-2"><h3 class="flex items-center gap-3 text-role font-semibold"><img src={job.logo} alt="" width="40" height="40" loading="lazy" decoding="async" class="size-10 shrink-0 rounded-sm border border-line bg-white object-contain" /><span>{job.company}</span></h3><p class="font-mono text-meta text-muted"><EmploymentPeriod period={job.period} /></p></div>
+              <p class="mt-2 font-mono text-meta text-muted">{job.location}</p>
               <p class="mt-1 text-role font-semibold">{job.title}</p>
               <p class="mt-2 text-body text-copy">{job.description}</p>
               <ul class="mt-3 space-y-2">{job.points.map((point) => <li class="flex gap-3 text-body text-copy"><span class="mt-2.5 size-1 shrink-0 rounded-full bg-ink/35" aria-hidden="true" /><span>{point}</span></li>)}</ul>
