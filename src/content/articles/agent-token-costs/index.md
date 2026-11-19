@@ -1,6 +1,6 @@
 ---
 title: How millions of agent tokens can cost less than you think
-description: I used 366M Opus tokens in one week, and at API list prices that came to $190.71. The agent loop and prompt caching explain why.
+description: I used 366M Opus tokens in a week, which cost $190.71 at API list prices. The agent loop and prompt caching explain why.
 publishedAt: 2026-11-17
 cover:
   src: img/cover-5x2.png
