@@ -1,10 +1,11 @@
 import { about, additionalWork, capabilities, earlierExperience, experience, profile, projects, sectionIntros } from '../data/portfolio';
 import type { EmploymentPeriod, Project } from '../types/portfolio';
+import { articleMarkdown, articlePath, formatArticleDate, readingMinutes, type Article } from './articles';
 import { formatEmploymentPeriod } from './employment-period';
 
 /**
- * Markdown renderings of the portfolio, generated from src/data/portfolio.ts so the
- * HTML pages, /llms.txt, /llms-full.txt and the per-page .md files cannot drift apart.
+ * Markdown renderings of the portfolio, generated from src/data/portfolio.ts and the article
+ * collection so the HTML pages, /llms.txt, /llms-full.txt and the per-page .md files cannot drift apart.
  */
 
 export const MARKDOWN_TYPE = 'text/markdown; charset=utf-8';
@@ -57,7 +58,24 @@ export function renderProject(project: Project, site?: URL): string {
   );
 }
 
-export function renderHome(site?: URL): string {
+export function renderArticle(article: Article, site?: URL): string {
+  const { title, description, publishedAt, updatedAt, tags } = article.data;
+  return blocks(
+    `# ${title}`,
+    `> ${description}`,
+    bullets([
+      `Author: ${profile.name}`,
+      `Published: ${formatArticleDate(publishedAt)}`,
+      ...(updatedAt ? [`Updated: ${formatArticleDate(updatedAt)}`] : []),
+      ...(tags.length > 0 ? [`Tags: ${tags.join(', ')}`] : []),
+      `Web page: ${toUrl(articlePath(article), site)}`,
+    ]),
+    articleMarkdown(article, site),
+    `Back to the portfolio: ${toUrl('/', site)}`,
+  );
+}
+
+export function renderHome(articles: Article[], site?: URL): string {
   const featured = projects.filter((project) => project.featured);
   const caseStudies = projects.filter((project) => !project.featured);
   const projectEntry = (project: Project): string => [
@@ -109,13 +127,19 @@ export function renderHome(site?: URL): string {
     '## About',
     ...about,
     bullets(capabilities.map((item) => `${item.title}: ${item.text}`)),
+    articles.length > 0 && `## Articles\n\n${sectionIntros.articles}`,
+    ...articles.map((article) => [
+      `### [${article.data.title}](${toUrl(markdownPath(articlePath(article)), site)})`,
+      `${formatArticleDate(article.data.publishedAt)} · ${readingMinutes(article)} min read`,
+      article.data.description,
+    ].join('\n\n')),
     '## Reading these projects',
     readingNotes,
   );
 }
 
 /** The /llms.txt index, structured as llmstxt.org describes: H1, blockquote, prose, then H2 link lists. */
-export function renderLlmsIndex(site?: URL): string {
+export function renderLlmsIndex(articles: Article[], site?: URL): string {
   const link = (label: string, path: string, notes: string) => `- [${label}](${toUrl(path, site)}): ${notes}`;
   return blocks(
     `# ${profile.name}`,
@@ -127,8 +151,10 @@ export function renderLlmsIndex(site?: URL): string {
       link('Profile, experience, and contact', markdownPath('/'), 'Roles, responsibilities, outcomes, skills, and contact details.'),
       ...projects.map((project) => link(project.name, markdownPath(projectPath(project)), project.summary)),
     ].join('\n'),
+    articles.length > 0 && '## Articles',
+    articles.length > 0 && articles.map((article) => link(article.data.title, markdownPath(articlePath(article)), article.data.description)).join('\n'),
     '## Full content',
-    link('Complete portfolio in one file', '/llms-full.txt', 'The profile, every project, and every case study concatenated, for agents that read one document.'),
+    link('Complete portfolio in one file', '/llms-full.txt', 'The profile, every project, every case study, and every article concatenated, for agents that read one document.'),
     '## Optional',
     [
       link('Portfolio website', '/', 'The human-facing HTML version of this content.'),
@@ -138,7 +164,11 @@ export function renderLlmsIndex(site?: URL): string {
   );
 }
 
-/** Everything in one document: the home markdown followed by each project page. */
-export function renderLlmsFull(site?: URL): string {
-  return [renderHome(site), ...projects.map((project) => renderProject(project, site))].join('\n---\n\n');
+/** Everything in one document: the home markdown followed by each project page and article. */
+export function renderLlmsFull(articles: Article[], site?: URL): string {
+  return [
+    renderHome(articles, site),
+    ...projects.map((project) => renderProject(project, site)),
+    ...articles.map((article) => renderArticle(article, site)),
+  ].join('\n---\n\n');
 }

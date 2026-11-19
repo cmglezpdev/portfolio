@@ -1,0 +1,58 @@
+---
+import type { GetStaticPaths, InferGetStaticPropsType } from 'astro';
+import { render } from 'astro:content';
+import { Image } from 'astro:assets';
+import Layout from '../../layouts/Layout.astro';
+import Icon from '../../components/Icon.astro';
+import Tag from '../../components/Tag.astro';
+import PreviewDialog from '../../components/PreviewDialog.astro';
+import { profile } from '../../data/portfolio';
+import { articlePath, formatArticleDate, getArticles, readingMinutes } from '../../utils/articles';
+
+export const getStaticPaths = (async () => {
+  const articles = await getArticles();
+  return articles.map((article, index) => ({
+    params: { slug: article.id },
+    props: { article, nextArticle: articles.length > 1 ? articles[(index + 1) % articles.length] : null },
+  }));
+}) satisfies GetStaticPaths;
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+const { article, nextArticle } = Astro.props;
+const { title, description, publishedAt, updatedAt, tags, cover } = article.data;
+const { Content, headings } = await render(article);
+const sections = headings.filter((heading) => heading.depth === 2);
+const isoDate = (date: Date) => date.toISOString().slice(0, 10);
+---
+<Layout title={`${title} | ${profile.name}`} description={description} article={article}>
+  <article class="mx-auto max-w-6xl px-5 pt-10 sm:px-8 sm:pt-16 lg:px-12">
+    <a href="/#articles" class="mb-10 inline-flex min-h-10 items-center gap-2 font-mono text-meta text-muted hover:text-accent"><span aria-hidden="true">←</span> Back to articles</a>
+    {cover && <Image src={cover.src} alt={cover.alt} priority sizes="(min-width: 72rem) 1056px, (min-width: 64rem) calc(100vw - 6rem), (min-width: 40rem) calc(100vw - 4rem), calc(100vw - 2.5rem)" class="mb-10 h-auto w-full rounded-sm border border-line" />}
+    <header>
+      <p class="flex flex-wrap gap-x-3 gap-y-1 font-mono text-meta text-muted">
+        <time datetime={isoDate(publishedAt)}>{formatArticleDate(publishedAt)}</time>
+        <span aria-hidden="true">/</span>
+        <span>{readingMinutes(article)} min read</span>
+        {updatedAt && <><span aria-hidden="true">/</span><span>Updated <time datetime={isoDate(updatedAt)}>{formatArticleDate(updatedAt)}</time></span></>}
+      </p>
+      <h1 class="mt-5 max-w-4xl text-4xl leading-[1.1] font-medium tracking-[-.04em] sm:text-6xl">{title}<span class="text-accent">.</span></h1>
+      <p class="mt-5 max-w-2xl text-xl leading-relaxed tracking-[-.02em] text-muted">{description}</p>
+      {tags.length > 0 && <div class="mt-6 flex flex-wrap gap-2">{tags.map((label) => <Tag label={label} />)}</div>}
+    </header>
+    <div class="mt-10 grid gap-10 border-t border-line pt-10 pb-16 lg:grid-cols-[.65fr_2fr] lg:gap-20 lg:pb-24">
+      <aside class="hidden lg:sticky lg:top-28 lg:block lg:self-start">
+        {sections.length > 0 && <>
+          <p class="font-mono text-meta uppercase tracking-[.15em] text-muted">In this article</p>
+          <nav aria-label="Article sections" class="mt-5 flex flex-col items-start gap-3 text-control">
+            {sections.map((section) => <a href={`#${section.slug}`} data-nav={section.slug} class="hover:text-accent aria-[current=location]:text-accent">{section.text}</a>)}
+          </nav>
+        </>}
+      </aside>
+      <div data-article-body class="article-prose min-w-0"><Content /></div>
+    </div>
+    {nextArticle
+      ? <a href={articlePath(nextArticle)} class="group flex flex-wrap items-center justify-between gap-6 border-t border-line py-10 transition-colors hover:text-accent"><span><span class="font-mono text-meta uppercase tracking-[.14em] text-muted">Next article</span><span class="mt-2 block text-3xl font-medium tracking-[-.05em]">{nextArticle.data.title}</span></span><Icon name="arrow" class="size-7 transition-transform motion-safe:group-hover:translate-x-1" /></a>
+      : <a href="/#articles" class="inline-flex min-h-12 items-center gap-3 border-t border-line py-10 text-body hover:text-accent">Back to articles <Icon name="arrow" /></a>}
+  </article>
+  <PreviewDialog />
+</Layout>

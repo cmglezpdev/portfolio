@@ -23,7 +23,7 @@ A public account of a project's problem, Carlos's contribution, technical decisi
 A concise label connecting a project's implemented work to an engineering skill or technology. Planned features do not qualify as current capabilities.
 
 **Writing**:
-Articles authored by Carlos, potentially published on the portfolio or external platforms. Writing is outside the first release.
+Articles authored by Carlos and published on the portfolio from Markdown files. They may also appear on external platforms.
 
 **Professional project**:
 A project delivered within paid employment. Public descriptions must distinguish Carlos's own contributions from existing functionality and team work.

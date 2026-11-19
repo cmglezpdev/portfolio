@@ -108,6 +108,12 @@ for (const file of pages) {
     try { JSON.parse(body); } catch { check(false, `${name}: JSON-LD is not valid JSON`); }
   }
 
+  // An article's HTML and markdown copy come from one source file, so its copy must be in llms-full.txt whole.
+  if (name.startsWith('/articles/')) {
+    if (target && resolves(target)) check(full.includes(normalize(read(target))), `${name}: markdown copy missing from llms-full.txt`);
+    continue;
+  }
+
   // Content parity: list items and body paragraphs on the page must also be in llms-full.txt.
   const main = html.match(/<main[\s\S]*<\/main>/)?.[0] ?? '';
   const body = main.replace(/<script[\s\S]*?<\/script>/g, '');

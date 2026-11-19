@@ -18,6 +18,7 @@ export const profile: Profile = {
 export const sectionIntros = {
   experience: 'My work across healthcare software, SaaS platforms, payments, and AI applications.',
   work: ['Personal products and small tools.', 'Things I wanted to exist, so I built them.'],
+  articles: 'Notes on agents and software, with my own numbers when I have them.',
 };
 
 export const about: string[] = [
