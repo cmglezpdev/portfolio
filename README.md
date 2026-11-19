@@ -60,6 +60,7 @@ tags: [AI agents, Prompt caching] # optional
 cover: # optional: banner on the home page card and at the top of the article, ideally 5:2
   src: img/cover.png
   alt: What the image shows
+  background: '#141414' # optional: bar color when the cover is letterboxed into the social card
 draft: true # optional: visible in `pnpm dev`, left out of production builds
 ---
 
@@ -67,6 +68,8 @@ Opening paragraph.
 
 ## First section
 ```
+
+Shared links preview the article itself: `title`, `description`, tags, and the `cover` as a 1200×630 card at `/articles/<slug>/social.png`. The cover is centered rather than cropped, so set `background` to its edge color if it is not near-black. Articles without a `cover` fall back to the site-wide card.
 
 The page renders `title` as the only `h1`, so start the body at `##`. Each `##` heading becomes a link in the article's side navigation.
 

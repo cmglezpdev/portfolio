@@ -12,7 +12,8 @@ const articles = defineCollection({
     updatedAt: z.coerce.date().optional(),
     tags: z.array(z.string()).default([]),
     // Banner on the home page card and at the top of the article, ideally 5:2.
-    cover: z.object({ src: image(), alt: z.string().min(1) }).optional(),
+    // `background` fills the bars when the cover is letterboxed into the 1200x630 social preview; match the cover's edge color.
+    cover: z.object({ src: image(), alt: z.string().min(1), background: z.string().default('#141414') }).optional(),
     // Drafts appear in `astro dev` and are left out of production builds.
     draft: z.boolean().default(false),
   }),

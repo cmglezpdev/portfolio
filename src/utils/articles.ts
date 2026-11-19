@@ -12,6 +12,11 @@ const images = import.meta.glob<{ default: ImageMetadata }>('/src/content/articl
 
 export const articlePath = (article: Article): string => `/articles/${article.id}/`;
 
+/** Size of the Open Graph / Twitter preview card, the 1.91:1 ratio social platforms crop to. */
+export const SOCIAL_IMAGE_SIZE = { width: 1200, height: 630 } as const;
+
+export const socialImagePath = (article: Article): string => `${articlePath(article)}social.png`;
+
 export const formatArticleDate = (date: Date): string => dateFormat.format(date);
 
 export const readingMinutes = (article: Article): number =>
