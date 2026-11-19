@@ -9,13 +9,17 @@ const { outputText } = ts.transpileModule(source, {
   compilerOptions: { target: ts.ScriptTarget.ES2022, module: ts.ModuleKind.None },
 });
 
-function createPage(width, height, ids, observerAvailable = true) {
+function createPage(width, height, ids, observerAvailable = true, headings = false) {
   const listeners = new Map();
   const frames = [];
   let scrollY = 0;
+  // Article links target short headings inside one body element; other links target whole sections.
+  const body = { getBoundingClientRect: () => ({ top: 500 - scrollY, bottom: 500 + ids.length * 600 - scrollY }) };
   const sections = ids.map((id, index) => ({
     id,
-    getBoundingClientRect: () => ({ top: 500 + index * 600 - scrollY, bottom: 1100 + index * 600 - scrollY }),
+    tagName: headings ? 'H2' : 'SECTION',
+    parentElement: body,
+    getBoundingClientRect: () => ({ top: 500 + index * 600 - scrollY, bottom: (headings ? 540 : 1100) + index * 600 - scrollY }),
   }));
   const links = ids.map((id) => {
     const attributes = new Map([['data-nav', id]]);
@@ -47,9 +51,9 @@ function createPage(width, height, ids, observerAvailable = true) {
 }
 
 for (const [width, height] of [[1200, 900], [390, 844]]) {
-  for (const ids of [['experience', 'work'], ['overview', 'implementation']]) {
+  for (const [ids, headings] of [[['experience', 'work'], false], [['overview', 'implementation'], false], [['the-loop', 'the-cost'], true]]) {
     for (const observerAvailable of [true, false]) {
-      const page = createPage(width, height, ids, observerAvailable);
+      const page = createPage(width, height, ids, observerAvailable, headings);
       const readingPoint = height * 0.35;
       assert.deepEqual(page.active(), [], 'hero has no active section');
       page.scrollTo(500 - readingPoint - 1);
@@ -80,4 +84,4 @@ for (const [width, height] of [[1200, 900], [390, 844]]) {
     }
   }
 }
-console.log('Section navigation checks passed for desktop and phone, homepage and project links, with and without IntersectionObserver.');
+console.log('Section navigation checks passed for desktop and phone, homepage, project and article links, with and without IntersectionObserver.');

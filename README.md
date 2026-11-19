@@ -28,10 +28,12 @@ In an environment that cannot write Astro's global telemetry configuration, pref
 | Name, introduction metadata, email, social links | `src/data/portfolio.ts`, `profile` |
 | Employment history and roles | `src/data/portfolio.ts`, `experience` and `earlierExperience` |
 | Project summaries, tags, links, case studies | `src/data/portfolio.ts`, `projects` |
+| Articles | `src/content/articles/<slug>/index.md` |
 | Main introduction and about text | `src/pages/index.astro` |
 | Palette and fonts | `src/styles/global.css`, Tailwind theme tokens |
 | Homepage layout | `src/pages/index.astro` |
 | Project page layout | `src/pages/work/[slug].astro` |
+| Article page layout and typography | `src/pages/articles/[slug].astro`, `.article-prose` in `src/styles/global.css` |
 | Shared HTML shell, fonts, and metadata | `src/layouts/Layout.astro` |
 | Reusable interface components | `src/components/` |
 | Preview dialog, animations, scroll marker, active navigation | `src/scripts/interactions.ts` |
@@ -43,6 +45,34 @@ The Astro configuration is `astro.config.ts`. Content, browser interactions, and
 Store the profile portrait at `public/images/profile/`. Store project screenshots as WebP under `public/images/projects/<project>/`, then list their paths and short alt descriptions in the project's `images` field. Company marks live under `public/images/companies/`. Raw screenshots used during conversion stay in the local, ignored `projects-images/` folder.
 
 The supplied PDF is preserved at the repository root. It is not offered as a current résumé because it predates AOShield and still lists Dara as current employment. Replace it with an updated version before adding a download link.
+
+## Write an article
+
+Create `src/content/articles/<slug>/index.md`. The folder name becomes the URL, `/articles/<slug>/`, and the article appears in the home page's Articles section, newest first. There is no `/articles/` index page yet.
+
+```md
+---
+title: Article title
+description: One or two sentences for the home page, search results, and social cards.
+publishedAt: 2026-11-17
+updatedAt: 2026-12-01 # optional
+tags: [AI agents, Prompt caching] # optional
+cover: # optional: banner on the home page card and at the top of the article, ideally 5:2
+  src: img/cover.png
+  alt: What the image shows
+draft: true # optional: visible in `pnpm dev`, left out of production builds
+---
+
+Opening paragraph.
+
+## First section
+```
+
+The page renders `title` as the only `h1`, so start the body at `##`. Each `##` heading becomes a link in the article's side navigation.
+
+Keep images in the article's folder and reference them relatively, as in `![Alt text](img/chart.png)`. Astro converts them to responsive WebP files, and a missing file fails the build. A line in italics directly after an image is styled as its caption.
+
+HTML written directly in the Markdown is rendered as is, including `style` attributes and `<script>` tags. Use it for a one-off demo or diagram. It is not sanitized, so only paste code you trust.
 
 ## Structure and behavior
 
@@ -75,9 +105,9 @@ Agents and crawlers read the same static HTML as people; essential text does not
 - Markdown copies of every page at `<page URL>/index.html.md` (for example `/work/nativo/index.html.md`), advertised with `<link rel="alternate" type="text/markdown">`.
 - `/llms.txt`, an index in the llmstxt.org format, and `/llms-full.txt`, the whole portfolio as one markdown document.
 
-All of these are generated from `src/data/portfolio.ts` by `src/utils/markdown.ts`, so the HTML and markdown cannot drift. Edit copy in the data file, not in the page templates.
+All of these are generated from `src/data/portfolio.ts` and the article files by `src/utils/markdown.ts`, so the HTML and markdown cannot drift. Edit copy in the data file or the article, not in the page templates.
 
-After `pnpm build`, run `pnpm check:agents` to verify the output: `llms.txt` structure and link resolution, a markdown alternate on every page, one `h1` and `main` per page, valid JSON-LD, and that every list item and paragraph in the HTML also appears in `llms-full.txt`.
+After `pnpm build`, run `pnpm check:agents` to verify the output: `llms.txt` structure and link resolution, a markdown alternate on every page, one `h1` and `main` per page, valid JSON-LD, that every list item and paragraph in the HTML also appears in `llms-full.txt`, and that each article's markdown copy appears there whole.
 
 What this does not do: these features make content available; they do not guarantee indexing, ranking, or inclusion in AI answers. Google states that it needs no `llms.txt`, AI text files, or special markup for AI Overviews and AI Mode, and that such files neither help nor harm Search. `llms.txt` is a community proposal, and no AI provider documents that it honors it. It is kept because it is cheap and may help tools that fetch it at inference time. Crawl and training controls belong in `robots.txt` and the host firewall.
 

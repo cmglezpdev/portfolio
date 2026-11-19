@@ -47,3 +47,45 @@ a.text-muted:hover { text-decoration-line: underline; }
 :root { --navigation-offset: 10rem; }
 @media (min-width: 64rem) { :root { --navigation-offset: 6.5rem; } }
 :where(main section[id], footer section[id]) { scroll-margin-top: var(--navigation-offset); }
+
+/* Article reader. Markdown output has no classes, so its elements are styled here.
+   Text keeps a readable measure; images, tables and code use the full column. */
+@layer components {
+  .article-prose { color: var(--color-copy); font-size: var(--text-body); line-height: var(--text-body--line-height); overflow-wrap: break-word; }
+  .article-prose > * + * { margin-top: 1.25rem; }
+  .article-prose > :where(p, ul, ol, blockquote, h2, h3, h4) { max-width: 65ch; }
+  .article-prose :where(h2, h3, h4) { color: var(--color-ink); font-weight: 600; scroll-margin-top: var(--navigation-offset); }
+  .article-prose h2 { margin-top: 3.5rem; font-size: 1.5rem; line-height: 2rem; letter-spacing: -.03em; }
+  .article-prose h3 { margin-top: 2.25rem; font-size: var(--text-role); line-height: var(--text-role--line-height); }
+  .article-prose h4 { margin-top: 1.75rem; }
+  .article-prose :where(strong) { color: var(--color-ink); font-weight: 600; }
+  .article-prose :where(a) { color: var(--color-accent); text-decoration-line: underline; }
+  .article-prose :where(a):hover { color: var(--color-ink); }
+  .article-prose :where(ul, ol) { padding-left: 1.25rem; }
+  .article-prose :where(ul) { list-style: disc; }
+  .article-prose :where(ol) { list-style: decimal; }
+  .article-prose :where(li + li) { margin-top: .5rem; }
+  .article-prose :where(li)::marker { color: var(--color-muted); }
+  .article-prose :where(blockquote) { border-left: 2px solid var(--color-accent); padding-left: 1.25rem; }
+  .article-prose :where(hr) { margin-block: 3rem; border-color: var(--color-line); }
+
+  .article-prose :where(code) { border-radius: .125rem; background: var(--color-surface); padding: .1em .3em; font-family: var(--font-mono); font-size: .875em; }
+  .article-prose :where(pre) { overflow-x: auto; border: 1px solid var(--color-line); border-radius: .125rem; background: var(--color-surface); padding: 1rem 1.25rem; font-size: .875rem; line-height: 1.5rem; }
+  .article-prose :where(pre code) { background: none; padding: 0; font-size: inherit; }
+  .article-prose .astro-code, .article-prose .astro-code span { color: light-dark(var(--shiki-light), var(--shiki-dark)); }
+
+  /* display: block lets a table wider than the column scroll by itself. */
+  .article-prose :where(table) { display: block; overflow-x: auto; margin-block: 2rem; border-collapse: collapse; font-size: var(--text-control); line-height: var(--text-control--line-height); }
+  .article-prose :where(th, td) { border-bottom: 1px solid var(--color-line); padding: .625rem 1rem .625rem 0; text-align: left; vertical-align: top; }
+  .article-prose :where(th) { color: var(--color-ink); font-weight: 600; }
+  .article-prose :where(th[style*="right"], td[style*="right"]) { padding-right: 0; white-space: nowrap; }
+
+  .article-prose :where(img) { display: block; height: auto; max-width: 100%; border: 1px solid var(--color-line); border-radius: .125rem; }
+  .article-prose :where(a[data-preview]) { display: block; cursor: zoom-in; }
+  .article-prose > p:has(img) { margin-top: 2rem; max-width: none; }
+  /* An italic line right after an image is its caption. */
+  .article-prose > p:has(img) + p:has(> em:only-child) { margin-top: .75rem; color: var(--color-muted); font-family: var(--font-mono); font-size: var(--text-meta); line-height: var(--text-meta--line-height); }
+  .article-prose > p:has(img) + p:has(> em:only-child) em { font-style: normal; }
+  .article-prose > p:has(img) + p:has(> em:only-child) + * { margin-top: 2rem; }
+  .article-prose > p:has(img) + p:has(> em:only-child) + h2 { margin-top: 3.5rem; }
+}

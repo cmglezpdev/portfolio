@@ -54,15 +54,21 @@ function initSectionNavigation(): void {
     const section = document.getElementById(link.getAttribute('data-nav') || '');
     return section ? [{ link, section }] : [];
   });
+  // Article headings are siblings of their text, so each range ends where the next heading starts.
+  const rangeEnd = (index: number): number => {
+    const { section } = sections[index];
+    if (section.tagName !== 'H2') return section.getBoundingClientRect().bottom;
+    const next = sections[index + 1]?.section;
+    return next ? next.getBoundingClientRect().top : (section.parentElement ?? section).getBoundingClientRect().bottom;
+  };
   let scheduled = false;
   const update = (): void => {
     scheduled = false;
     const position = window.innerHeight * 0.35;
-    for (const { link, section } of sections) {
-      const bounds = section.getBoundingClientRect();
-      if (bounds.top <= position && bounds.bottom > position) link.setAttribute('aria-current', 'location');
+    sections.forEach(({ link, section }, index) => {
+      if (section.getBoundingClientRect().top <= position && rangeEnd(index) > position) link.setAttribute('aria-current', 'location');
       else link.removeAttribute('aria-current');
-    }
+    });
   };
   const schedule = (): void => {
     if (scheduled) return;
@@ -73,6 +79,25 @@ function initSectionNavigation(): void {
   window.addEventListener('scroll', schedule, { passive: true });
   window.addEventListener('resize', schedule, { passive: true });
   update();
+}
+
+// Diagrams carry small text, so article images open in the shared preview dialog.
+// Without JavaScript they stay ordinary images.
+function initArticleImages(): void {
+  const images = document.querySelectorAll('[data-article-body] img');
+  images.forEach((image, index) => {
+    if (!(image instanceof HTMLImageElement) || image.closest('a')) return;
+    const trigger = document.createElement('a');
+    trigger.href = image.currentSrc || image.src;
+    trigger.dataset.preview = '';
+    trigger.dataset.title = document.querySelector('h1')?.textContent || 'Article image';
+    trigger.dataset.caption = `Image ${index + 1} of ${images.length}`;
+    trigger.setAttribute('aria-haspopup', 'dialog');
+    trigger.setAttribute('aria-label', `Enlarge image: ${image.alt}`);
+    image.dataset.previewMain = '';
+    image.replaceWith(trigger);
+    trigger.append(image);
+  });
 }
 
 function initProjectPreview(): void {
@@ -103,7 +128,10 @@ function initProjectPreview(): void {
     image.className = 'block h-full w-full object-contain';
     imageContainer.replaceChildren(image);
     description.textContent = image.alt;
-    if (counter) counter.textContent = `${currentIndex + 1} / ${slides.length}`;
+    if (counter instanceof HTMLElement) {
+      counter.textContent = `${currentIndex + 1} / ${slides.length}`;
+      counter.hidden = slides.length < 2;
+    }
     if (fullImageLink instanceof HTMLAnchorElement) {
       const largestSrc = image.srcset
         .split(',')
@@ -132,6 +160,8 @@ function initProjectPreview(): void {
       title.textContent = button.dataset.title || 'Project preview';
       caption.textContent = button.dataset.caption || '';
       projectLink.setAttribute('href', button.dataset.href || '/#work');
+      // Article images have no project page to link to.
+      if (projectLink instanceof HTMLElement) projectLink.hidden = !button.dataset.href;
       slides = [source];
       button.querySelectorAll('template[data-preview-slide]').forEach((template) => {
         if (!(template instanceof HTMLTemplateElement)) return;
@@ -162,4 +192,5 @@ function initProjectPreview(): void {
 initProjectAnimations();
 initScrollProgress();
 initSectionNavigation();
+initArticleImages();
 initProjectPreview();
