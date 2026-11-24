@@ -28,6 +28,7 @@ In an environment that cannot write Astro's global telemetry configuration, pref
 | Name, introduction metadata, email, social links | `src/data/portfolio.ts`, `profile` |
 | Employment history and roles | `src/data/portfolio.ts`, `experience` and `earlierExperience` |
 | Project summaries, tags, links, case studies | `src/data/portfolio.ts`, `projects` |
+| Open-source contributions | `src/data/portfolio.ts`, `openSource` |
 | Articles | `src/content/articles/<slug>/index.md` |
 | Main introduction and about text | `src/pages/index.astro` |
 | Palette and fonts | `src/styles/global.css`, Tailwind theme tokens |
@@ -42,7 +43,7 @@ In an environment that cannot write Astro's global telemetry configuration, pref
 
 The Astro configuration is `astro.config.ts`. Content, browser interactions, and static endpoints use TypeScript, with Astro's strict configuration and JavaScript source disabled. Run `pnpm check` separately from `pnpm build`; building alone does not check types.
 
-Store the profile portrait at `public/images/profile/`. Store project screenshots as WebP under `public/images/projects/<project>/`, then list their paths and short alt descriptions in the project's `images` field. Company marks live under `public/images/companies/`. Raw screenshots used during conversion stay in the local, ignored `projects-images/` folder.
+Store the profile portrait at `public/images/profile/`. Store project screenshots as WebP under `public/images/projects/<project>/`, then list their paths and short alt descriptions in the project's `images` field. Company marks live under `public/images/companies/`, and open-source project logos under `public/images/open-source/`. Raw screenshots used during conversion stay in the local, ignored `projects-images/` folder.
 
 The supplied PDF is preserved at the repository root. It is not offered as a current résumé because it predates AOShield and still lists Dara as current employment. Replace it with an updated version before adding a download link.
 

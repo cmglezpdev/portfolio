@@ -80,3 +80,18 @@ export interface AdditionalWork {
   tag: string;
   url?: string;
 }
+
+export interface PullRequest {
+  number: number;
+  summary: string;
+  state: 'merged' | 'open' | 'closed';
+}
+
+export interface OpenSourceContribution {
+  project: string;
+  /** GitHub `owner/name`; the repository and pull request URLs are derived from it. */
+  repo: string;
+  about: string;
+  logo: string;
+  pulls: PullRequest[];
+}

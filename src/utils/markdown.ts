@@ -1,4 +1,4 @@
-import { about, additionalWork, capabilities, earlierExperience, experience, profile, projects, sectionIntros } from '../data/portfolio';
+import { about, additionalWork, capabilities, earlierExperience, experience, openSource, profile, projects, sectionIntros } from '../data/portfolio';
 import type { EmploymentPeriod, Project } from '../types/portfolio';
 import { articleMarkdown, articlePath, formatArticleDate, readingMinutes, type Article } from './articles';
 import { formatEmploymentPeriod } from './employment-period';
@@ -18,6 +18,9 @@ export const toUrl = (path: string, site?: URL): string => (site ? new URL(path,
  * a URL without a filename gains `index.html.md`.
  */
 export const markdownPath = (htmlPath: string): string => `${htmlPath.replace(/\/$/, '')}/index.html.md`;
+
+export const repoUrl = (repo: string): string => `https://github.com/${repo}`;
+export const pullUrl = (repo: string, number: number): string => `${repoUrl(repo)}/pull/${number}`;
 
 export const projectPath = (project: Project): string => `/work/${project.slug}/`;
 
@@ -127,6 +130,12 @@ export function renderHome(articles: Article[], site?: URL): string {
     '## About',
     ...about,
     bullets(capabilities.map((item) => `${item.title}: ${item.text}`)),
+    `## Open source\n\n${sectionIntros.openSource}`,
+    ...openSource.map((item) => [
+      `### [${item.project}](${repoUrl(item.repo)})`,
+      item.about,
+      bullets(item.pulls.map((pull) => `[#${pull.number}](${pullUrl(item.repo, pull.number)}) (${pull.state}): ${pull.summary}`)),
+    ].join('\n\n')),
     articles.length > 0 && `## Articles\n\n${sectionIntros.articles}`,
     ...articles.map((article) => [
       `### [${article.data.title}](${toUrl(markdownPath(articlePath(article)), site)})`,

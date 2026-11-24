@@ -1,4 +1,4 @@
-import type { AdditionalWork, EarlierExperience, Experience, Profile, Project } from '../types/portfolio';
+import type { AdditionalWork, EarlierExperience, Experience, OpenSourceContribution, Profile, Project } from '../types/portfolio';
 
 export const profile: Profile = {
   name: 'Carlos Manuel González',
@@ -18,6 +18,7 @@ export const profile: Profile = {
 export const sectionIntros = {
   experience: 'My work across healthcare software, SaaS platforms, payments, and AI applications.',
   work: ['Personal products and small tools.', 'Things I wanted to exist, so I built them.'],
+  openSource: 'Pull requests to tools I use every day.',
   articles: 'Notes on agents and software, with my own numbers when I have them.',
 };
 
@@ -241,5 +242,64 @@ export const additionalWork: AdditionalWork[] = [
   { name: 'QR Generator', description: 'A free QR-code generator with configurable styles and no account required. Shared publicly, with feedback from people using it.', tag: 'Web tool · QR codes', url: 'https://qr-generator.linkseek.app/' },
   { name: 'AWS & Terraform lab', description: 'Hands-on AWS and Terraform exercises with deployment tests, architecture diagrams, and notes on service choices.', tag: 'Cloud · Learning projects', url: 'https://github.com/cmglezpdev/terraform-aws-lab' },
   // { name: 'System design lab', description: 'A URL-shortener experiment exploring load testing, caching, and PostgreSQL replication.', tag: 'Backend · Learning project', url: 'https://github.com/cmglezpdev/link-shortener-scalability-lab' },
-  { name: 'Supabase contribution', description: 'Fixed permissions in the SQL example for the automatic embeddings guide.', tag: 'Documentation · Merged', url: 'https://github.com/supabase/supabase/pull/35600' },
+];
+
+// Pull request states are a snapshot: update `state` when one is merged or closed.
+export const openSource: OpenSourceContribution[] = [
+  {
+    project: 'Supabase',
+    repo: 'supabase/supabase',
+    about: 'Postgres development platform',
+    logo: '/images/open-source/supabase.webp',
+    pulls: [
+      { number: 35600, summary: 'Sets security definer on the queue_embeddings function in the automatic embeddings guide, which fixes a permission error on insert.', state: 'merged' },
+    ],
+  },
+  {
+    project: 'Convex',
+    repo: 'convex/convex-backend',
+    about: 'Reactive database for app developers',
+    logo: '/images/open-source/convex.webp',
+    pulls: [
+      { number: 667, summary: 'Keeps the unsaved environment variables in the dashboard when you paste another one.', state: 'open' },
+    ],
+  },
+  {
+    project: 'OpenWhispr',
+    repo: 'OpenWhispr/openwhispr',
+    about: 'Voice-to-text dictation app',
+    logo: '/images/open-source/openwhispr.webp',
+    pulls: [
+      { number: 3413, summary: 'Adds Vercel AI Gateway as a bring-your-own-key speech-to-text provider for dictation, history retries, and audio uploads.', state: 'open' },
+      { number: 1357, summary: 'Added Vercel AI Gateway as a named reasoning provider. Closed because the custom OpenAI-compatible endpoint already covers it.', state: 'closed' },
+    ],
+  },
+  {
+    project: 'Gentleman.Dots',
+    repo: 'Gentleman-Programming/Gentleman.Dots',
+    about: 'Terminal and editor configuration',
+    logo: '/images/open-source/gentleman-programming.webp',
+    pulls: [
+      { number: 79, summary: 'Replaces deprecated Nushell commands in bash-env.nu.', state: 'merged' },
+      { number: 80, summary: 'Replaces deprecated Nushell options in the same file.', state: 'merged' },
+    ],
+  },
+  {
+    project: 'miduConf website',
+    repo: 'midudev/miduconf-website',
+    about: 'Website of a web development conference',
+    logo: '/images/open-source/midudev.webp',
+    pulls: [
+      { number: 90, summary: 'Adds a NestJS flavour to the conference ticket designs.', state: 'merged' },
+    ],
+  },
+  {
+    project: 'Gentle AI',
+    repo: 'Gentleman-Programming/gentle-ai',
+    about: 'Configurator for AI coding agents',
+    logo: '/images/open-source/gentleman-programming.webp',
+    pulls: [
+      { number: 2464, summary: 'Keeps the TUI cursor in place when you go back a screen. Closed by a bot when its linked issue went stale.', state: 'closed' },
+    ],
+  },
 ];

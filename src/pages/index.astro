@@ -6,7 +6,8 @@ import ProjectCard from '../components/ProjectCard.astro';
 import PreviewDialog from '../components/PreviewDialog.astro';
 import EmploymentPeriod from '../components/EmploymentPeriod.astro';
 import ArticleCard from '../components/ArticleCard.astro';
-import { profile, experience, earlierExperience, projects, additionalWork, about, capabilities, sectionIntros } from '../data/portfolio';
+import { profile, experience, earlierExperience, projects, additionalWork, about, capabilities, openSource, sectionIntros } from '../data/portfolio';
+import { pullUrl, repoUrl } from '../utils/markdown';
 import { getArticles } from '../utils/articles';
 const featured = projects.filter((project) => project.featured);
 const articles = await getArticles();
@@ -132,10 +133,36 @@ const articles = await getArticles();
       </div>
     </section>
 
+    <section id="open-source" aria-labelledby="open-source-heading" class="scroll-mt-8 border-t border-line py-16 sm:py-20 lg:py-24">
+      <div class="grid gap-10 lg:grid-cols-[.85fr_2fr] lg:gap-16">
+        <div>
+          <p class="mb-5 font-mono text-meta uppercase tracking-[.18em] text-muted"><span class="mr-3 text-accent">04</span> Open source</p>
+          <h2 id="open-source-heading" class="text-4xl leading-[1.15] font-medium tracking-[-.03em]">Fixes I sent upstream<span class="text-accent">.</span></h2>
+          <p class="mt-5 max-w-xs text-body text-copy">{sectionIntros.openSource}</p>
+        </div>
+        <div>{openSource.map((item) => <article class="flex gap-4 border-t border-line py-6 last:pb-0">
+          <img src={item.logo} alt="" width="40" height="40" loading="lazy" decoding="async" class="size-10 shrink-0 rounded-sm border border-line bg-white object-contain" />
+          <div class="min-w-0 flex-1">
+            <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+              <h3 class="text-role font-semibold"><a href={repoUrl(item.repo)} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 transition-colors hover:text-accent">{item.project}<Icon name="external" class="size-3.5" /><span class="sr-only">, repository, opens in a new tab</span></a></h3>
+              <span class="font-mono text-meta text-muted">{item.about}</span>
+            </div>
+            <div class="mt-3 space-y-4">{item.pulls.map((pull) => <div>
+              <div class="flex flex-wrap items-center gap-x-3 font-mono text-meta">
+                <a href={pullUrl(item.repo, pull.number)} target="_blank" rel="noopener noreferrer" class="inline-flex min-h-8 items-center font-medium text-accent hover:underline">#{pull.number}<span class="sr-only"> in {item.project}, opens in a new tab</span></a>
+                <span class:list={['inline-flex items-center gap-1.5', pull.state === 'merged' ? 'text-ink' : 'text-muted']}><span aria-hidden="true" class:list={['size-1.5 rounded-full', pull.state === 'merged' ? 'bg-accent' : pull.state === 'open' ? 'border border-accent' : 'bg-muted/50']}></span>{pull.state}</span>
+              </div>
+              <p class="text-body text-copy">{pull.summary}</p>
+            </div>)}</div>
+          </div>
+        </article>)}</div>
+      </div>
+    </section>
+
     {articles.length > 0 && <section id="articles" aria-labelledby="articles-heading" class="scroll-mt-8 border-t border-line py-16 sm:py-20 lg:py-24">
       <div class="grid gap-10 lg:grid-cols-[.85fr_2fr] lg:gap-16">
         <div>
-          <p class="mb-5 font-mono text-meta uppercase tracking-[.18em] text-muted"><span class="mr-3 text-accent">04</span> Articles</p>
+          <p class="mb-5 font-mono text-meta uppercase tracking-[.18em] text-muted"><span class="mr-3 text-accent">05</span> Articles</p>
           <h2 id="articles-heading" class="text-4xl leading-[1.15] font-medium tracking-[-.03em]">Things I had to figure out<span class="text-accent">.</span></h2>
           <p class="mt-5 max-w-xs text-body text-copy">{sectionIntros.articles}</p>
         </div>
